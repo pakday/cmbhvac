@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CTABanner } from "@/components/CTABanner";
+import { ContinuousSlider } from "@/components/ContinuousSlider";
 import {
   ShieldCheck,
   Star,
@@ -50,7 +51,6 @@ export default function Home() {
   return (
     <>
       <Navbar />
-
       {/* ═══ HERO ═══ */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background image layer */}
@@ -82,11 +82,13 @@ export default function Home() {
               </div>
 
               <h1 className="text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-6 tracking-tight">
-                <span className="block font-light">Utah&apos;s Most</span>
+                <span className="block font-extrabold">Utah&apos;s Most</span>
                 <span className="block text-[#DB5425] font-extrabold">
                   Trusted
                 </span>
-                <span className="block font-light">HVAC &amp; Plumbing</span>
+                <span className="block font-extrabold">
+                  HVAC &amp; Plumbing
+                </span>
               </h1>
 
               <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-lg">
@@ -176,8 +178,38 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ═══ SERVICES ═══ */}
+      {/* ═══ SERVICE AREA SLIDER ═══ */}
+      <ContinuousSlider
+        cities={[
+          "Clearfield",
+          "Syracuse",
+          "Kaysville",
+          "Farmington",
+          "Bountiful",
+          "Layton",
+          "Kearns",
+          "Magna",
+          "Taylorsville",
+          "Holladay",
+          "Riverton",
+          "South Salt Lake",
+          "Cottonwood Heights",
+          "Herriman",
+          "Midvale",
+          "Millcreek",
+          "Murray",
+          "West Jordan",
+          "West Valley City",
+          "Salt Lake City",
+          "West Point",
+          "Fruit Heights",
+          "W. Bountiful",
+          "Centerville",
+          "Woods Cross",
+          "Clinton",
+        ]}
+      />
+      {/* ═══ SERVICES ═══ */}{" "}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
@@ -216,8 +248,9 @@ export default function Home() {
             <Link href="/services/ac" className="card group">
               <div className="aspect-video rounded-2xl overflow-hidden mb-5">
                 <Image
+                  // updated to a reliable Unsplash photo (same as AC services hero)
                   src="https://images.unsplash.com/photo-1631545806609-22ceb4037852?w=600&q=80"
-                  alt="Air conditioning unit"
+                  alt="Air Conditioning unit"
                   width={600}
                   height={400}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -263,7 +296,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ═══ WHY CHOOSE ═══ */}
       <section className="bg-gray-50 py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -307,7 +339,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ═══ CREDENTIALS ═══ */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -329,7 +360,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ═══ PROCESS ═══ */}
       <section className="bg-gray-50 py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -374,19 +404,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ═══ MEMBERSHIP ═══ */}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-linear-to-br from-[#133F60] to-[#1A5280] rounded-3xl p-8 md:p-12 text-white">
+          {/* lighten membership card background for better contrast */}
+          <div className="bg-linear-to-br from-[#E0F2FE] to-[#BAE6FD] rounded-3xl p-8 md:p-12 text-gray-900">
             <div className="badge badge-white mb-4">
-              <Award className="w-3.5 h-3.5" />
+              <Award className="w-3.5 h-3.5 text-gray-900" />
               Save Every Year
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-3">
               CMB HVAC Maintenance Membership
             </h2>
-            <p className="text-lg text-white/85 mb-6 max-w-2xl">
+            <p className="text-lg text-gray-800/85 mb-6 max-w-2xl">
               Take the stress out of HVAC maintenance. Our membership program
               saves you money, prevents costly breakdowns, and keeps your system
               running at peak efficiency.
@@ -401,7 +431,7 @@ export default function Home() {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-3 text-white/90"
+                  className="flex items-center gap-3 text-gray-800"
                 >
                   <Star className="w-5 h-5 text-[#DB5425]" />
                   {item}
@@ -416,7 +446,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ═══ BLOG PREVIEW ═══ */}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -478,7 +507,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ═══ FAQ ═══ */}
       <section className="bg-gray-50 py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -512,7 +540,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       {/* ═══ CTA ═══ */}
       <CTABanner
         title="Home of the Free Service Call"
@@ -523,7 +550,6 @@ export default function Home() {
         secondaryHref="tel:3858656749"
         icon={<Phone className="w-5 h-5" />}
       />
-
       <Footer />
     </>
   );

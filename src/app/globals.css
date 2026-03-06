@@ -186,4 +186,7 @@
   .prose-blog a {
     @apply text-[#133F60] underline underline-offset-2 hover:text-[#DB5425];
   }
+
+  /* previously used marquee animation; now handled by Swiper */
+  /* nothing needed here */
 }

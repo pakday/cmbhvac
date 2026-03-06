@@ -132,26 +132,7 @@ export function Navbar() {
 
   return (
     <>
-      {/* ── Announcement Bar ── */}
-      <div className="bg-[#133F60] text-white text-xs py-2 px-4 text-center">
-        <span className="inline-flex items-center gap-2">
-          <span className="hidden sm:inline">🎉</span>
-          <strong>Free Service Call</strong> on your first visit —{" "}
-          <a
-            href="tel:3858656749"
-            className="underline underline-offset-2 hover:text-white/80"
-          >
-            Call (385) 865-6749
-          </a>{" "}
-          or{" "}
-          <Link
-            href="/schedule-us"
-            className="underline underline-offset-2 hover:text-white/80"
-          >
-            Book Online
-          </Link>
-        </span>
-      </div>
+      {/* Announcement bar removed per design request */}
 
       <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
