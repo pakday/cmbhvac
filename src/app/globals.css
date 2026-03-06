@@ -161,4 +161,29 @@
     color: theme("colors.white");
     background-color: rgba(255, 255, 255, 0.15);
   }
+
+  /* Blog rich-text content */
+  .prose-blog h2 {
+    @apply text-2xl font-bold text-gray-900 mt-10 mb-4;
+  }
+
+  .prose-blog h3 {
+    @apply text-xl font-bold text-gray-900 mt-7 mb-3;
+  }
+
+  .prose-blog p {
+    @apply text-gray-700 leading-relaxed mb-5;
+  }
+
+  .prose-blog ul {
+    @apply list-disc list-outside ml-5 space-y-2 my-5 text-gray-700;
+  }
+
+  .prose-blog strong {
+    @apply font-semibold text-gray-900;
+  }
+
+  .prose-blog a {
+    @apply text-[#133F60] underline underline-offset-2 hover:text-[#DB5425];
+  }
 }

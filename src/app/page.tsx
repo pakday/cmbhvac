@@ -19,6 +19,7 @@ import {
   Phone,
 } from "lucide-react";
 import { useState } from "react";
+import { blogPosts, formatDate } from "@/lib/blog-data";
 
 export default function Home() {
   const [openAccordion, setOpenAccordion] = useState<number | null>(0);
@@ -51,50 +52,126 @@ export default function Home() {
       <Navbar />
 
       {/* ═══ HERO ═══ */}
-      <section className="hero-dark relative overflow-hidden pt-20 pb-24 md:pt-24 md:pb-32">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-linear-to-br from-[#133F60] via-[#1A5280] to-[#0D2E47]" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#DB5425] opacity-10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl" />
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Background image layer */}
+        <div className="absolute inset-0 -z-20">
+          <Image
+            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1800&q=80"
+            alt="HVAC technician at work"
+            fill
+            className="object-cover object-center"
+            priority
+          />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <div className="badge badge-white mb-4">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              Licensed & Insured • 25+ Years Experience
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#0D2E47]/95 via-[#133F60]/85 to-[#133F60]/40" />
+        <div className="absolute inset-0 -z-10 bg-linear-to-t from-[#0D2E47]/60 via-transparent to-transparent" />
+
+        {/* Accent blobs */}
+        <div className="absolute top-1/4 right-1/4 w-125 h-125 bg-[#DB5425] opacity-10 rounded-full blur-[120px] -z-10" />
+        <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-[#1A5280] opacity-30 rounded-full blur-[80px] -z-10" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left — text */}
+            <div className="text-white">
+              <div className="badge badge-white mb-5 text-xs">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                Licensed &amp; Insured · 25+ Years Experience
+              </div>
+
+              <h1 className="text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-6 tracking-tight">
+                <span className="block font-light">Utah&apos;s Most</span>
+                <span className="block text-[#DB5425] font-extrabold">
+                  Trusted
+                </span>
+                <span className="block font-light">HVAC &amp; Plumbing</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed max-w-lg">
+                From scorching Salt Lake summers to mountain-cold winters — we
+                keep your home comfortable year-round. Fast, honest, done right.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-10">
+                <Link
+                  href="/schedule-us"
+                  className="btn-primary text-base py-3 px-7"
+                >
+                  Book Free Service Call
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <a
+                  href="tel:3858656749"
+                  className="btn-outline-white text-base py-3 px-7"
+                >
+                  <Phone className="w-5 h-5" />
+                  (385) 865-6749
+                </a>
+              </div>
+
+              {/* Trust pills */}
+              <div className="flex flex-wrap gap-3">
+                {[
+                  {
+                    icon: <Star className="w-4 h-4 text-yellow-400" />,
+                    text: "A+ BBB Rating",
+                  },
+                  {
+                    icon: <Award className="w-4 h-4 text-blue-300" />,
+                    text: "NATE Certified",
+                  },
+                  {
+                    icon: <Clock className="w-4 h-4 text-green-400" />,
+                    text: "24/7 Emergency",
+                  },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm text-white/90"
+                  >
+                    {item.icon}
+                    {item.text}
+                  </div>
+                ))}
+              </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-              Your Trusted HVAC & Plumbing Experts in Salt Lake City
-            </h1>
-            <p className="text-xl text-white/85 mb-8 leading-relaxed">
-              From heating and cooling to plumbing repairs, CMB HVAC delivers
-              fast, reliable service backed by our satisfaction guarantee. No
-              upsells. No surprises. Done the right way.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary text-lg py-3 px-8">
-                Schedule Free Service Call
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <a
-                href="tel:3858656749"
-                className="btn-outline-white text-lg py-3 px-8"
-              >
-                <Phone className="w-5 h-5" />
-                (385) 865-6749
-              </a>
-            </div>
-            <div className="flex flex-wrap gap-6 mt-8 text-sm text-white/70">
-              <span className="flex items-center gap-2">
-                <Star className="w-4 h-4" /> A+ BBB Rating
-              </span>
-              <span className="flex items-center gap-2">
-                <Award className="w-4 h-4" /> NATE Certified
-              </span>
-              <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4" /> 24/7 Emergency Service
-              </span>
+
+            {/* Right — floating stat cards */}
+            <div className="hidden lg:grid grid-cols-2 gap-4">
+              {[
+                {
+                  value: "25+",
+                  label: "Years of Experience",
+                  color: "border-blue-400/30",
+                },
+                {
+                  value: "5,000+",
+                  label: "Homes Serviced",
+                  color: "border-[#DB5425]/30",
+                },
+                {
+                  value: "4.9★",
+                  label: "Average Google Rating",
+                  color: "border-yellow-400/30",
+                },
+                {
+                  value: "Free",
+                  label: "Service Call Included",
+                  color: "border-green-400/30",
+                },
+              ].map((stat, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-white hover:bg-white/15 transition-colors"
+                >
+                  <div className="text-3xl font-extrabold text-white mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-white/70">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -220,9 +297,7 @@ export default function Home() {
               },
             ].map((item, idx) => (
               <div key={idx} className="flex gap-4">
-                <div className="icon-box-lg icon-box shrink-0">
-                  {item.icon}
-                </div>
+                <div className="icon-box-lg icon-box shrink-0">{item.icon}</div>
                 <div>
                   <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
@@ -337,6 +412,68 @@ export default function Home() {
             <Link href="/membership" className="btn-primary inline-block">
               Learn About Membership
               <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ BLOG PREVIEW ═══ */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between mb-10">
+            <SectionHeader
+              eyebrow="From the Blog"
+              title="Expert Tips & Honest Advice"
+              description="Real guidance from our certified technicians — written for Utah homeowners."
+            />
+            <Link
+              href="/blog"
+              className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-[#DB5425] hover:gap-3 transition-all"
+            >
+              View All Articles <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {blogPosts.slice(0, 3).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="group block rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="aspect-video overflow-hidden">
+                  <Image
+                    src={post.coverImage}
+                    alt={post.title}
+                    width={600}
+                    height={338}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-5">
+                  <div className="text-xs font-semibold text-[#DB5425] mb-2">
+                    {post.category}
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2 group-hover:text-[#133F60] transition-colors line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm line-clamp-2 mb-4">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
+                    <span className="text-xs text-gray-400">
+                      {post.author} · {formatDate(post.date)}
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-[#DB5425] group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-8 md:hidden">
+            <Link href="/blog" className="btn-secondary">
+              View All Articles <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
