@@ -37,7 +37,19 @@
   .hero-dark h3,
   .hero-dark h4,
   .hero-dark h5,
-  .hero-dark h6 {
+  .hero-dark h6,
+  .section-dark h1,
+  .section-dark h2,
+  .section-dark h3,
+  .section-dark h4,
+  .section-dark h5,
+  .section-dark h6,
+  footer h1,
+  footer h2,
+  footer h3,
+  footer h4,
+  footer h5,
+  footer h6 {
     @apply text-white;
   }
 }
@@ -55,12 +67,24 @@
     @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white px-6 py-2.5 font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#133F60];
   }
 
+  .btn-white {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-2.5 font-semibold text-[#133F60] transition-all duration-200 hover:bg-gray-100 hover:shadow-md hover:-translate-y-px;
+  }
+
   .btn-ghost {
     @apply font-semibold text-[#DB5425] transition-all duration-150 hover:underline hover:underline-offset-4;
   }
 
+  .btn-sm {
+    @apply px-4 py-1.5 text-sm;
+  }
+
   .hero-dark {
     @apply relative bg-[#133F60] text-white;
+  }
+
+  .section-dark {
+    @apply relative text-white;
   }
 
   .section-header {
@@ -76,7 +100,32 @@
   }
 
   .cta-banner {
-    @apply bg-[#DB5425] py-16 text-center text-white md:py-20;
+    @apply relative overflow-hidden py-20 text-white md:py-28;
+    background: linear-gradient(135deg, #0d2e47 0%, #133f60 55%, #1a5280 100%);
+  }
+
+  .cta-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      white 1px,
+      transparent 0
+    );
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
+  .cta-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #db5425, #e8632e, #db5425);
   }
 
   .icon-box {

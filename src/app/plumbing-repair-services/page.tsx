@@ -86,7 +86,7 @@ export default function PlumbingRepairPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D2E47]/92 via-[#133F60]/80 to-[#133F60]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/92 via-[#133F60]/80 to-[#133F60]/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -129,7 +129,7 @@ export default function PlumbingRepairPage() {
       {/* EMERGENCY STRIP */}
       <div className="bg-[#DB5425] text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap font-semibold text-sm md:text-base text-center">
-          <AlertTriangle className="w-5 h-5 flex-shrink-0" />
+          <AlertTriangle className="w-5 h-5 shrink-0" />
           <span>
             Burst pipe or major leak? We provide emergency plumbing service.
           </span>
@@ -263,7 +263,7 @@ export default function PlumbingRepairPage() {
                     key={i}
                     className="flex items-start gap-2 text-sm text-gray-700"
                   >
-                    <CheckCircle className="w-4 h-4 text-[#DB5425] mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-[#DB5425] mt-0.5 shrink-0" />
                     {point}
                   </li>
                 ))}
@@ -317,7 +317,7 @@ export default function PlumbingRepairPage() {
                 >
                   <span>{faq.q}</span>
                   <ArrowRight
-                    className={`w-4 h-4 flex-shrink-0 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`}
+                    className={`w-4 h-4 shrink-0 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`}
                   />
                 </button>
                 {openAccordion === idx && (
@@ -335,7 +335,7 @@ export default function PlumbingRepairPage() {
         title="Ready to Fix Your Plumbing Problem?"
         description="Expert technicians. Transparent pricing. Satisfaction guaranteed. Serving Salt Lake & Davis County."
         primaryText="Book Your Appointment"
-        primaryHref="/contact"
+        primaryHref="/schedule-us"
         secondaryText="Call (385) 865-6749"
         secondaryHref="tel:3858656749"
         icon={<Phone className="w-4 h-4" />}

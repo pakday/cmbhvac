@@ -53,7 +53,7 @@ export default function Home() {
       {/* ═══ HERO ═══ */}
       <section className="hero-dark relative overflow-hidden pt-20 pb-24 md:pt-24 md:pb-32">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#133F60] via-[#1A5280] to-[#0D2E47]" />
+          <div className="absolute inset-0 bg-linear-to-br from-[#133F60] via-[#1A5280] to-[#0D2E47]" />
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#DB5425] opacity-10 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-white opacity-5 rounded-full blur-3xl" />
         </div>
@@ -220,7 +220,7 @@ export default function Home() {
               },
             ].map((item, idx) => (
               <div key={idx} className="flex gap-4">
-                <div className="icon-box-lg icon-box flex-shrink-0">
+                <div className="icon-box-lg icon-box shrink-0">
                   {item.icon}
                 </div>
                 <div>
@@ -303,7 +303,7 @@ export default function Home() {
       {/* ═══ MEMBERSHIP ═══ */}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-[#133F60] to-[#1A5280] rounded-3xl p-8 md:p-12 text-white">
+          <div className="bg-linear-to-br from-[#133F60] to-[#1A5280] rounded-3xl p-8 md:p-12 text-white">
             <div className="badge badge-white mb-4">
               <Award className="w-3.5 h-3.5" />
               Save Every Year
@@ -381,7 +381,7 @@ export default function Home() {
         title="Home of the Free Service Call"
         description="Don't wait — call or book online for your free in-home consultation. The best techs, the friendliest service, 100% satisfaction guaranteed."
         primaryText="Schedule Your Appointment"
-        primaryHref="/contact"
+        primaryHref="/schedule-us"
         secondaryText="Call (385) 865-6749"
         secondaryHref="tel:3858656749"
         icon={<Phone className="w-5 h-5" />}

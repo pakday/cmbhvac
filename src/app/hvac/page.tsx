@@ -24,8 +24,17 @@ export default function HVACPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-40">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#133F60] to-[#0D2E47]" />
+      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="https://images.unsplash.com/photo-1542621334-a254cf47733d?w=1600&q=80"
+            alt="HVAC technician at work"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/95 via-[#133F60]/85 to-[#133F60]/40" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <div className="badge badge-white mb-4">
@@ -219,7 +228,7 @@ export default function HVACPage() {
               },
             ].map((step, idx) => (
               <div key={idx} className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#DB5425] text-white flex items-center justify-center font-bold flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#DB5425] text-white flex items-center justify-center font-bold shrink-0">
                   {step.num}
                 </div>
                 <div>
@@ -316,7 +325,7 @@ export default function HVACPage() {
         title="Ready to Schedule? The Service Call is Free."
         description="No upsells. No surprises. Our licensed, NATE-certified technicians are ready to help you today."
         primaryText="Book Your Appointment"
-        primaryHref="/contact"
+        primaryHref="/schedule-us"
         secondaryText="(385) 865-6749"
         secondaryHref="tel:3858656749"
         icon={<Phone className="w-5 h-5" />}

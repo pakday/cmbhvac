@@ -34,7 +34,7 @@ export default function RepipingServicesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D2E47]/93 via-[#133F60]/82 to-[#133F60]/45" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/93 via-[#133F60]/82 to-[#133F60]/45" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -205,7 +205,7 @@ export default function RepipingServicesPage() {
                   },
                 ].map((item, idx) => (
                   <li key={idx} className="flex gap-3">
-                    <div className="icon-box flex-shrink-0">
+                    <div className="icon-box shrink-0">
                       <ShieldCheck className="w-5 h-5" />
                     </div>
                     <div>
@@ -323,7 +323,7 @@ export default function RepipingServicesPage() {
                 >
                   <span>{faq.q}</span>
                   <ArrowRight
-                    className={`w-4 h-4 flex-shrink-0 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`}
+                    className={`w-4 h-4 shrink-0 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`}
                   />
                 </button>
                 {openAccordion === idx && (
@@ -341,7 +341,7 @@ export default function RepipingServicesPage() {
         title="Expert Repiping You Can Trust"
         description="Modern materials. Guaranteed workmanship. Transparent pricing. Serving Salt Lake & Davis County."
         primaryText="Book Your Appointment"
-        primaryHref="/contact"
+        primaryHref="/schedule-us"
         secondaryText="Call (385) 865-6749"
         secondaryHref="tel:3858656749"
         icon={<Phone className="w-4 h-4" />}

@@ -74,7 +74,10 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-white transition-colors">
+                <Link
+                  href="/service-areas"
+                  className="hover:text-white transition-colors"
+                >
                   Service Areas
                 </Link>
               </li>
@@ -133,7 +136,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-3 text-sm text-gray-300">
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 flex-shrink-0" />
+                <Phone className="w-4 h-4 shrink-0" />
                 <a
                   href="tel:3858656749"
                   className="hover:text-white transition-colors"
@@ -142,7 +145,7 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 flex-shrink-0" />
+                <Mail className="w-4 h-4 shrink-0" />
                 <a
                   href="mailto:Team@cmbhvac.com"
                   className="hover:text-white transition-colors"
@@ -151,12 +154,15 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 shrink-0 mt-0.5" />
                 <span>Serving the Wasatch Front, Utah</span>
               </li>
             </ul>
             <div className="mt-4">
-              <Link href="/contact" className="btn-primary btn-sm inline-block">
+              <Link
+                href="/schedule-us"
+                className="btn-primary btn-sm inline-block"
+              >
                 Book Appointment
               </Link>
             </div>

@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import Image from "next/image";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
 import { useState } from "react";
@@ -47,8 +48,17 @@ export default function ContactPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-40">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#133F60] to-[#0D2E47]" />
+      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80"
+            alt="Contact CMB HVAC"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/96 via-[#133F60]/88 to-[#133F60]/50" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
@@ -77,7 +87,7 @@ export default function ContactPage() {
                   href="tel:3858656749"
                   className="flex gap-4 p-4 rounded-lg hover:bg-gray-50 transition"
                 >
-                  <div className="icon-box flex-shrink-0">
+                  <div className="icon-box shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -92,7 +102,7 @@ export default function ContactPage() {
                   href="mailto:Team@cmbhvac.com"
                   className="flex gap-4 p-4 rounded-lg hover:bg-gray-50 transition"
                 >
-                  <div className="icon-box flex-shrink-0">
+                  <div className="icon-box shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
@@ -106,7 +116,7 @@ export default function ContactPage() {
 
                 {/* SERVICE AREA */}
                 <div className="flex gap-4 p-4 rounded-lg bg-gray-50">
-                  <div className="icon-box flex-shrink-0">
+                  <div className="icon-box shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -122,7 +132,7 @@ export default function ContactPage() {
 
                 {/* HOURS */}
                 <div className="flex gap-4 p-4 rounded-lg">
-                  <div className="icon-box flex-shrink-0">
+                  <div className="icon-box shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>

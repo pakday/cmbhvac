@@ -42,7 +42,7 @@ export default function PlumbingPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D2E47]/92 via-[#133F60]/75 to-[#133F60]/30" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/92 via-[#133F60]/75 to-[#133F60]/30" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -81,7 +81,7 @@ export default function PlumbingPage() {
       {/* EMERGENCY BANNER */}
       <div className="bg-[#DB5425] text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap font-semibold text-center text-sm md:text-base">
-          <AlertCircle className="w-5 h-5 flex-shrink-0" />
+          <AlertCircle className="w-5 h-5 shrink-0" />
           <span>Have a burst pipe or backed-up drain?</span>
           <a href="tel:3858656749" className="underline font-bold">
             Call (385) 865-6749 — We respond fast
@@ -145,7 +145,7 @@ export default function PlumbingPage() {
                 <ul className="space-y-1.5 mb-5 flex-1">
                   {service.items.map((item, i) => (
                     <li key={i} className="text-sm text-gray-600 flex items-center gap-2">
-                      <CheckCircle className="w-3.5 h-3.5 text-[#DB5425] flex-shrink-0" />
+                      <CheckCircle className="w-3.5 h-3.5 text-[#DB5425] shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -196,7 +196,7 @@ export default function PlumbingPage() {
                   { icon: <CheckCircle className="w-5 h-5" />, title: "Satisfaction Guaranteed", desc: "Every job backed by our workmanship guarantee." },
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-3">
-                    <div className="icon-box flex-shrink-0">{item.icon}</div>
+                    <div className="icon-box shrink-0">{item.icon}</div>
                     <div>
                       <h4 className="font-semibold text-sm mb-0.5">{item.title}</h4>
                       <p className="text-xs text-gray-600">{item.desc}</p>
@@ -307,7 +307,7 @@ export default function PlumbingPage() {
                   className="accordion-trigger w-full text-left"
                 >
                   <span>{faq.q}</span>
-                  <ArrowRight className={`w-4 h-4 flex-shrink-0 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`} />
+                  <ArrowRight className={`w-4 h-4 shrink-0 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`} />
                 </button>
                 {openAccordion === idx && (
                   <div className="px-5 py-4 text-gray-700 text-sm border-t border-gray-200 leading-relaxed">{faq.a}</div>
@@ -322,7 +322,7 @@ export default function PlumbingPage() {
         title="Get Expert Plumbing Help Today"
         description="Licensed & insured. Fixed prices. Satisfaction guaranteed. Serving Salt Lake & Davis County."
         primaryText="Book Appointment"
-        primaryHref="/contact"
+        primaryHref="/schedule-us"
         secondaryText="Call (385) 865-6749"
         secondaryHref="tel:3858656749"
         icon={<Phone className="w-4 h-4" />}

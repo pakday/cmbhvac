@@ -11,6 +11,7 @@ export function Navbar() {
     {
       label: "Heating & Cooling",
       submenu: [
+        { label: "All HVAC Services", href: "/services" },
         { label: "Air Conditioning", href: "/services/ac" },
         { label: "Furnace & Heating", href: "/services/furnace" },
         { label: "Commercial HVAC", href: "#" },
@@ -31,7 +32,7 @@ export function Navbar() {
       ],
     },
     { label: "Membership", href: "/membership" },
-    { label: "Service Areas", href: "#" },
+    { label: "Service Areas", href: "/service-areas" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -88,7 +89,7 @@ export function Navbar() {
               <Phone className="w-4 h-4" />
               (385) 865-6749
             </a>
-            <Link href="/contact" className="btn-primary btn-sm">
+            <Link href="/schedule-us" className="btn-primary btn-sm">
               Book Now
             </Link>
           </div>
@@ -147,7 +148,7 @@ export function Navbar() {
                 (385) 865-6749
               </a>
               <Link
-                href="/contact"
+                href="/schedule-us"
                 className="btn-primary w-full flex justify-center"
                 onClick={() => setMobileMenuOpen(false)}
               >

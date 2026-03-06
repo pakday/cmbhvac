@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -25,8 +26,17 @@ export default function MembershipPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-40">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#133F60] to-[#0D2E47]" />
+      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1600&q=80"
+            alt="Home comfort membership"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/95 via-[#133F60]/85 to-[#133F60]/50" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <div className="badge badge-white mb-4">
@@ -101,7 +111,7 @@ export default function MembershipPage() {
       </section>
 
       {/* DETAILED BENEFITS */}
-      <section className="bg-gradient-to-br from-[#133F60] to-[#0D2E47] text-white py-20 md:py-28">
+      <section className="section-dark bg-linear-to-br from-[#133F60] to-[#0D2E47] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
             What's Included
@@ -223,7 +233,7 @@ export default function MembershipPage() {
                 className={`rounded-2xl p-8 ${plan.highlight ? "bg-[#DB5425] text-white ring-2 ring-[#DB5425]" : "card"}`}
               >
                 <h3
-                  className={`text-2xl font-bold mb-2 ${plan.highlight ? "" : ""}`}
+                  className={`text-2xl font-bold mb-2 ${plan.highlight ? "text-white" : "text-gray-900"}`}
                 >
                   {plan.name}
                 </h3>
@@ -259,8 +269,8 @@ export default function MembershipPage() {
                   href="/contact"
                   className={
                     plan.highlight
-                      ? "btn-primary w-full block text-center"
-                      : "btn-outline w-full block text-center"
+                      ? "btn-white w-full block text-center py-3"
+                      : "btn-secondary w-full block text-center py-3"
                   }
                 >
                   {plan.cta}
@@ -393,7 +403,7 @@ export default function MembershipPage() {
         title="Ready to Save on HVAC & Plumbing?"
         description="Join thousands of happy members. Enroll today and get priority service, 15% off repairs, and 24/7 support."
         primaryText="Join Now"
-        primaryHref="/contact"
+        primaryHref="/schedule-us"
         secondaryText="Call (385) 865-6749"
         secondaryHref="tel:3858656749"
         icon={<Smartphone className="w-5 h-5" />}

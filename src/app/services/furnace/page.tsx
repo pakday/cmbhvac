@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -26,8 +27,17 @@ export default function FurnaceServicesPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-40">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#133F60] to-[#0D2E47]" />
+      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1600&q=80"
+            alt="Furnace heating system"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/95 via-[#133F60]/85 to-[#133F60]/40" />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <div className="badge badge-white mb-4">
@@ -196,7 +206,7 @@ export default function FurnaceServicesPage() {
               },
             ].map((service, idx) => (
               <div key={idx} className="card p-6 flex items-start gap-4">
-                <div className="icon-box flex-shrink-0">
+                <div className="icon-box shrink-0">
                   <CheckCircle className="w-5 h-5" />
                 </div>
                 <div className="flex-1">
@@ -240,7 +250,7 @@ export default function FurnaceServicesPage() {
       </section>
 
       {/* EFFICIENCY & SAVINGS */}
-      <section className="bg-[#133F60] text-white py-20 md:py-28">
+      <section className="section-dark bg-[#133F60] py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -260,7 +270,7 @@ export default function FurnaceServicesPage() {
                 "Environmental benefits from reduced fuel consumption",
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#DB5425] flex-shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-[#DB5425] shrink-0" />
                   <span>{benefit}</span>
                 </div>
               ))}
@@ -342,7 +352,7 @@ export default function FurnaceServicesPage() {
         title="Keep Your Heat Running Reliably"
         description="Annual maintenance, fast repairs, and modern replacement options. Get ahead of winter."
         primaryText="Schedule Service"
-        primaryHref="/contact"
+        primaryHref="/schedule-us"
         secondaryText="Call (385) 865-6749"
         secondaryHref="tel:3858656749"
         icon={<Flame className="w-5 h-5" />}

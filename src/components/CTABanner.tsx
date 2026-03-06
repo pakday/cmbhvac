@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Phone, ArrowRight } from "lucide-react";
 
 interface CTABannerProps {
   title: string;
@@ -7,6 +8,7 @@ interface CTABannerProps {
   primaryHref: string;
   secondaryText?: string;
   secondaryHref?: string;
+  eyebrow?: string;
   icon?: React.ReactNode;
 }
 
@@ -17,28 +19,47 @@ export function CTABanner({
   primaryHref,
   secondaryText,
   secondaryHref,
+  eyebrow,
   icon,
 }: CTABannerProps) {
   return (
     <section className="cta-banner">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-        <p className="text-lg mb-6 max-w-2xl mx-auto opacity-90">
-          {description}
-        </p>
-        <div className="flex flex-wrap gap-3 justify-center">
-          <Link href={primaryHref} className="btn-primary">
-            {primaryText}
-          </Link>
-          {secondaryText && secondaryHref && (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+          {/* Left: Text */}
+          <div className="max-w-xl">
+            {eyebrow && (
+              <p className="text-[#DB5425] text-xs font-bold uppercase tracking-widest mb-3">
+                {eyebrow}
+              </p>
+            )}
+            <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
+              {title}
+            </h2>
+            <p className="text-white/80 text-lg leading-relaxed">
+              {description}
+            </p>
+          </div>
+
+          {/* Right: Buttons */}
+          <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 lg:shrink-0">
             <Link
-              href={secondaryHref}
-              className="btn-outline-white flex items-center gap-2"
+              href={primaryHref}
+              className="btn-primary inline-flex items-center justify-center gap-2 text-base py-3 px-7"
             >
-              {icon}
-              {secondaryText}
+              {primaryText}
+              <ArrowRight className="w-4 h-4" />
             </Link>
-          )}
+            {secondaryText && secondaryHref && (
+              <Link
+                href={secondaryHref}
+                className="btn-outline-white inline-flex items-center justify-center gap-2 text-base py-3 px-7"
+              >
+                {icon ?? <Phone className="w-4 h-4" />}
+                {secondaryText}
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </section>
