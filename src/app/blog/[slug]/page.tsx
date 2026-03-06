@@ -16,7 +16,6 @@ import {
   Clock,
   Tag,
   Calendar,
-  User,
   Phone,
 } from "lucide-react";
 import { BlogContent } from "@/components/BlogContent";
@@ -126,8 +125,8 @@ export default async function BlogPostPage({ params }: Props) {
 
       {/* ═══ CONTENT ═══ */}
       <section className="py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-12">
             {/* Article */}
             <article>
               <BlogContent content={post.content} />
@@ -147,87 +146,8 @@ export default async function BlogPostPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Author card */}
-              <div className="mt-10 p-6 bg-gray-50 rounded-2xl border border-gray-200 flex items-start gap-4">
-                <div className="w-14 h-14 rounded-full bg-[#133F60] text-white flex items-center justify-center text-xl font-bold shrink-0">
-                  {post.author.charAt(0)}
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="font-bold text-gray-900">
-                      {post.author}
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      · {post.authorRole}
-                    </span>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    A certified HVAC professional with CMB HVAC, serving Salt
-                    Lake City and the Wasatch Front. Committed to honest advice
-                    and top-quality service.
-                  </p>
-                </div>
-              </div>
+              {/* (author card removed) */}
             </article>
-
-            {/* Sidebar */}
-            <aside className="space-y-8">
-              {/* CTA Card */}
-              <div className="bg-[#133F60] text-white rounded-2xl p-6">
-                <h3 className="text-lg font-bold mb-2">Need Help Now?</h3>
-                <p className="text-sm text-white/80 mb-4">
-                  Our certified technicians are ready. Call for a free
-                  diagnosis.
-                </p>
-                <a
-                  href="tel:3858656749"
-                  className="btn-primary w-full text-sm justify-center mb-3"
-                >
-                  <Phone className="w-4 h-4" />
-                  (385) 865-6749
-                </a>
-                <Link
-                  href="/schedule-us"
-                  className="btn-outline-white w-full text-sm justify-center"
-                >
-                  Book Online
-                </Link>
-              </div>
-
-              {/* Trending */}
-              <div>
-                <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-4">
-                  More Articles
-                </h3>
-                <div className="space-y-4">
-                  {recommended.slice(0, 2).map((p) => (
-                    <Link
-                      key={p.slug}
-                      href={`/blog/${p.slug}`}
-                      className="flex gap-3 group"
-                    >
-                      <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
-                        <Image
-                          src={p.coverImage}
-                          alt={p.title}
-                          width={64}
-                          height={64}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-gray-800 group-hover:text-[#133F60] transition-colors line-clamp-2">
-                          {p.title}
-                        </p>
-                        <p className="text-xs text-gray-400 mt-1">
-                          {p.readTime}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </aside>
           </div>
         </div>
       </section>
