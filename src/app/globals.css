@@ -31,19 +31,28 @@
   h6 {
     @apply text-gray-900;
   }
+
+  .hero-dark h1,
+  .hero-dark h2,
+  .hero-dark h3,
+  .hero-dark h4,
+  .hero-dark h5,
+  .hero-dark h6 {
+    @apply text-white;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-[#DB5425] px-7 py-3 font-semibold text-white transition-all duration-200 hover:bg-[#E8632E] hover:shadow-md hover:scale-102;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#DB5425] px-6 py-2.5 font-semibold text-white transition-all duration-200 hover:bg-[#E8632E] hover:shadow-md hover:-translate-y-px;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#133F60] px-7 py-3 font-semibold text-[#133F60] transition-all duration-200 hover:bg-[#133F60] hover:text-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#133F60] px-6 py-2.5 font-semibold text-[#133F60] transition-all duration-200 hover:bg-[#133F60] hover:text-white;
   }
 
   .btn-outline-white {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white px-7 py-3 font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#133F60];
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white px-6 py-2.5 font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#133F60];
   }
 
   .btn-ghost {

@@ -19,11 +19,15 @@ export function Navbar() {
     {
       label: "Plumbing",
       submenu: [
-        { label: "All Services", href: "/plumbing" },
-        { label: "Plumbing Repair", href: "/plumbing" },
-        { label: "Plumbing Installation", href: "/plumbing" },
-        { label: "Repiping Services", href: "/plumbing" },
-        { label: "Water Heater Services", href: "/plumbing" },
+        { label: "All Plumbing Services", href: "/plumbing" },
+        { label: "Plumbing Repair", href: "/plumbing-repair-services" },
+        {
+          label: "Plumbing Installation",
+          href: "/plumbing-installation-services",
+        },
+        { label: "Repiping Services", href: "/repiping-services" },
+        { label: "Water Heater Services", href: "/water-heater-services" },
+        { label: "Water Treatment", href: "/water-treatment-services" },
       ],
     },
     { label: "Membership", href: "/membership" },
