@@ -5,7 +5,8 @@ import { load } from "cheerio";
  * Targets: img src, svg data, data URLs, and inline images
  */
 export function removeBase64(html: string): string {
-  const $ = load(html, { decodeEntities: false });
+  // using any because decodeEntities is missing from CheerioOptions
+  const $ = load(html, { decodeEntities: false } as any);
 
   // Remove images with base64 data URLs
   $("img").each((_, elem) => {

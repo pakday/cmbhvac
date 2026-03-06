@@ -5,7 +5,8 @@ import { load } from "cheerio";
  * Keeps HTML structure clean and minimal
  */
 export function stripAttributes(html: string): string {
-  const $ = load(html, { decodeEntities: false });
+  // cast to any for decodeEntities option
+  const $ = load(html, { decodeEntities: false } as any);
 
   // Get all elements and remove all attributes except href
   $("*").each((_, elem) => {

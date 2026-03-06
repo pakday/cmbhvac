@@ -4,7 +4,8 @@ import { load } from "cheerio";
  * Removes all empty div elements and other empty containers
  */
 export function removeEmptyDivs(html: string): string {
-  const $ = load(html, { decodeEntities: false });
+  // typings don't include decodeEntities; cast to any
+  const $ = load(html, { decodeEntities: false } as any);
 
   // Remove empty divs, spans, sections, etc
   const emptySelectors = [

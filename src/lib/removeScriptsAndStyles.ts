@@ -5,7 +5,8 @@ import { load } from "cheerio";
  * Also removes noscript tags as they're typically fallbacks for disabled JS
  */
 export function removeScriptsAndStyles(html: string): string {
-  const $ = load(html, { decodeEntities: false });
+  // Cheerio typings lack decodeEntities
+  const $ = load(html, { decodeEntities: false } as any);
 
   // Remove script tags and content
   $("script").remove();

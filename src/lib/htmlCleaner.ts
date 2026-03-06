@@ -48,7 +48,8 @@ export function cleanHTML(html: string): string {
  * Remove empty tags that don't carry content
  */
 function removeEmptyTags(html: string): string {
-  const $ = load(html, { decodeEntities: false });
+  // Cheerio typings don't include decodeEntities; using any to bypass
+  const $ = load(html, { decodeEntities: false } as any);
 
   const emptyTagsToRemove = [
     "script",

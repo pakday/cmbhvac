@@ -8,7 +8,8 @@ export function removeLinkTagsAndComments(html: string): string {
   // Remove HTML comments first (before parsing to avoid issues)
   let cleaned = html.replace(/<!--[\s\S]*?-->/g, "");
 
-  const $ = load(cleaned, { decodeEntities: false });
+  // cast to any because CheerioOptions missing decodeEntities
+  const $ = load(cleaned, { decodeEntities: false } as any);
 
   // Remove stylesheet links
   $('link[rel="stylesheet"]').remove();
