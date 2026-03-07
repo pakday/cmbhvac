@@ -19,35 +19,9 @@ import {
   ArrowRight,
   Phone,
 } from "lucide-react";
-import { useState } from "react";
-import { blogPosts, formatDate } from "@/lib/blog-data";
+// no React hooks needed on homepage currently
 
 export default function Home() {
-  const [openAccordion, setOpenAccordion] = useState<number | null>(0);
-
-  const faqItems = [
-    {
-      q: "Do you offer financing?",
-      a: "Yes — we offer 0% financing for 36-60 months on qualifying equipment purchases and installations. Ask your technician for details during your appointment.",
-    },
-    {
-      q: "Do you offer weekend appointments?",
-      a: "Yes — we schedule appointments on weekends for your convenience. We also offer 24/7 emergency service for urgent situations on nights, weekends, and holidays.",
-    },
-    {
-      q: "How fast can you do an installation?",
-      a: "Usually next day, depending on equipment availability. In some cases, supply chain conditions may affect timelines, but we'll always communicate clearly and keep you informed.",
-    },
-    {
-      q: "What areas do you serve?",
-      a: "We serve the entire Wasatch Front and Northern Utah — including Salt Lake City, Bountiful, Ogden, Layton, Draper, Sandy, Provo, Park City, West Valley City, and 100+ other communities.",
-    },
-    {
-      q: "Is the service call really free?",
-      a: "Yes! We're the home of the free service call. Call or text us for a quick, no-pressure assessment. We also offer free in-home consultations for new system installations.",
-    },
-  ];
-
   return (
     <>
       <Navbar />
@@ -178,6 +152,75 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* ═══ TRUST CARDS ═══ */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Star className="w-8 h-8 text-orange-500" />,
+                title: "Experienced",
+                desc: "With over 20 years of experience in the HVAC industry, our team at CMB HVAC has the knowledge and expertise to handle all of your heating and cooling needs.",
+              },
+              {
+                icon: <ShieldCheck className="w-8 h-8 text-orange-500" />,
+                title: "Licensed",
+                desc: "At CMB HVAC, we’re fully licensed and insured, so you can trust that our team of professionals will provide you with high-quality service and workmanship.",
+              },
+              {
+                icon: <ShieldCheck className="w-8 h-8 text-orange-500" />,
+                title: "Insured",
+                desc: "At CMB HVAC, we’re fully insured to protect our clients and employees, giving you peace of mind when you choose us for your heating and cooling needs.",
+              },
+              {
+                icon: <Award className="w-8 h-8 text-orange-500" />,
+                title: "Certified",
+                desc: "As a Certified Locally Owned and Operated company, we are your neighbors in our communities, ready to gain for you and your family the level of comfort your home needs.",
+              },
+            ].map((card, idx) => (
+              <div key={idx} className="text-center">
+                <div className="icon-box mx-auto mb-4">{card.icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
+                <p className="text-gray-600">{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* ═══ ABOUT US ═══ */}
+      <section className="py-20 md:py-28 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">About Us</h2>
+            <h3 className="text-xl font-semibold mb-4">
+              We make sure your home stays cool and comfortable
+            </h3>
+            <p className="text-gray-700 mb-4">
+              We’ll make sure your home stays cool and comfortable on even on
+              the hottest days of the summer!
+            </p>
+            <p className="text-gray-700 mb-4">
+              At CMB HVAC, we understand that installing or replacing an HVAC
+              system can be a significant investment for homeowners. That’s why
+              we’re committed to providing our customers with the information
+              they need to make informed decisions about their heating and
+              cooling needs.
+            </p>
+            <Link href="/schedule-us" className="btn-primary">
+              Schedule Your Appointment Here
+            </Link>
+          </div>
+          <div className="aspect-video rounded-2xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1590642915849-036cf529540b?w=800&q=80"
+              alt="HVAC technician standing by company van outdoors"
+              width={800}
+              height={533}
+              className="object-cover w-full h-full"
+            />
+          </div>
+        </div>
+      </section>
       {/* ═══ SERVICE AREA SLIDER ═══ */}
       <ContinuousSlider
         cities={[
@@ -249,7 +292,7 @@ export default function Home() {
               <div className="aspect-video rounded-2xl overflow-hidden mb-5">
                 <Image
                   // updated to a reliable Unsplash photo (same as AC services hero)
-                  src="https://images.unsplash.com/photo-1631545806609-22ceb4037852?w=600&q=80"
+                  src="https://images.unsplash.com/photo-1647022528152-52ed9338611d?w=600&q=80"
                   alt="Air Conditioning unit"
                   width={600}
                   height={400}
@@ -334,207 +377,6 @@ export default function Home() {
                   <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* ═══ CREDENTIALS ═══ */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-            {[
-              { icon: <Award className="w-6 h-6" />, label: "Experienced" },
-              { icon: <ShieldCheck className="w-6 h-6" />, label: "Licensed" },
-              { icon: <ShieldCheck className="w-6 h-6" />, label: "Insured" },
-              { icon: <Star className="w-6 h-6" />, label: "Certified" },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-2 font-semibold text-gray-900"
-              >
-                <div className="icon-box icon-box-secondary">{item.icon}</div>
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* ═══ PROCESS ═══ */}
-      <section className="bg-gray-50 py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Our Process"
-            title="What to Expect When You Call"
-            description="From your first call to job completion, we make the experience seamless and hassle-free."
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
-            {[
-              {
-                step: "1",
-                title: "Schedule",
-                desc: "Call or book online. We'll text you with an exact arrival time.",
-              },
-              {
-                step: "2",
-                title: "Diagnose",
-                desc: "We examine your system, run tests, and pinpoint the root cause.",
-              },
-              {
-                step: "3",
-                title: "Fixed Price",
-                desc: "We present multiple options with upfront pricing. You choose what's best.",
-              },
-              {
-                step: "4",
-                title: "Done Right",
-                desc: "We complete the work, clean up, and back everything with our guarantee.",
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-12 h-12 rounded-full bg-[#DB5425] text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* ═══ MEMBERSHIP ═══ */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* lighten membership card background for better contrast */}
-          <div className="bg-linear-to-br from-[#E0F2FE] to-[#BAE6FD] rounded-3xl p-8 md:p-12 text-gray-900">
-            <div className="badge badge-white mb-4">
-              <Award className="w-3.5 h-3.5 text-gray-900" />
-              Save Every Year
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">
-              CMB HVAC Maintenance Membership
-            </h2>
-            <p className="text-lg text-gray-800/85 mb-6 max-w-2xl">
-              Take the stress out of HVAC maintenance. Our membership program
-              saves you money, prevents costly breakdowns, and keeps your system
-              running at peak efficiency.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {[
-                "Bi-Annual Check-Ups",
-                "15% Off Repairs",
-                "24hr Emergency Service",
-                "Priority Scheduling",
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-3 text-gray-800"
-                >
-                  <Star className="w-5 h-5 text-[#DB5425]" />
-                  {item}
-                </div>
-              ))}
-            </div>
-
-            <Link href="/membership" className="btn-primary inline-block">
-              Learn About Membership
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-      {/* ═══ BLOG PREVIEW ═══ */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-10">
-            <SectionHeader
-              eyebrow="From the Blog"
-              title="Expert Tips & Honest Advice"
-              description="Real guidance from our certified technicians — written for Utah homeowners."
-            />
-            <Link
-              href="/blog"
-              className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-[#DB5425] hover:gap-3 transition-all"
-            >
-              View All Articles <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {blogPosts.slice(0, 3).map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
-                className="group block rounded-2xl overflow-hidden border border-gray-200 bg-white shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
-              >
-                <div className="aspect-video overflow-hidden">
-                  <Image
-                    src={post.coverImage}
-                    alt={post.title}
-                    width={600}
-                    height={338}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5">
-                  <div className="text-xs font-semibold text-[#DB5425] mb-2">
-                    {post.category}
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-2 group-hover:text-[#133F60] transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-gray-500 text-sm line-clamp-2 mb-4">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                    <span className="text-xs text-gray-400">
-                      {post.author} · {formatDate(post.date)}
-                    </span>
-                    <ArrowRight className="w-4 h-4 text-[#DB5425] group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-8 md:hidden">
-            <Link href="/blog" className="btn-secondary">
-              View All Articles <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-      {/* ═══ FAQ ═══ */}
-      <section className="bg-gray-50 py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Common Questions"
-            title="Frequently Asked Questions"
-            centered
-          />
-
-          <div className="max-w-2xl mx-auto mt-12 space-y-3">
-            {faqItems.map((item, idx) => (
-              <div key={idx} className="accordion-item">
-                <button
-                  onClick={() =>
-                    setOpenAccordion(openAccordion === idx ? null : idx)
-                  }
-                  className="accordion-trigger w-full"
-                >
-                  {item.q}
-                  <ArrowRight
-                    className={`w-5 h-5 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`}
-                  />
-                </button>
-                {openAccordion === idx && (
-                  <div className="px-5 py-4 text-gray-700 border-t border-gray-200">
-                    {item.a}
-                  </div>
-                )}
               </div>
             ))}
           </div>
