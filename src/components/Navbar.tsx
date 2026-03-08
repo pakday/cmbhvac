@@ -94,6 +94,7 @@ export function Navbar() {
       label: "Explore",
       icon: <Compass className="w-4 h-4 text-purple-500" />,
       submenu: [
+        { label: "Products", href: "/products", desc: "Browse our offerings" },
         { label: "Blog", href: "/blog", desc: "Expert tips & honest advice" },
         {
           label: "Membership Program",
