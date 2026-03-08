@@ -36,7 +36,7 @@ export default function ACServicesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/95 via-[#133F60]/85 to-[#133F60]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/80 to-brand/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -47,7 +47,7 @@ export default function ACServicesPage() {
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
               Expert AC Repair & Installation in Salt Lake City
             </h1>
-            <p className="text-xl text-white/85 mb-8">
+            <p className="text-xl text-primary-foreground/80 mb-8">
               Your AC is everything on a hot Utah summer day. We repair,
               install, and maintain all major brands. Fast diagnosis. Fixed
               pricing. Satisfaction guaranteed.
@@ -135,26 +135,26 @@ export default function ACServicesPage() {
                 </div>
                 <h3 className="text-lg font-bold mb-3">{issue.title}</h3>
                 <div className="mb-4">
-                  <p className="text-xs text-gray-500 font-semibold uppercase mb-2">
+                  <p className="text-xs text-muted-foreground font-semibold uppercase mb-2">
                     Common causes:
                   </p>
                   <ul className="space-y-1">
                     {issue.items.map((item, i) => (
                       <li
                         key={i}
-                        className="text-sm text-gray-600 flex items-center gap-2"
+                        className="text-sm text-muted-foreground flex items-center gap-2"
                       >
-                        <span className="w-1.5 h-1.5 bg-[#DB5425] rounded-full" />
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-sm font-semibold text-gray-900">
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm font-semibold text-foreground">
                     Our solution:
                   </p>
-                  <p className="text-sm text-gray-600 mt-1">{issue.fix}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{issue.fix}</p>
                 </div>
               </div>
             ))}
@@ -163,7 +163,7 @@ export default function ACServicesPage() {
       </section>
 
       {/* OUR AC SERVICES */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="What We Do"
@@ -200,7 +200,7 @@ export default function ACServicesPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-lg mb-1">{service.title}</h3>
-                  <p className="text-gray-600">{service.desc}</p>
+                  <p className="text-muted-foreground">{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -214,7 +214,7 @@ export default function ACServicesPage() {
           <h2 className="text-3xl font-bold text-center mb-4">
             We Service All Major Brands
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             From Lennox and Carrier to Rheem, Goodman, and Trane — we're
             certified to repair and maintain them all.
           </p>
@@ -231,7 +231,7 @@ export default function ACServicesPage() {
               "Amana",
             ].map((brand, idx) => (
               <div key={idx} className="card text-center py-6">
-                <p className="font-bold text-gray-900">{brand}</p>
+                <p className="font-bold text-foreground">{brand}</p>
               </div>
             ))}
           </div>
@@ -239,13 +239,13 @@ export default function ACServicesPage() {
       </section>
 
       {/* MAINTENANCE CHECKLIST */}
-      <section className="section-dark bg-[#133F60] py-20 md:py-28">
+      <section className="section-dark bg-primary py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Keep Your AC Running All Summer
             </h2>
-            <p className="text-lg text-white/85 mb-8">
+            <p className="text-lg text-primary-foreground/80 mb-8">
               Annual maintenance prevents 80% of AC breakdowns. Here's what we
               check:
             </p>
@@ -262,14 +262,14 @@ export default function ACServicesPage() {
                 "Ductwork for leaks",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#DB5425] shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-accent shrink-0" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 pt-8 border-t border-white/20">
-              <p className="text-sm text-white/80 mb-4">
+            <div className="mt-8 pt-8 border-t border-primary-foreground/20">
+              <p className="text-sm text-primary-foreground/80 mb-4">
                 <strong>Pro Tip:</strong> Replace filters every 1–3 months
                 during the cooling season. Dirty filters reduce efficiency by
                 15–20%.
@@ -328,7 +328,7 @@ export default function ACServicesPage() {
                   />
                 </button>
                 {openAccordion === idx && (
-                  <div className="px-5 py-4 text-gray-700 border-t border-gray-200">
+                  <div className="px-5 py-4 text-foreground border-t border-border">
                     {faq.a}
                   </div>
                 )}

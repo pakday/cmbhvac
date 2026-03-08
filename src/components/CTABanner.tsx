@@ -29,14 +29,14 @@ export function CTABanner({
           {/* Left: Text */}
           <div className="max-w-xl">
             {eyebrow && (
-              <p className="text-[#DB5425] text-xs font-bold uppercase tracking-widest mb-3">
+              <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
                 {eyebrow}
               </p>
             )}
             <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
               {title}
             </h2>
-            <p className="text-white/80 text-lg leading-relaxed">
+            <p className="text-primary-foreground/80 text-lg leading-relaxed">
               {description}
             </p>
           </div>

@@ -34,7 +34,7 @@ export function Navbar() {
   const navLinks: NavItem[] = [
     {
       label: "Heating",
-      icon: <Flame className="w-4 h-4 text-[#DB5425]" />,
+      icon: <Flame className="w-4 h-4 text-accent" />,
       submenu: [
         {
           label: "Furnace Repair & Installation",
@@ -129,7 +129,7 @@ export function Navbar() {
     <>
       {/* Announcement bar removed per design request */}
 
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/95 border-b border-gray-200">
+      <nav className="sticky top-0 z-50 backdrop-blur-md bg-primary-foreground border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-18">
             {/* Logo */}
@@ -137,8 +137,8 @@ export function Navbar() {
               href="/"
               className="flex items-center gap-1 font-bold text-xl"
             >
-              <span className="text-[#133F60]">CMB</span>
-              <span className="text-[#DB5425]">HVAC</span>
+              <span className="text-primary">CMB</span>
+              <span className="text-accent">HVAC</span>
             </Link>
 
             {/* Desktop Menu */}
@@ -147,24 +147,24 @@ export function Navbar() {
                 <div key={idx} className="relative group">
                   {item.submenu ? (
                     <>
-                      <button className="flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-gray-700 hover:text-[#133F60] hover:bg-gray-50 transition-colors text-sm">
+                      <button className="flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-foreground hover:text-primary hover:bg-muted transition-colors text-sm">
                         {item.label}
                         <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
                       </button>
                       <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 group-hover:translate-y-0 translate-y-1">
-                        <div className="bg-white border border-gray-200 rounded-2xl shadow-xl w-64 overflow-hidden">
+                        <div className="bg-white border border-border rounded-2xl shadow-xl w-64 overflow-hidden">
                           <div className="py-2">
                             {item.submenu.map((sub, subIdx) => (
                               <Link
                                 key={subIdx}
                                 href={sub.href}
-                                className="flex flex-col px-5 py-3 hover:bg-gray-50 transition-colors"
+                                className="flex flex-col px-5 py-3 hover:bg-muted transition-colors"
                               >
-                                <span className="text-sm font-semibold text-gray-800 group-hover:text-[#133F60]">
+                                <span className="text-sm font-semibold text-foreground group-hover:text-primary">
                                   {sub.label}
                                 </span>
                                 {sub.desc && (
-                                  <span className="text-xs text-gray-400 mt-0.5">
+                                  <span className="text-xs text-muted-foreground mt-0.5">
                                     {sub.desc}
                                   </span>
                                 )}
@@ -177,7 +177,7 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={item.href!}
-                      className="flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-gray-700 hover:text-[#133F60] hover:bg-gray-50 transition-colors text-sm"
+                      className="flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-foreground hover:text-primary hover:bg-muted transition-colors text-sm"
                     >
                       {item.label}
                     </Link>
@@ -203,7 +203,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-[#133F60]"
+              className="lg:hidden p-2 text-primary"
             >
               {mobileMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -215,7 +215,7 @@ export function Navbar() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="lg:hidden pb-4 border-t border-gray-100 mt-1 pt-2 space-y-0.5">
+            <div className="lg:hidden pb-4 border-t border-border mt-1 pt-2 space-y-0.5">
               {navLinks.map((item, idx) => (
                 <div key={idx}>
                   {item.submenu ? (
@@ -224,7 +224,7 @@ export function Navbar() {
                         onClick={() =>
                           setOpenMobile(openMobile === idx ? null : idx)
                         }
-                        className="w-full flex items-center justify-between px-3 py-2.5 font-semibold text-gray-800 hover:bg-gray-50 rounded-xl text-sm"
+                        className="w-full flex items-center justify-between px-3 py-2.5 font-semibold text-foreground hover:bg-muted rounded-xl text-sm"
                       >
                         <span className="flex items-center gap-2">
                           {item.icon}
@@ -235,12 +235,12 @@ export function Navbar() {
                         />
                       </button>
                       {openMobile === idx && (
-                        <div className="mt-0.5 ml-4 space-y-0.5 border-l-2 border-gray-100 pl-3">
+                        <div className="mt-0.5 ml-4 space-y-0.5 border-l-2 border-border pl-3">
                           {item.submenu.map((sub, subIdx) => (
                             <Link
                               key={subIdx}
                               href={sub.href}
-                              className="block py-2 px-2 text-sm text-gray-600 hover:text-[#133F60] hover:bg-gray-50 rounded-lg"
+                              className="block py-2 px-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted rounded-lg"
                               onClick={() => setMobileMenuOpen(false)}
                             >
                               {sub.label}
@@ -252,7 +252,7 @@ export function Navbar() {
                   ) : (
                     <Link
                       href={item.href!}
-                      className="flex items-center gap-2 px-3 py-2.5 font-semibold text-gray-800 hover:bg-gray-50 rounded-xl text-sm"
+                      className="flex items-center gap-2 px-3 py-2.5 font-semibold text-foreground hover:bg-muted rounded-xl text-sm"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.icon}
@@ -261,7 +261,7 @@ export function Navbar() {
                   )}
                 </div>
               ))}
-              <div className="pt-3 space-y-2 px-3 border-t border-gray-100 mt-2">
+              <div className="pt-3 space-y-2 px-3 border-t border-border mt-2">
                 <a
                   href="tel:3858656749"
                   className="btn-secondary w-full flex justify-center"

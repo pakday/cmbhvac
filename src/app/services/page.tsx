@@ -27,7 +27,7 @@ const services = [
   {
     category: "Heating & Cooling",
     icon: <Flame className="w-6 h-6" />,
-    color: "bg-blue-50 text-[#133F60]",
+    color: "bg-blue-50 text-primary",
     items: [
       {
         title: "Air Conditioning",
@@ -58,7 +58,7 @@ const services = [
   {
     category: "Plumbing",
     icon: <Droplets className="w-6 h-6" />,
-    color: "bg-orange-50 text-[#DB5425]",
+    color: "bg-orange-50 text-accent",
     items: [
       {
         title: "Plumbing Repair",
@@ -142,7 +142,7 @@ export default function ServicesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/96 via-[#133F60]/88 to-[#133F60]/45" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/90 to-brand/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -153,12 +153,12 @@ export default function ServicesPage() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
               All Services — Heating, Cooling &amp; Plumbing
             </h1>
-            <p className="text-lg text-white/85 mb-8 max-w-xl">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
               One call covers it all. CMB delivers fast, honest, and guaranteed
               HVAC and plumbing services across the Wasatch Front — licensed
               technicians, upfront pricing, no surprises.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-white/80">
+            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
               {[
                 "Licensed & Insured",
                 "Same-Day Available",
@@ -166,7 +166,7 @@ export default function ServicesPage() {
                 "Satisfaction Guaranteed",
               ].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> {t}
+                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
                 </span>
               ))}
             </div>
@@ -187,7 +187,7 @@ export default function ServicesPage() {
       {services.map((group) => (
         <section
           key={group.category}
-          className="py-20 md:py-28 even:bg-gray-50"
+          className="py-20 md:py-28 even:bg-muted"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
@@ -227,7 +227,7 @@ export default function ServicesPage() {
                       {service.icon}
                     </div>
                     <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                    <p className="text-gray-600 text-sm mb-4">{service.desc}</p>
+                    <p className="text-muted-foreground text-sm mb-4">{service.desc}</p>
                     <span className="btn-ghost text-sm inline-flex items-center gap-2">
                       Learn More <ArrowRight className="w-4 h-4" />
                     </span>
@@ -258,11 +258,11 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
             {whyUs.map((item, idx) => (
               <div key={idx} className="text-center">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-4 text-white">
+                <div className="w-14 h-14 rounded-2xl bg-primary-foreground/10 flex items-center justify-center mx-auto mb-4 text-white">
                   {item.icon}
                 </div>
                 <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                <p className="text-white/75 text-sm">{item.desc}</p>
+                <p className="text-primary-foreground/80 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -272,16 +272,16 @@ export default function ServicesPage() {
       {/* MEMBERSHIP PROMO */}
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-gray-50 border border-gray-200 overflow-hidden">
+          <div className="rounded-3xl bg-muted border border-border overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="p-10 md:p-14">
-                <p className="text-[#DB5425] text-xs font-bold uppercase tracking-widest mb-3">
+                <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
                   Membership Program
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
                   Save All Year with a CMB Membership
                 </h2>
-                <p className="text-gray-600 mb-6">
+                <p className="text-muted-foreground mb-6">
                   Join our annual membership program and enjoy 15% off all
                   repairs, bi-annual check-ups, priority scheduling, and 24/7
                   emergency support — starting at just $179/year.
@@ -295,9 +295,9 @@ export default function ServicesPage() {
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-center gap-3 text-gray-700"
+                      className="flex items-center gap-3 text-foreground"
                     >
-                      <CheckCircle className="w-5 h-5 text-[#DB5425] shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-accent shrink-0" />
                       {item}
                     </li>
                   ))}

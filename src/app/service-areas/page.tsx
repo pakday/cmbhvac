@@ -122,7 +122,7 @@ export default function ServiceAreasPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/96 via-[#133F60]/88 to-[#133F60]/50" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/90 to-brand/50" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -133,12 +133,12 @@ export default function ServiceAreasPage() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
               Serving Utah&apos;s Wasatch Front &amp; Beyond
             </h1>
-            <p className="text-lg text-white/85 mb-8 max-w-xl">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
               CMB HVAC &amp; Plumbing serves over 50 communities across Salt
               Lake, Davis, Weber, Utah, and Summit counties. Licensed
               technicians, same-day availability, and satisfaction guaranteed.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-white/80">
+            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
               {[
                 "50+ Communities Served",
                 "Same-Day Available",
@@ -146,7 +146,7 @@ export default function ServiceAreasPage() {
                 "24/7 Emergency",
               ].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> {t}
+                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
                 </span>
               ))}
             </div>
@@ -169,10 +169,10 @@ export default function ServiceAreasPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <p className="eyebrow">Where We Work</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               Cities &amp; Communities We Serve
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-muted-foreground">
               Don&apos;t see your city? Call us — we serve many communities
               beyond this list and may still be able to help you.
             </p>
@@ -187,16 +187,16 @@ export default function ServiceAreasPage() {
                   </div>
                   <h3 className="text-xl font-bold">{county.name}</h3>
                 </div>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-sm text-muted-foreground mb-4">
                   {county.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {county.cities.map((city) => (
                     <span
                       key={city}
-                      className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full px-3 py-1"
+                      className="inline-flex items-center gap-1 bg-secondary text-foreground text-xs font-medium rounded-full px-3 py-1"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#DB5425]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                       {city}
                     </span>
                   ))}
@@ -205,14 +205,14 @@ export default function ServiceAreasPage() {
             ))}
 
             {/* Not Listed Card */}
-            <div className="card border-dashed border-2 border-gray-300 bg-gray-50 flex flex-col items-center justify-center text-center p-10">
+            <div className="card border-dashed border-2 border-border bg-muted flex flex-col items-center justify-center text-center p-10">
               <div className="icon-box icon-box-secondary icon-box-lg mx-auto mb-4">
                 <Phone className="w-6 h-6" />
               </div>
               <h3 className="text-xl font-bold mb-2">
                 Don&apos;t See Your City?
               </h3>
-              <p className="text-gray-600 text-sm mb-5">
+              <p className="text-muted-foreground text-sm mb-5">
                 We expand our coverage regularly. Give us a call — we may
                 already serve your area or be able to accommodate you.
               </p>
@@ -236,13 +236,13 @@ export default function ServiceAreasPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-[#DB5425] text-xs font-bold uppercase tracking-widest mb-3">
+              <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
                 Full Service Coverage
               </p>
               <h2 className="text-3xl md:text-4xl font-bold mb-5">
                 All Services Available Across Our Coverage Area
               </h2>
-              <p className="text-white/80 mb-8">
+              <p className="text-primary-foreground/80 mb-8">
                 Whether you&apos;re in Salt Lake City or Park City, you get the
                 same high-quality service. Our licensed and NATE-certified
                 technicians cover every community we serve.
@@ -252,9 +252,9 @@ export default function ServiceAreasPage() {
                   <Link
                     key={service.label}
                     href={service.href}
-                    className="flex items-center gap-3 text-white/90 hover:text-white group transition-colors"
+                    className="flex items-center gap-3 text-primary-foreground/90 hover:text-white group transition-colors"
                   >
-                    <CheckCircle className="w-5 h-5 text-[#DB5425] shrink-0" />
+                    <CheckCircle className="w-5 h-5 text-accent shrink-0" />
                     <span className="font-medium group-hover:underline">
                       {service.label}
                     </span>
@@ -279,16 +279,16 @@ export default function ServiceAreasPage() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#0D2E47]/60 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-primary-dark/60 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
+                <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-4 border border-primary-foreground/20">
                   <div className="flex items-center gap-3">
-                    <ShieldCheck className="w-8 h-8 text-[#DB5425]" />
+                    <ShieldCheck className="w-8 h-8 text-accent" />
                     <div>
                       <p className="font-bold text-sm">
                         NATE Certified Technicians
                       </p>
-                      <p className="text-xs text-white/80">
+                      <p className="text-xs text-primary-foreground/80">
                         Serving the Wasatch Front since 2008
                       </p>
                     </div>
@@ -301,7 +301,7 @@ export default function ServiceAreasPage() {
       </section>
 
       {/* EMERGENCY + AVAILABILITY */}
-      <section className="py-20 md:py-28 bg-gray-50">
+      <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="card text-center">
@@ -309,7 +309,7 @@ export default function ServiceAreasPage() {
                 <Clock className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-xl mb-2">24/7 Emergency Service</h3>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-muted-foreground text-sm mb-4">
                 HVAC failures and plumbing emergencies don&apos;t wait for
                 business hours. Our emergency line is always open.
               </p>
@@ -323,7 +323,7 @@ export default function ServiceAreasPage() {
                 <MapPin className="w-6 h-6" />
               </div>
               <h3 className="font-bold text-xl mb-2">Fast Response Times</h3>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-muted-foreground text-sm mb-4">
                 We keep technicians strategically positioned across the Wasatch
                 Front so we can reach you fast — often within 1–2 hours.
               </p>
@@ -339,7 +339,7 @@ export default function ServiceAreasPage() {
               <h3 className="font-bold text-xl mb-2">
                 Satisfaction Guaranteed
               </h3>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-muted-foreground text-sm mb-4">
                 Every job backed by our workmanship guarantee. If you&apos;re
                 not happy, we&apos;ll make it right — no questions asked.
               </p>

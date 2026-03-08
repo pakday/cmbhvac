@@ -35,7 +35,7 @@ export default function WaterTreatmentServicesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/93 via-[#133F60]/82 to-[#133F60]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/90 via-brand/80 to-brand/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -47,13 +47,13 @@ export default function WaterTreatmentServicesPage() {
               Utah&apos;s Top Water Treatment Services in Salt Lake &amp; Davis
               County
             </h1>
-            <p className="text-lg text-white/85 mb-8 max-w-xl">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
               Upgrade your water quality with confidence. CMB Plumbing is
               Utah&apos;s trusted leader in professional water treatment — from
               whole-home water softeners to advanced reverse osmosis
               installations.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-white/80">
+            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
               {[
                 "Water Softeners",
                 "Reverse Osmosis",
@@ -61,7 +61,7 @@ export default function WaterTreatmentServicesPage() {
                 "Utah Experts",
               ].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> {t}
+                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
                 </span>
               ))}
             </div>
@@ -88,11 +88,11 @@ export default function WaterTreatmentServicesPage() {
                 description="CMB Plumbing provides tailored solutions that ensure clean, safe, and great-tasting water for your family or business. Serving Bountiful, Salt Lake City, Ogden, Layton, West Valley City, Millcreek, Roy, and Draper — we bring expert care to every tap."
               />
               <div className="mt-6 space-y-4">
-                <div className="border-l-4 border-[#DB5425] pl-4">
+                <div className="border-l-4 border-accent pl-4">
                   <h3 className="font-bold mb-1">
                     Water Softener Installation for Healthier Homes
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Tired of hard water buildup, dry skin, or stained fixtures?
                     CMB Plumbing offers expert water softener installation and
                     maintenance that protects your plumbing, appliances, and
@@ -123,7 +123,7 @@ export default function WaterTreatmentServicesPage() {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why CMB Plumbing?"
@@ -156,7 +156,7 @@ export default function WaterTreatmentServicesPage() {
               <div key={idx} className="card text-center">
                 <div className="icon-box mx-auto mb-4">{item.icon}</div>
                 <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -209,7 +209,7 @@ export default function WaterTreatmentServicesPage() {
                     {service.icon}
                   </div>
                   <h3 className="font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {service.desc}
                   </p>
                   <Link
@@ -226,7 +226,7 @@ export default function WaterTreatmentServicesPage() {
       </section>
 
       {/* UTAH WATER QUALITY */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden min-h-[380px]">
@@ -253,9 +253,9 @@ export default function WaterTreatmentServicesPage() {
                 ].map((point, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2 text-sm text-gray-700"
+                    className="flex items-start gap-2 text-sm text-foreground"
                   >
-                    <CheckCircle className="w-4 h-4 text-[#DB5425] mt-0.5 shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-accent mt-0.5 shrink-0" />
                     {point}
                   </li>
                 ))}
@@ -314,7 +314,7 @@ export default function WaterTreatmentServicesPage() {
                   />
                 </button>
                 {openAccordion === idx && (
-                  <div className="px-5 py-4 text-sm text-gray-700 border-t border-gray-200 leading-relaxed">
+                  <div className="px-5 py-4 text-sm text-foreground border-t border-border leading-relaxed">
                     {faq.a}
                   </div>
                 )}

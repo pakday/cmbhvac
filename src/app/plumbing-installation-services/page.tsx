@@ -35,7 +35,7 @@ export default function PlumbingInstallationPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/92 via-[#133F60]/80 to-[#133F60]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/90 via-brand/80 to-brand/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -46,12 +46,12 @@ export default function PlumbingInstallationPage() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
               Expert Plumbing Installations in Salt Lake &amp; Davis County
             </h1>
-            <p className="text-lg text-white/85 mb-8 max-w-xl">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
               CMB Plumbing is Utah&apos;s trusted source for expert plumbing
               installation services — designed to elevate comfort, efficiency,
               and long-term value in your home.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-white/80">
+            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
               {[
                 "Licensed Plumbers",
                 "Premium Materials",
@@ -59,7 +59,7 @@ export default function PlumbingInstallationPage() {
                 "Satisfaction Guaranteed",
               ].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> {t}
+                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
                 </span>
               ))}
             </div>
@@ -85,7 +85,7 @@ export default function PlumbingInstallationPage() {
                 title="Plumbing Installation Services in Salt Lake &amp; Davis County"
                 description="From water heater installations to custom tub and plumbing fixture upgrades, our licensed professionals deliver flawless results you can rely on. Proudly serving Bountiful, Salt Lake City, Ogden, Layton, West Valley City, Millcreek, Roy, and Draper."
               />
-              <p className="mt-6 text-gray-700 leading-relaxed">
+              <p className="mt-6 text-foreground leading-relaxed">
                 Plumbing is more than messy accidents and emergency calls. CMB
                 Plumbing can assist you in getting the water features, fixtures,
                 and their related equipment that transform your kitchen,
@@ -118,7 +118,7 @@ export default function PlumbingInstallationPage() {
                   ))}
                   <span className="font-bold text-sm">5-Star Installs</span>
                 </div>
-                <p className="text-xs text-gray-500 mt-0.5">
+                <p className="text-xs text-muted-foreground mt-0.5">
                   Trusted across Northern Utah
                 </p>
               </div>
@@ -128,7 +128,7 @@ export default function PlumbingInstallationPage() {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why CMB Plumbing?"
@@ -161,7 +161,7 @@ export default function PlumbingInstallationPage() {
               <div key={idx} className="card text-center">
                 <div className="icon-box mx-auto mb-4">{item.icon}</div>
                 <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -215,7 +215,7 @@ export default function PlumbingInstallationPage() {
                     <Droplets className="w-5 h-5" />
                   </div>
                   <h3 className="font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {service.desc}
                   </p>
                   <Link
@@ -232,7 +232,7 @@ export default function PlumbingInstallationPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="FAQ"
@@ -271,7 +271,7 @@ export default function PlumbingInstallationPage() {
                   />
                 </button>
                 {openAccordion === idx && (
-                  <div className="px-5 py-4 text-sm text-gray-700 border-t border-gray-200 leading-relaxed">
+                  <div className="px-5 py-4 text-sm text-foreground border-t border-border leading-relaxed">
                     {faq.a}
                   </div>
                 )}

@@ -1,15 +1,125 @@
 @import "tailwindcss";
 
-/* custom theme variables placed in :root to avoid invalid @layer usage */
+/* ── Design tokens ──────────────────────────────────────────────────── */
+
 :root {
-  --color-primary: #133f60;
-  --color-primary-light: #1a5280;
-  --color-primary-dark: #0d2e47;
-  --color-secondary: #db5425;
-  --color-secondary-light: #e8632e;
-  --color-text-heading: #1a1a2e;
-  --color-text-body: #4a4a68;
-  --color-text-muted: #8892a4;
+  /* Backgrounds & surfaces */
+  --background: 210 25% 98%; /* page background */
+  --foreground: 210 40% 10%; /* default text    */
+
+  /* Card / popover */
+  --card: 0 0% 100%;
+  --card-foreground: 210 40% 10%;
+
+  /* Primary — CMB navy */
+  --primary: 205 73% 22%; /* #133f60 */
+  --primary-foreground: 0 0% 100%; /* white   */
+  /* Supplementary shades (not overriding the list, just extending) */
+  --primary-light: 205 65% 30%; /* #1a5280 */
+  --primary-dark: 205 77% 16%; /* #0d2e47 */
+
+  /* Secondary — very light blue surface */
+  --secondary: 205 40% 96%;
+  --secondary-foreground: 205 73% 22%;
+
+  /* Muted — light section bg / secondary text */
+  --muted: 210 20% 94%;
+  --muted-foreground: 210 20% 45%;
+
+  /* Accent — CMB orange */
+  --accent: 17 71% 51%; /* #db5425 */
+  --accent-foreground: 0 0% 100%;
+  --accent-light: 19 79% 55%; /* #e8632e */
+
+  /* Destructive */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Border / input / ring */
+  --border: 210 25% 88%;
+  --input: 210 25% 88%;
+  --ring: 205 73% 22%;
+
+  /* Border radius */
+  --radius: 0.75rem;
+}
+
+/* Register as Tailwind utilities — generates bg-*, text-*, border-*, etc. */
+@theme {
+  /* Font — Outfit loaded via next/font in layout.tsx.
+     Hardcode the name so it resolves even before the CSS var is in scope. */
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  /* Background & text */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  /* Card */
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  /* Primary */
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-light: hsl(var(--primary-light));
+  --color-primary-dark: hsl(var(--primary-dark));
+
+  /* Secondary */
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  /* Muted */
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  /* Accent */
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-light: hsl(var(--accent-light));
+
+  /* Destructive */
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  /* Border / input / ring */
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  /* ── Text sizes — exact rem line-heights (no unitless multipliers) ──── */
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.75rem;
+
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 3.5rem;
+
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 4rem;
+
+  /* Hero display heading size */
+  --text-display: 4.25rem;
+  --text-display--line-height: 4.4625rem; /* 4.25 × 1.05 */
 }
 
 @layer base {
@@ -20,7 +130,7 @@
   }
 
   body {
-    @apply bg-white text-gray-700;
+    @apply bg-background text-foreground;
   }
 
   h1,
@@ -29,7 +139,7 @@
   h4,
   h5,
   h6 {
-    @apply text-gray-900;
+    @apply text-foreground;
   }
 
   .hero-dark h1,
@@ -56,23 +166,23 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#DB5425] px-6 py-2.5 font-semibold text-white transition-all duration-200 hover:bg-[#E8632E] hover:shadow-md hover:-translate-y-px;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-2.5 font-semibold text-accent-foreground transition-all duration-200 hover:bg-accent-light hover:shadow-md hover:-translate-y-px;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#133F60] px-6 py-2.5 font-semibold text-[#133F60] transition-all duration-200 hover:bg-[#133F60] hover:text-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-6 py-2.5 font-semibold text-primary transition-all duration-200 hover:bg-primary hover:text-primary-foreground;
   }
 
   .btn-outline-white {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white px-6 py-2.5 font-semibold text-white transition-all duration-200 hover:bg-white hover:text-[#133F60];
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary-foreground px-6 py-2.5 font-semibold text-primary-foreground transition-all duration-200 hover:bg-primary-foreground hover:text-primary;
   }
 
   .btn-white {
-    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-2.5 font-semibold text-[#133F60] transition-all duration-200 hover:bg-gray-100 hover:shadow-md hover:-translate-y-px;
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-primary-foreground px-6 py-2.5 font-semibold text-primary transition-all duration-200 hover:bg-secondary hover:shadow-md hover:-translate-y-px;
   }
 
   .btn-ghost {
-    @apply font-semibold text-[#DB5425] transition-all duration-150 hover:underline hover:underline-offset-4;
+    @apply font-semibold text-accent transition-all duration-150 hover:underline hover:underline-offset-4;
   }
 
   .btn-sm {
@@ -80,7 +190,7 @@
   }
 
   .hero-dark {
-    @apply relative bg-[#133F60] text-white;
+    @apply relative bg-primary text-primary-foreground;
   }
 
   .section-dark {
@@ -96,12 +206,17 @@
   }
 
   .card {
-    @apply rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md md:p-8;
+    @apply rounded-3xl border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md md:p-8;
   }
 
   .cta-banner {
-    @apply relative overflow-hidden py-20 text-white md:py-28;
-    background: linear-gradient(135deg, #0d2e47 0%, #133f60 55%, #1a5280 100%);
+    @apply relative overflow-hidden py-20 text-primary-foreground md:py-28;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary-dark)) 0%,
+      hsl(var(--primary)) 55%,
+      hsl(var(--primary-light)) 100%
+    );
   }
 
   .cta-banner::before {
@@ -125,11 +240,16 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #db5425, #e8632e, #db5425);
+    background: linear-gradient(
+      90deg,
+      hsl(var(--accent)),
+      hsl(var(--accent-light)),
+      hsl(var(--accent))
+    );
   }
 
   .icon-box {
-    @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-[#133F60];
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary text-primary;
   }
 
   .icon-box-lg {
@@ -137,23 +257,23 @@
   }
 
   .icon-box-secondary {
-    @apply bg-orange-50 text-[#DB5425];
+    @apply bg-orange-50 text-accent;
   }
 
   .eyebrow {
-    @apply mb-3 inline-block text-xs font-bold uppercase tracking-widest text-[#DB5425];
+    @apply mb-3 inline-block text-xs font-bold uppercase tracking-widest text-accent;
   }
 
   .accordion-item {
-    @apply mb-2 overflow-hidden rounded-2xl border border-gray-200;
+    @apply mb-2 overflow-hidden rounded-2xl border border-border;
   }
 
   .accordion-trigger {
-    @apply flex w-full items-center justify-between bg-white px-5 py-4 font-semibold transition-colors hover:bg-gray-50;
+    @apply flex w-full items-center justify-between bg-card px-5 py-4 font-semibold transition-colors hover:bg-muted;
   }
 
   .badge {
-    @apply inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3.5 py-1.5 text-xs font-semibold text-[#133F60];
+    @apply inline-flex items-center gap-1.5 rounded-full bg-secondary px-3.5 py-1.5 text-xs font-semibold text-primary;
   }
 
   .badge-white {
@@ -164,27 +284,27 @@
 
   /* Blog rich-text content */
   .prose-blog h2 {
-    @apply text-2xl font-bold text-gray-900 mt-10 mb-4;
+    @apply text-2xl font-bold text-foreground mt-10 mb-4;
   }
 
   .prose-blog h3 {
-    @apply text-xl font-bold text-gray-900 mt-7 mb-3;
+    @apply text-xl font-bold text-foreground mt-7 mb-3;
   }
 
   .prose-blog p {
-    @apply text-gray-700 leading-relaxed mb-5;
+    @apply text-foreground leading-relaxed mb-5;
   }
 
   .prose-blog ul {
-    @apply list-disc list-outside ml-5 space-y-2 my-5 text-gray-700;
+    @apply list-disc list-outside ml-5 space-y-2 my-5 text-foreground;
   }
 
   .prose-blog strong {
-    @apply font-semibold text-gray-900;
+    @apply font-semibold text-foreground;
   }
 
   .prose-blog a {
-    @apply text-[#133F60] underline underline-offset-2 hover:text-[#DB5425];
+    @apply text-primary underline underline-offset-2 hover:text-accent;
   }
 
   /* previously used marquee animation; now handled by Swiper */

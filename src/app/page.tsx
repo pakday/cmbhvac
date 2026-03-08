@@ -245,7 +245,7 @@ function FiveStars() {
   return (
     <div className="flex gap-0.5">
       {[...Array(5)].map((_, i) => (
-        <Star key={i} className="w-4 h-4 fill-[#DB5425] text-[#DB5425]" />
+        <Star key={i} className="w-4 h-4 fill-accent text-accent" />
       ))}
     </div>
   );
@@ -269,29 +269,29 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#0D2E47]/97 via-[#133F60]/90 to-[#0D2E47]/50" />
-        <div className="absolute inset-0 -z-10 bg-linear-to-t from-[#0D2E47]/70 via-transparent to-transparent" />
-        <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-[#DB5425] opacity-[0.07] rounded-full blur-[100px] -z-10" />
+        <div className="absolute inset-0 -z-10 bg-linear-to-r from-primary-dark/100 via-brand/90 to-primary-dark/50" />
+        <div className="absolute inset-0 -z-10 bg-linear-to-t from-primary-dark/70 via-transparent to-transparent" />
+        <div className="absolute top-1/3 right-1/3 w-96 h-96 bg-accent opacity-[0.07] rounded-full blur-[100px] -z-10" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* LEFT */}
             <div className="lg:col-span-7 text-white">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold text-white/90 mb-6">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#DB5425]" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 backdrop-blur-sm px-4 py-1.5 text-xs font-semibold text-primary-foreground/90 mb-6">
+                <ShieldCheck className="w-3.5 h-3.5 text-accent" />
                 Licensed &amp; Insured &middot; 25+ Years Experience
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-[4.25rem] font-extrabold text-white leading-[1.05] tracking-tight mb-5">
+              <h1 className="text-5xl md:text-6xl lg:text-display font-extrabold text-white leading-[1.05] tracking-tight mb-5">
                 No More
                 <br />
-                <span className="text-[#DB5425]">Pricing Games.</span>
+                <span className="text-accent">Pricing Games.</span>
               </h1>
 
-              <p className="text-xl md:text-2xl font-semibold text-white/90 mb-3 leading-snug max-w-xl">
+              <p className="text-xl md:text-2xl font-semibold text-primary-foreground/90 mb-3 leading-snug max-w-xl">
                 Get the HVAC system you need, affordably, promptly, expertly.
               </p>
-              <p className="text-base text-white/65 mb-10 leading-relaxed max-w-xl">
+              <p className="text-base text-primary-foreground/70 mb-10 leading-relaxed max-w-xl">
                 From scorching Salt Lake summers to mountain&#8209;cold winters
                 &mdash; we keep your home comfortable year-round. Fast, honest,
                 done right.
@@ -318,22 +318,22 @@ export default function Home() {
                 {[
                   {
                     icon: (
-                      <Star className="w-3.5 h-3.5 fill-[#DB5425] text-[#DB5425]" />
+                      <Star className="w-3.5 h-3.5 fill-accent text-accent" />
                     ),
                     text: "A+ BBB Rating",
                   },
                   {
-                    icon: <Award className="w-3.5 h-3.5 text-[#E8632E]" />,
+                    icon: <Award className="w-3.5 h-3.5 text-accent-light" />,
                     text: "NATE Certified",
                   },
                   {
-                    icon: <Clock className="w-3.5 h-3.5 text-[#DB5425]" />,
+                    icon: <Clock className="w-3.5 h-3.5 text-accent" />,
                     text: "24/7 Emergency",
                   },
                 ].map((p, i) => (
                   <span
                     key={i}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 px-3.5 py-1.5 text-xs text-white/85 font-medium"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 px-3.5 py-1.5 text-xs text-primary-foreground/80 font-medium"
                   >
                     {p.icon}
                     {p.text}
@@ -348,17 +348,17 @@ export default function Home() {
                 {
                   value: "25+",
                   label: "Years of Experience",
-                  accent: "border-t-[#1A5280]/60",
+                  accent: "border-t-brand-light/60",
                 },
                 {
                   value: "5,000+",
                   label: "Homes Serviced",
-                  accent: "border-t-[#DB5425]/70",
+                  accent: "border-t-accent/70",
                 },
                 {
                   value: "4.9 ★",
                   label: "Google Rating",
-                  accent: "border-t-[#E8632E]/70",
+                  accent: "border-t-accent-light/70",
                 },
                 {
                   value: "Free",
@@ -368,10 +368,10 @@ export default function Home() {
               ].map((s, i) => (
                 <div
                   key={i}
-                  className={`bg-white/10 backdrop-blur-md border border-white/15 border-t-2 ${s.accent} rounded-2xl p-6 text-white`}
+                  className={`bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 border-t-2 ${s.accent} rounded-2xl p-6 text-white`}
                 >
                   <div className="text-3xl font-extrabold mb-1">{s.value}</div>
-                  <div className="text-sm text-white/65">{s.label}</div>
+                  <div className="text-sm text-primary-foreground/70">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -380,10 +380,10 @@ export default function Home() {
       </section>
 
       {/* ── TRUST BAND (Experienced / Licensed / Insured / Certified) ─ */}
-      <section className="bg-[#0D2E47] py-16 md:py-20">
+      <section className="bg-primary-dark py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-[#DB5425] text-xs font-bold uppercase tracking-widest mb-2">
+            <p className="text-accent text-xs font-bold uppercase tracking-widest mb-2">
               Why Trust Us
             </p>
             <h2 className="text-2xl md:text-3xl font-bold text-white">
@@ -394,15 +394,15 @@ export default function Home() {
             {trustCards.map((card, i) => (
               <div
                 key={i}
-                className="group relative rounded-2xl border border-white/10 bg-white/5 p-7 hover:bg-white/10 transition-all duration-200 text-center"
+                className="group relative rounded-2xl border border-primary-foreground/10 bg-primary-foreground/10 p-7 hover:bg-primary-foreground/20 transition-all duration-200 text-center"
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-[#DB5425]/15 text-[#DB5425] mb-5 mx-auto group-hover:bg-[#DB5425]/25 transition-colors">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/20 text-accent mb-5 mx-auto group-hover:bg-accent/30 transition-colors">
                   {card.icon}
                 </div>
                 <h3 className="text-lg font-bold text-white mb-2">
                   {card.title}
                 </h3>
-                <p className="text-sm text-white/60 leading-relaxed">
+                <p className="text-sm text-primary-foreground/60 leading-relaxed">
                   {card.desc}
                 </p>
               </div>
@@ -412,11 +412,11 @@ export default function Home() {
       </section>
 
       {/* ── SERVICES ─────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-gray-50">
+      <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-14">
             <p className="eyebrow">Our Services</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Service and Maintenance
             </h2>
           </div>
@@ -426,7 +426,7 @@ export default function Home() {
               <Link
                 key={i}
                 href={svc.href}
-                className="group flex flex-col rounded-3xl overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300"
+                className="group flex flex-col rounded-3xl overflow-hidden border border-border bg-white shadow-sm transition-all duration-300"
               >
                 <div className="relative overflow-hidden h-48">
                   <Image
@@ -441,10 +441,10 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="p-5 flex-1 flex flex-col">
-                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {svc.desc}
                   </p>
-                  <div className="mt-4 flex items-center gap-1 text-[#DB5425] font-semibold text-sm group-hover:gap-2 transition-all">
+                  <div className="mt-4 flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">
                     Learn more <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -467,11 +467,11 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="eyebrow">Why Choose CMB HVAC</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
                 We Treat Your Home
                 <br className="hidden md:block" /> Like Our Own
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
                 At CMB HVAC, we hire the best technicians and invest in training
                 to keep up with industry innovations. Our goal with every call
                 is to create a healthy home and happy customer.
@@ -481,10 +481,10 @@ export default function Home() {
                   <div key={i} className="flex gap-4">
                     <div className="icon-box shrink-0">{item.icon}</div>
                     <div>
-                      <h3 className="font-bold text-gray-900 mb-1">
+                      <h3 className="font-bold text-foreground mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -502,15 +502,15 @@ export default function Home() {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <div className="absolute -bottom-5 -left-8 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-3 border border-gray-100">
-                <div className="w-12 h-12 rounded-xl bg-[#133F60]/10 flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-6 h-6 text-[#133F60]" />
+              <div className="absolute -bottom-5 -left-8 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-3 border border-border">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-gray-900">
+                  <div className="text-sm font-bold text-foreground">
                     100% Satisfaction
                   </div>
-                  <div className="text-xs text-gray-500">
+                  <div className="text-xs text-muted-foreground">
                     Guaranteed on every job
                   </div>
                 </div>
@@ -521,7 +521,7 @@ export default function Home() {
       </section>
 
       {/* ── ABOUT US ─────────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-gray-50">
+      <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div className="relative rounded-3xl overflow-hidden aspect-video lg:aspect-auto lg:h-120">
@@ -531,7 +531,7 @@ export default function Home() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-[#0D2E47] via-[#0D2E47]/70 to-transparent p-8">
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-primary-dark via-primary-dark/70 to-transparent p-8">
                 <div className="flex items-center gap-6 flex-wrap">
                   {[
                     { value: "25+", label: "Years Serving Utah" },
@@ -540,7 +540,7 @@ export default function Home() {
                   ].map((s, i) => (
                     <div key={i} className="text-white">
                       <div className="text-2xl font-extrabold">{s.value}</div>
-                      <div className="text-xs text-white/70">{s.label}</div>
+                      <div className="text-xs text-primary-foreground/70">{s.label}</div>
                     </div>
                   ))}
                 </div>
@@ -548,15 +548,15 @@ export default function Home() {
             </div>
             <div>
               <p className="eyebrow">About Us</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
                 We make sure your home stays
                 <br className="hidden md:block" /> cool and comfortable
               </h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-foreground leading-relaxed mb-4">
                 We&apos;ll make sure your home stays cool and comfortable even
                 on the hottest days of the summer!
               </p>
-              <p className="text-gray-700 leading-relaxed mb-8">
+              <p className="text-foreground leading-relaxed mb-8">
                 At CMB HVAC, we understand that installing or replacing an HVAC
                 system can be a significant investment for homeowners.
                 That&apos;s why we&apos;re committed to providing our customers
@@ -580,23 +580,20 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="eyebrow">Our Reviews</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
               What Our Customers Say
             </h2>
-            <div className="inline-flex items-center gap-3 rounded-2xl bg-gray-50 border border-gray-200 shadow-sm px-5 py-2.5">
+            <div className="inline-flex items-center gap-3 rounded-2xl bg-muted border border-border shadow-sm px-5 py-2.5">
               <GoogleLogo className="w-5 h-5" />
-              <span className="font-extrabold text-gray-900 text-lg leading-none">
+              <span className="font-extrabold text-foreground text-lg leading-none">
                 5.0
               </span>
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 fill-[#DB5425] text-[#DB5425]"
-                  />
+                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                 ))}
               </div>
-              <span className="text-gray-400 text-sm">64 Google reviews</span>
+              <span className="text-muted-foreground text-sm">64 Google reviews</span>
             </div>
           </div>
         </div>
@@ -614,26 +611,26 @@ export default function Home() {
           {reviews.map((r, i) => (
             <SwiperSlide key={i} style={{ width: "320px" }}>
               <div
-                className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="flex flex-col rounded-2xl border border-border bg-white p-6 shadow-sm"
                 style={{ minHeight: "240px" }}
               >
                 <div className="flex items-center justify-between mb-3">
                   <FiveStars />
                   <GoogleLogo />
                 </div>
-                <Quote className="w-6 h-6 text-[#DB5425]/30 mb-2" />
-                <p className="text-sm text-gray-600 leading-relaxed flex-1 mb-4">
+                <Quote className="w-6 h-6 text-accent/30 mb-2" />
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">
                   &ldquo;{r.text}&rdquo;
                 </p>
-                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                  <div className="w-9 h-9 rounded-full bg-[#133F60] flex items-center justify-center text-white text-xs font-bold shrink-0">
+                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                  <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold shrink-0">
                     {r.initials}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-gray-900">
+                    <p className="text-sm font-semibold text-foreground">
                       {r.name}
                     </p>
-                    <p className="text-xs text-gray-400">{r.ago}</p>
+                    <p className="text-xs text-muted-foreground">{r.ago}</p>
                   </div>
                 </div>
               </div>
@@ -643,10 +640,10 @@ export default function Home() {
       </section>
 
       {/* ── BRANDS ───────────────────────────────────────────────── */}
-      <section className="py-16 md:py-20 bg-gray-50 border-t border-gray-100">
+      <section className="py-16 md:py-20 bg-muted border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="eyebrow mb-2">Our Brands</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
             Part of the CMB HVAC Family
           </h2>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
@@ -669,7 +666,7 @@ export default function Home() {
       </section>
 
       {/* ── SERVICE AREA ─────────────────────────────────────────── */}
-      <section className="py-20 md:py-28 bg-[#0D2E47] relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-primary-dark relative overflow-hidden">
         {/* dot pattern */}
         <div
           className="absolute inset-0 opacity-[0.04]"
@@ -680,18 +677,18 @@ export default function Home() {
           }}
         />
         {/* orange accent blob */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#DB5425] opacity-10 rounded-full blur-[120px]" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-accent opacity-10 rounded-full blur-[120px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* header */}
           <div className="text-center mb-14">
-            <p className="text-[#DB5425] text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
               We Serve
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               We Service Davis &amp; Salt Lake County
             </h2>
-            <p className="text-white/60 text-lg max-w-lg mx-auto">
+            <p className="text-primary-foreground/60 text-lg max-w-lg mx-auto">
               From the mountains to the valley floor &mdash; wherever you are,
               we&apos;ve got you covered.
             </p>
@@ -711,8 +708,8 @@ export default function Home() {
             >
               {[...cities, ...cities].map((city, i) => (
                 <SwiperSlide key={i} style={{ width: "auto" }}>
-                  <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/8 px-4 py-2.5 text-sm text-white/80 whitespace-nowrap cursor-default select-none">
-                    <MapPin className="w-3.5 h-3.5 text-[#DB5425] shrink-0" />
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2.5 text-sm text-primary-foreground/80 whitespace-nowrap cursor-default select-none">
+                    <MapPin className="w-3.5 h-3.5 text-accent shrink-0" />
                     {city}
                   </span>
                 </SwiperSlide>

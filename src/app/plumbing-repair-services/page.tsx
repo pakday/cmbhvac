@@ -103,7 +103,7 @@ export default function PlumbingRepairPage() {
       {/* ══════════════════════════════════════════
           HERO — solid left · faded right image
       ══════════════════════════════════════════ */}
-      <section className="hero-dark relative min-h-[75vh] flex items-center overflow-hidden bg-[#0D2E47]">
+      <section className="hero-dark relative min-h-[75vh] flex items-center overflow-hidden bg-primary-dark">
         {/* dot texture */}
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -123,25 +123,25 @@ export default function PlumbingRepairPage() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47] via-[#0D2E47]/65 to-transparent" />
-          <div className="absolute inset-0 bg-linear-to-b from-[#0D2E47]/30 via-transparent to-[#0D2E47]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark via-primary-dark/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-b from-primary-dark/30 via-transparent to-primary-dark/40" />
         </div>
 
         {/* LEFT — content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 w-full">
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white/70 mb-7">
-              <Wrench className="w-3.5 h-3.5 text-[#DB5425]" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary-foreground/70 mb-7">
+              <Wrench className="w-3.5 h-3.5 text-accent" />
               CMB Plumbing · Northern Utah
             </div>
 
-            <h1 className="text-5xl md:text-[4rem] font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="text-5xl md:text-display font-black leading-[1.02] tracking-tight mb-6">
               Plumbing Repair
               <br />
-              <span className="text-[#DB5425]">Done Right.</span>
+              <span className="text-accent">Done Right.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/75 leading-relaxed mb-10">
+            <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-10">
               CMB Plumbing is the trusted name for expert repair across Northern
               Utah — from advanced leak detection and toilet repairs to burst
               pipes and gas line fixes. Fast, honest, guaranteed.
@@ -172,9 +172,9 @@ export default function PlumbingRepairPage() {
               ].map((t) => (
                 <span
                   key={t}
-                  className="inline-flex items-center gap-1 text-xs text-white/50 font-medium"
+                  className="inline-flex items-center gap-1 text-xs text-primary-foreground/50 font-medium"
                 >
-                  <CheckCircle className="w-3 h-3 text-[#DB5425]/70" />
+                  <CheckCircle className="w-3 h-3 text-accent/70" />
                   {t}
                 </span>
               ))}
@@ -186,7 +186,7 @@ export default function PlumbingRepairPage() {
       {/* ══════════════════════════════════════════
           EMERGENCY STRIP
       ══════════════════════════════════════════ */}
-      <div className="bg-[#DB5425] text-white py-3.5 px-4">
+      <div className="bg-accent text-white py-3.5 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap font-semibold text-sm md:text-base text-center">
           <AlertTriangle className="w-5 h-5 shrink-0" />
           <span>
@@ -212,11 +212,11 @@ export default function PlumbingRepairPage() {
               <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
                 Plumbing Repair in
                 <br />
-                <span className="text-[#133F60]">
+                <span className="text-primary">
                   Salt Lake &amp; Davis County
                 </span>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 CMB Plumbing is the trusted name for expert plumbing services
                 across Northern Utah — from advanced leak detection and toilet
                 repairs to high-end fixture installations. Whether you&apos;re a
@@ -225,7 +225,7 @@ export default function PlumbingRepairPage() {
                 count on fast, professional, and dependable plumbing solutions
                 that protect your property and your peace of mind.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
                 When plumbing problems strike, you don&apos;t have time to wait
                 — and at CMB Plumbing, locally owned and operated, we don&apos;t
                 make you. Our licensed pros show up fast, fix it right, and
@@ -252,19 +252,19 @@ export default function PlumbingRepairPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#0D2E47]/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-primary-dark/50 via-transparent to-transparent" />
               </div>
               {/* floating badge */}
-              <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-white rounded-2xl p-5 shadow-2xl border border-gray-100 max-w-xs">
+              <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-white rounded-2xl p-5 shadow-2xl border border-border max-w-xs">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-[#DB5425]/10 flex items-center justify-center shrink-0">
-                    <Droplets className="w-5 h-5 text-[#DB5425]" />
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                    <Droplets className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 font-medium">
+                    <p className="text-xs text-muted-foreground font-medium">
                       Non-invasive detection
                     </p>
-                    <p className="text-sm font-bold text-gray-900">
+                    <p className="text-sm font-bold text-foreground">
                       Advanced Leak Detection
                     </p>
                   </div>
@@ -289,7 +289,7 @@ export default function PlumbingRepairPage() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-[#0D2E47]/50 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-primary-dark/50 via-transparent to-transparent" />
             </div>
 
             {/* copy */}
@@ -298,9 +298,9 @@ export default function PlumbingRepairPage() {
               <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
                 Advanced Water
                 <br />
-                <span className="text-[#DB5425]">Leak Detection</span>
+                <span className="text-accent">Leak Detection</span>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 Don&apos;t let hidden leaks turn into costly disasters. At CMB
                 Plumbing, our leak detection experts use state-of-the-art
                 diagnostic tools to locate issues within walls, slabs, and
@@ -308,7 +308,7 @@ export default function PlumbingRepairPage() {
                 both residential and commercial customers, delivering rapid
                 results and reliable repairs that prevent future problems.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
                 We get to your home or business as quickly as possible to
                 mitigate the damage that a water leak, overflow, or drain backup
                 may be causing. We pinpoint where the problem is and give you
@@ -325,12 +325,12 @@ export default function PlumbingRepairPage() {
                 ].map((stat) => (
                   <div
                     key={stat.l}
-                    className="rounded-2xl bg-white border border-gray-200 p-5 shadow-sm"
+                    className="rounded-2xl bg-white border border-border p-5 shadow-sm"
                   >
-                    <p className="text-2xl font-black text-[#DB5425]">
+                    <p className="text-2xl font-black text-accent">
                       {stat.n}
                     </p>
-                    <p className="text-xs text-gray-500 font-medium mt-0.5">
+                    <p className="text-xs text-muted-foreground font-medium mt-0.5">
                       {stat.l}
                     </p>
                   </div>
@@ -348,7 +348,7 @@ export default function PlumbingRepairPage() {
       {/* ══════════════════════════════════════════
           WHY CHOOSE — dark immersive
       ══════════════════════════════════════════ */}
-      <section className="relative py-24 md:py-32 overflow-hidden bg-[#0D2E47]">
+      <section className="relative py-24 md:py-32 overflow-hidden bg-primary-dark">
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
           style={{
@@ -360,15 +360,15 @@ export default function PlumbingRepairPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
-            <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-[#DB5425]">
+            <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-accent">
               Why CMB Plumbing?
             </span>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white mb-5">
               We Fix Any of Your
               <br />
-              <span className="text-[#DB5425]">Problem Plumbing Issues</span>
+              <span className="text-accent">Problem Plumbing Issues</span>
             </h2>
-            <p className="text-white/70 text-lg leading-relaxed">
+            <p className="text-primary-foreground/70 text-lg leading-relaxed">
               CMB Plumbing is more than just a service call — it&apos;s peace of
               mind. With decades of combined experience, transparent pricing,
               and a reputation built on integrity, our team delivers solutions
@@ -381,13 +381,13 @@ export default function PlumbingRepairPage() {
             {WHY_US.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white/5 border border-white/10 rounded-3xl p-7 hover:bg-white/10 transition-colors"
+                className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-3xl p-7 hover:bg-primary-foreground/10 transition-colors"
               >
-                <div className="w-11 h-11 rounded-xl bg-[#DB5425]/20 border border-[#DB5425]/30 flex items-center justify-center text-[#DB5425] mb-5">
+                <div className="w-11 h-11 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center text-accent mb-5">
                   {item.icon}
                 </div>
                 <h3 className="text-white font-bold mb-2">{item.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <p className="text-primary-foreground/60 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -407,9 +407,9 @@ export default function PlumbingRepairPage() {
               <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
                 Schedule Your
                 <br />
-                <span className="text-[#DB5425]">Plumbing Repairs</span>
+                <span className="text-accent">Plumbing Repairs</span>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 Considering the immense strain under which your plumbing system
                 operates most of the time, it should come as no surprise that
                 you&apos;ll find yourself in need of professional plumbing
@@ -419,7 +419,7 @@ export default function PlumbingRepairPage() {
                 make any necessary repairs with the expertise that defines our
                 expert plumbing services.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
                 While there&apos;s no way to completely avoid all problems with
                 an aging plumbing system, you can keep them to a minimum by
                 scheduling routine maintenance. Not only does it help your
@@ -439,8 +439,8 @@ export default function PlumbingRepairPage() {
             </div>
 
             {/* checklist card */}
-            <div className="bg-[#f7f8fa] rounded-3xl p-8 md:p-10 border border-gray-100">
-              <h3 className="text-xl font-black text-gray-900 mb-7">
+            <div className="bg-[#f7f8fa] rounded-3xl p-8 md:p-10 border border-border">
+              <h3 className="text-xl font-black text-foreground mb-7">
                 What to Expect on Your Visit
               </h3>
               <ul className="space-y-5">
@@ -467,14 +467,14 @@ export default function PlumbingRepairPage() {
                   },
                 ].map((step, i) => (
                   <li key={i} className="flex gap-4 items-start">
-                    <div className="w-8 h-8 rounded-full bg-[#DB5425] flex items-center justify-center shrink-0 text-white text-xs font-black">
+                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center shrink-0 text-white text-xs font-black">
                       {String(i + 1).padStart(2, "0")}
                     </div>
                     <div>
-                      <p className="font-bold text-gray-900 text-sm mb-0.5">
+                      <p className="font-bold text-foreground text-sm mb-0.5">
                         {step.title}
                       </p>
-                      <p className="text-gray-500 text-sm leading-relaxed">
+                      <p className="text-muted-foreground text-sm leading-relaxed">
                         {step.body}
                       </p>
                     </div>
@@ -496,9 +496,9 @@ export default function PlumbingRepairPage() {
             <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
               Every Repair,
               <br />
-              <span className="text-[#133F60]">Covered &amp; Guaranteed</span>
+              <span className="text-primary">Covered &amp; Guaranteed</span>
             </h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-muted-foreground text-lg">
               From burst pipes to backflow prevention — our licensed plumbers
               handle it all across Northern Utah with precision and care.
             </p>
@@ -508,18 +508,18 @@ export default function PlumbingRepairPage() {
             {REPAIR_SERVICES.map((s, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group relative flex flex-col rounded-3xl border border-border bg-white p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#DB5425]/10 flex items-center justify-center text-[#DB5425] mb-5">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-5">
                   {s.icon}
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-[#DB5425] transition-colors">
+                <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed flex-1">
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                   {s.desc}
                 </p>
-                <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#DB5425]">
+                <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
                   Get an Estimate
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
@@ -549,9 +549,9 @@ export default function PlumbingRepairPage() {
               <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-5">
                 Got Questions?
                 <br />
-                <span className="text-[#133F60]">Straight Answers.</span>
+                <span className="text-primary">Straight Answers.</span>
               </h2>
-              <p className="text-gray-500 text-lg leading-relaxed mb-8">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 At CMB Plumbing, peace of mind starts with clarity. Quick,
                 honest answers so you know exactly what to expect before we even
                 knock on your door.
@@ -568,26 +568,26 @@ export default function PlumbingRepairPage() {
                   <div
                     key={idx}
                     className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                      open ? "border-[#DB5425]/40 shadow-md" : "border-gray-200"
+                      open ? "border-accent/40 shadow-md" : "border-border"
                     }`}
                   >
                     <button
                       onClick={() => setOpenAccordion(open ? null : idx)}
-                      className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-gray-50 transition-colors"
+                      className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-muted transition-colors"
                     >
                       <span
-                        className={`font-semibold text-base transition-colors ${open ? "text-[#DB5425]" : "text-gray-900"}`}
+                        className={`font-semibold text-base transition-colors ${open ? "text-accent" : "text-foreground"}`}
                       >
                         {faq.q}
                       </span>
                       <ChevronDown
-                        className={`w-5 h-5 shrink-0 transition-transform duration-300 ${open ? "rotate-180 text-[#DB5425]" : "text-gray-400"}`}
+                        className={`w-5 h-5 shrink-0 transition-transform duration-300 ${open ? "rotate-180 text-accent" : "text-muted-foreground"}`}
                       />
                     </button>
                     <div
                       className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96" : "max-h-0"}`}
                     >
-                      <p className="px-6 pb-6 pt-1 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+                      <p className="px-6 pb-6 pt-1 text-muted-foreground text-sm leading-relaxed border-t border-border">
                         {faq.a}
                       </p>
                     </div>

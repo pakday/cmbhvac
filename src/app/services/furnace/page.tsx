@@ -36,7 +36,7 @@ export default function FurnaceServicesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/95 via-[#133F60]/85 to-[#133F60]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/80 to-brand/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -47,7 +47,7 @@ export default function FurnaceServicesPage() {
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
               Furnace Repair & Installation Salt Lake City
             </h1>
-            <p className="text-xl text-white/85 mb-8">
+            <p className="text-xl text-primary-foreground/80 mb-8">
               When Utah winters hit, your furnace has to work. We repair all
               makes and models, install high-efficiency systems, and keep
               homeowners warm 24/7.
@@ -69,7 +69,7 @@ export default function FurnaceServicesPage() {
       </section>
 
       {/* EMERGENCY BANNER */}
-      <div className="bg-[#DB5425] text-white py-3 px-4">
+      <div className="bg-accent text-white py-3 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap font-semibold text-center">
           <AlertCircle className="w-5 h-5" />
           <span>Heating out in winter?</span>
@@ -146,26 +146,26 @@ export default function FurnaceServicesPage() {
                 </div>
                 <h3 className="text-lg font-bold mb-3">{issue.title}</h3>
                 <div className="mb-4">
-                  <p className="text-xs text-gray-500 font-semibold uppercase mb-2">
+                  <p className="text-xs text-muted-foreground font-semibold uppercase mb-2">
                     Common causes:
                   </p>
                   <ul className="space-y-1">
                     {issue.items.map((item, i) => (
                       <li
                         key={i}
-                        className="text-sm text-gray-600 flex items-center gap-2"
+                        className="text-sm text-muted-foreground flex items-center gap-2"
                       >
-                        <span className="w-1.5 h-1.5 bg-[#DB5425] rounded-full" />
+                        <span className="w-1.5 h-1.5 bg-accent rounded-full" />
                         {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className="pt-4 border-t border-gray-200">
-                  <p className="text-sm font-semibold text-gray-900">
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm font-semibold text-foreground">
                     Our solution:
                   </p>
-                  <p className="text-sm text-gray-600 mt-1">{issue.fix}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{issue.fix}</p>
                 </div>
               </div>
             ))}
@@ -174,7 +174,7 @@ export default function FurnaceServicesPage() {
       </section>
 
       {/* OUR FURNACE SERVICES */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Services"
@@ -211,7 +211,7 @@ export default function FurnaceServicesPage() {
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-lg mb-1">{service.title}</h3>
-                  <p className="text-gray-600">{service.desc}</p>
+                  <p className="text-muted-foreground">{service.desc}</p>
                 </div>
               </div>
             ))}
@@ -225,7 +225,7 @@ export default function FurnaceServicesPage() {
           <h2 className="text-3xl font-bold text-center mb-4">
             Furnace Brands We Service & Install
           </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             NATE-certified technicians trained on all major brands. Lennox,
             Carrier, Trane, Rheem, Goodman, York, and more.
           </p>
@@ -242,7 +242,7 @@ export default function FurnaceServicesPage() {
               "ICP",
             ].map((brand, idx) => (
               <div key={idx} className="card text-center py-6">
-                <p className="font-bold text-gray-900">{brand}</p>
+                <p className="font-bold text-foreground">{brand}</p>
               </div>
             ))}
           </div>
@@ -250,13 +250,13 @@ export default function FurnaceServicesPage() {
       </section>
 
       {/* EFFICIENCY & SAVINGS */}
-      <section className="section-dark bg-[#133F60] py-20 md:py-28">
+      <section className="section-dark bg-primary py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               High-Efficiency Furnaces Save Money Year After Year
             </h2>
-            <p className="text-lg text-white/85 mb-8">
+            <p className="text-lg text-primary-foreground/80 mb-8">
               Older furnaces waste 20–30% of fuel. New 95%+ AFUE systems can cut
               your heating bill in half.
             </p>
@@ -270,14 +270,14 @@ export default function FurnaceServicesPage() {
                 "Environmental benefits from reduced fuel consumption",
               ].map((benefit, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-[#DB5425] shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-accent shrink-0" />
                   <span>{benefit}</span>
                 </div>
               ))}
             </div>
 
-            <div className="bg-white/10 border border-white/20 rounded-lg p-6 mt-8">
-              <p className="text-sm text-white/80">
+            <div className="bg-primary-foreground/10 border border-primary-foreground/20 rounded-lg p-6 mt-8">
+              <p className="text-sm text-primary-foreground/80">
                 <strong>Example:</strong> A homeowner upgrading from a 1995
                 furnace to a high-efficiency 2024 model typically saves
                 $300–$600 annually on heating bills. The new furnace pays for
@@ -337,7 +337,7 @@ export default function FurnaceServicesPage() {
                   />
                 </button>
                 {openAccordion === idx && (
-                  <div className="px-5 py-4 text-gray-700 border-t border-gray-200">
+                  <div className="px-5 py-4 text-foreground border-t border-border">
                     {faq.a}
                   </div>
                 )}

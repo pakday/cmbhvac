@@ -144,7 +144,7 @@ export default function SchedulePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/96 via-[#133F60]/90 to-[#133F60]/55" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/90 to-brand/60" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -155,11 +155,11 @@ export default function SchedulePage() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
               Schedule Your HVAC or Plumbing Service
             </h1>
-            <p className="text-lg text-white/85 mb-8 max-w-xl">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
               Fast, easy booking. Same-day availability. Tell us what you need
               and a CMB technician will be at your door — on time, every time.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-white/80">
+            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
               {[
                 "Free Service Call",
                 "Same-Day Available",
@@ -167,7 +167,7 @@ export default function SchedulePage() {
                 "No Surprises",
               ].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> {t}
+                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
                 </span>
               ))}
             </div>
@@ -186,14 +186,14 @@ export default function SchedulePage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="py-20 md:py-28 bg-gray-50">
+      <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <p className="eyebrow">How It Works</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
               From Booking to Fixed — Simple Steps
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-muted-foreground">
               We've made scheduling as easy as possible. Most bookings are
               confirmed within minutes.
             </p>
@@ -202,16 +202,16 @@ export default function SchedulePage() {
             {steps.map((step, idx) => (
               <div key={idx} className="relative">
                 {idx < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-6 left-1/2 w-full border-t-2 border-dashed border-gray-300" />
+                  <div className="hidden lg:block absolute top-6 left-1/2 w-full border-t-2 border-dashed border-border" />
                 )}
                 <div className="relative text-center">
-                  <div className="w-12 h-12 rounded-2xl bg-[#DB5425] text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-accent text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">
                     {step.number}
                   </div>
-                  <h3 className="font-bold text-lg mb-2 text-gray-900">
+                  <h3 className="font-bold text-lg mb-2 text-foreground">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-gray-600">{step.desc}</p>
+                  <p className="text-sm text-muted-foreground">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -230,7 +230,7 @@ export default function SchedulePage() {
                 <h2 className="text-2xl font-bold mb-4">
                   Prefer to Call or Text?
                 </h2>
-                <p className="text-gray-600 mb-6">
+                <p className="text-muted-foreground mb-6">
                   Give us a ring and we'll get you scheduled immediately. Our
                   team answers 7 days a week, with emergency support 24/7.
                 </p>
@@ -238,19 +238,19 @@ export default function SchedulePage() {
 
               <a
                 href="tel:3858656749"
-                className="flex gap-4 items-center p-5 rounded-2xl border border-gray-200 bg-gray-50 hover:border-[#133F60] hover:bg-white transition-all group"
+                className="flex gap-4 items-center p-5 rounded-2xl border border-border bg-muted hover:border-primary hover:bg-white transition-all group"
               >
-                <div className="icon-box icon-box-lg shrink-0 group-hover:bg-[#133F60] group-hover:text-white transition-colors">
+                <div className="icon-box icon-box-lg shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5">
+                  <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-0.5">
                     Phone / Text
                   </p>
-                  <p className="font-bold text-gray-900 text-lg">
+                  <p className="font-bold text-foreground text-lg">
                     (385) 865-6749
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     Available 7 days a week
                   </p>
                 </div>
@@ -258,52 +258,52 @@ export default function SchedulePage() {
 
               <a
                 href="mailto:team@cmbhvac.com"
-                className="flex gap-4 items-center p-5 rounded-2xl border border-gray-200 bg-gray-50 hover:border-[#133F60] hover:bg-white transition-all group"
+                className="flex gap-4 items-center p-5 rounded-2xl border border-border bg-muted hover:border-primary hover:bg-white transition-all group"
               >
-                <div className="icon-box icon-box-lg shrink-0 group-hover:bg-[#133F60] group-hover:text-white transition-colors">
+                <div className="icon-box icon-box-lg shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5">
+                  <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-0.5">
                     Email
                   </p>
-                  <p className="font-bold text-gray-900">team@cmbhvac.com</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="font-bold text-foreground">team@cmbhvac.com</p>
+                  <p className="text-sm text-muted-foreground">
                     We reply within a few hours
                   </p>
                 </div>
               </a>
 
-              <div className="flex gap-4 items-center p-5 rounded-2xl border border-gray-200 bg-gray-50">
+              <div className="flex gap-4 items-center p-5 rounded-2xl border border-border bg-muted">
                 <div className="icon-box icon-box-lg shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5">
+                  <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-0.5">
                     Hours
                   </p>
-                  <p className="font-bold text-gray-900">
+                  <p className="font-bold text-foreground">
                     Mon – Sat: 7AM – 8PM
                   </p>
-                  <p className="text-sm text-gray-500">24/7 for emergencies</p>
+                  <p className="text-sm text-muted-foreground">24/7 for emergencies</p>
                 </div>
               </div>
 
-              <div className="flex gap-4 items-center p-5 rounded-2xl border border-gray-200 bg-gray-50">
+              <div className="flex gap-4 items-center p-5 rounded-2xl border border-border bg-muted">
                 <div className="icon-box icon-box-lg shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5">
+                  <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-0.5">
                     Service Area
                   </p>
-                  <p className="font-bold text-gray-900">
+                  <p className="font-bold text-foreground">
                     Salt Lake & Davis County
                   </p>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     <Link
                       href="/service-areas"
-                      className="text-[#DB5425] hover:underline"
+                      className="text-accent hover:underline"
                     >
                       View all service areas →
                     </Link>
@@ -313,7 +313,7 @@ export default function SchedulePage() {
 
               {/* Trust badges */}
               <div className="pt-2">
-                <p className="text-xs text-gray-500 font-semibold uppercase tracking-widest mb-3">
+                <p className="text-xs text-muted-foreground font-semibold uppercase tracking-widest mb-3">
                   You&apos;re in good hands
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -343,7 +343,7 @@ export default function SchedulePage() {
                     <h3 className="text-2xl font-bold mb-2">
                       Request Received!
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-muted-foreground">
                       A CMB team member will contact you shortly to confirm your
                       appointment. We&apos;ll see you soon!
                     </p>
@@ -360,9 +360,9 @@ export default function SchedulePage() {
                     <form onSubmit={handleSubmit} className="space-y-5">
                       {/* Service Type */}
                       <div>
-                        <label className="block text-sm font-semibold text-gray-700 mb-3">
+                        <label className="block text-sm font-semibold text-foreground mb-3">
                           Select a Service{" "}
-                          <span className="text-[#DB5425]">*</span>
+                          <span className="text-accent">*</span>
                         </label>
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                           {serviceTypes.map((s) => (
@@ -372,8 +372,8 @@ export default function SchedulePage() {
                               onClick={() => setSelectedService(s.id)}
                               className={`flex items-center gap-2 px-3 py-2.5 rounded-xl border text-sm font-medium transition-all ${
                                 selectedService === s.id
-                                  ? "border-[#133F60] bg-[#133F60] text-white"
-                                  : "border-gray-200 text-gray-700 hover:border-gray-300 hover:bg-gray-50"
+                                  ? "border-primary bg-primary text-white"
+                                  : "border-border text-foreground hover:border-border hover:bg-muted"
                               }`}
                             >
                               {s.icon}
@@ -388,9 +388,9 @@ export default function SchedulePage() {
                         <div>
                           <label
                             htmlFor="name"
-                            className="block text-sm font-semibold text-gray-700 mb-1.5"
+                            className="block text-sm font-semibold text-foreground mb-1.5"
                           >
-                            Full Name <span className="text-[#DB5425]">*</span>
+                            Full Name <span className="text-accent">*</span>
                           </label>
                           <input
                             id="name"
@@ -400,16 +400,16 @@ export default function SchedulePage() {
                             value={formData.name}
                             onChange={handleChange}
                             placeholder="John Smith"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:border-[#133F60] focus:ring-2 focus:ring-[#133F60]/20 outline-none transition"
+                            className="w-full rounded-xl border border-border px-4 py-2.5 text-sm focus:border-primary focus:ring-2 focus:ring-ring/20 outline-none transition"
                           />
                         </div>
                         <div>
                           <label
                             htmlFor="phone"
-                            className="block text-sm font-semibold text-gray-700 mb-1.5"
+                            className="block text-sm font-semibold text-foreground mb-1.5"
                           >
                             Phone Number{" "}
-                            <span className="text-[#DB5425]">*</span>
+                            <span className="text-accent">*</span>
                           </label>
                           <input
                             id="phone"
@@ -419,7 +419,7 @@ export default function SchedulePage() {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder="(385) 000-0000"
-                            className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:border-[#133F60] focus:ring-2 focus:ring-[#133F60]/20 outline-none transition"
+                            className="w-full rounded-xl border border-border px-4 py-2.5 text-sm focus:border-primary focus:ring-2 focus:ring-ring/20 outline-none transition"
                           />
                         </div>
                       </div>
@@ -428,7 +428,7 @@ export default function SchedulePage() {
                       <div>
                         <label
                           htmlFor="email"
-                          className="block text-sm font-semibold text-gray-700 mb-1.5"
+                          className="block text-sm font-semibold text-foreground mb-1.5"
                         >
                           Email Address
                         </label>
@@ -439,7 +439,7 @@ export default function SchedulePage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="john@example.com"
-                          className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:border-[#133F60] focus:ring-2 focus:ring-[#133F60]/20 outline-none transition"
+                          className="w-full rounded-xl border border-border px-4 py-2.5 text-sm focus:border-primary focus:ring-2 focus:ring-ring/20 outline-none transition"
                         />
                       </div>
 
@@ -447,10 +447,10 @@ export default function SchedulePage() {
                       <div>
                         <label
                           htmlFor="address"
-                          className="block text-sm font-semibold text-gray-700 mb-1.5"
+                          className="block text-sm font-semibold text-foreground mb-1.5"
                         >
                           Service Address{" "}
-                          <span className="text-[#DB5425]">*</span>
+                          <span className="text-accent">*</span>
                         </label>
                         <input
                           id="address"
@@ -460,7 +460,7 @@ export default function SchedulePage() {
                           value={formData.address}
                           onChange={handleChange}
                           placeholder="123 Main St, Salt Lake City, UT"
-                          className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:border-[#133F60] focus:ring-2 focus:ring-[#133F60]/20 outline-none transition"
+                          className="w-full rounded-xl border border-border px-4 py-2.5 text-sm focus:border-primary focus:ring-2 focus:ring-ring/20 outline-none transition"
                         />
                       </div>
 
@@ -468,7 +468,7 @@ export default function SchedulePage() {
                       <div>
                         <label
                           htmlFor="timePreference"
-                          className="block text-sm font-semibold text-gray-700 mb-1.5"
+                          className="block text-sm font-semibold text-foreground mb-1.5"
                         >
                           Preferred Time
                         </label>
@@ -477,7 +477,7 @@ export default function SchedulePage() {
                           name="timePreference"
                           value={formData.timePreference}
                           onChange={handleChange}
-                          className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:border-[#133F60] focus:ring-2 focus:ring-[#133F60]/20 outline-none transition bg-white"
+                          className="w-full rounded-xl border border-border px-4 py-2.5 text-sm focus:border-primary focus:ring-2 focus:ring-ring/20 outline-none transition bg-white"
                         >
                           <option value="asap">As Soon as Possible</option>
                           <option value="morning">Morning (8AM – 12PM)</option>
@@ -493,7 +493,7 @@ export default function SchedulePage() {
                       <div>
                         <label
                           htmlFor="message"
-                          className="block text-sm font-semibold text-gray-700 mb-1.5"
+                          className="block text-sm font-semibold text-foreground mb-1.5"
                         >
                           Describe the Issue
                         </label>
@@ -504,7 +504,7 @@ export default function SchedulePage() {
                           value={formData.message}
                           onChange={handleChange}
                           placeholder="Tell us what's happening with your system — the more detail, the faster we can help."
-                          className="w-full rounded-xl border border-gray-300 px-4 py-2.5 text-sm focus:border-[#133F60] focus:ring-2 focus:ring-[#133F60]/20 outline-none transition resize-none"
+                          className="w-full rounded-xl border border-border px-4 py-2.5 text-sm focus:border-primary focus:ring-2 focus:ring-ring/20 outline-none transition resize-none"
                         />
                       </div>
 
@@ -516,7 +516,7 @@ export default function SchedulePage() {
                         Request Appointment
                       </button>
 
-                      <p className="text-xs text-gray-500 text-center">
+                      <p className="text-xs text-muted-foreground text-center">
                         By submitting this form you agree to be contacted by CMB
                         HVAC regarding your service request. We never share your
                         information.
@@ -531,7 +531,7 @@ export default function SchedulePage() {
       </section>
 
       {/* QUICK EMERGENCY BAR */}
-      <div className="bg-[#DB5425] text-white py-4 px-4">
+      <div className="bg-accent text-white py-4 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-3 text-center font-semibold">
           <Clock className="w-5 h-5 shrink-0" />
           <span>Need emergency HVAC or plumbing help right now?</span>

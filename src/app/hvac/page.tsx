@@ -33,7 +33,7 @@ export default function HVACPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/95 via-[#133F60]/85 to-[#133F60]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/80 to-brand/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -44,7 +44,7 @@ export default function HVACPage() {
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
               Let Us Cool You Down — or Warm You Up
             </h1>
-            <p className="text-xl text-white/85 mb-8">
+            <p className="text-xl text-primary-foreground/80 mb-8">
               From high-efficiency AC installations to emergency furnace
               repairs, CMB HVAC covers every heating and cooling need with
               speed, transparency, and guaranteed work.
@@ -91,21 +91,21 @@ export default function HVACPage() {
                 <Snowflake className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold mb-3">Air Conditioning</h3>
-              <ul className="space-y-2 mb-4 text-sm text-gray-600">
+              <ul className="space-y-2 mb-4 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> AC Repair &
+                  <CheckCircle className="w-4 h-4 text-accent" /> AC Repair &
                   Diagnostics
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> New System
+                  <CheckCircle className="w-4 h-4 text-accent" /> New System
                   Installation
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Ductless
+                  <CheckCircle className="w-4 h-4 text-accent" /> Ductless
                   Mini-Split Systems
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Indoor Air
+                  <CheckCircle className="w-4 h-4 text-accent" /> Indoor Air
                   Quality
                 </li>
               </ul>
@@ -129,21 +129,21 @@ export default function HVACPage() {
                 <Flame className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold mb-3">Heating & Furnace</h3>
-              <ul className="space-y-2 mb-4 text-sm text-gray-600">
+              <ul className="space-y-2 mb-4 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Furnace
+                  <CheckCircle className="w-4 h-4 text-accent" /> Furnace
                   Repair & Installation
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Boiler
+                  <CheckCircle className="w-4 h-4 text-accent" /> Boiler
                   Services
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Heat Pump
+                  <CheckCircle className="w-4 h-4 text-accent" /> Heat Pump
                   Systems
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Maintenance
+                  <CheckCircle className="w-4 h-4 text-accent" /> Maintenance
                   Plans
                 </li>
               </ul>
@@ -167,21 +167,21 @@ export default function HVACPage() {
                 <Building2 className="w-5 h-5" />
               </div>
               <h3 className="text-xl font-bold mb-3">Commercial HVAC</h3>
-              <ul className="space-y-2 mb-4 text-sm text-gray-600">
+              <ul className="space-y-2 mb-4 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> New
+                  <CheckCircle className="w-4 h-4 text-accent" /> New
                   Construction Installs
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Commercial
+                  <CheckCircle className="w-4 h-4 text-accent" /> Commercial
                   Repair & Maintenance
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Custom
+                  <CheckCircle className="w-4 h-4 text-accent" /> Custom
                   System Design
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> Service
+                  <CheckCircle className="w-4 h-4 text-accent" /> Service
                   Contracts
                 </li>
               </ul>
@@ -197,7 +197,7 @@ export default function HVACPage() {
       </section>
 
       {/* PROCESS */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Process"
@@ -228,12 +228,12 @@ export default function HVACPage() {
               },
             ].map((step, idx) => (
               <div key={idx} className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-[#DB5425] text-white flex items-center justify-center font-bold shrink-0">
+                <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold shrink-0">
                   {step.num}
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">{step.title}</h4>
-                  <p className="text-gray-600 text-sm">{step.desc}</p>
+                  <p className="text-muted-foreground text-sm">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -248,22 +248,22 @@ export default function HVACPage() {
       {/* CREDENTIALS */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#133F60] rounded-3xl p-8 text-white">
+          <div className="bg-primary rounded-3xl p-8 text-white">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-4xl font-bold text-[#DB5425]">25+</div>
+                <div className="text-4xl font-bold text-accent">25+</div>
                 <div className="text-sm opacity-80 mt-1">Years Experience</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[#DB5425]">A+</div>
+                <div className="text-4xl font-bold text-accent">A+</div>
                 <div className="text-sm opacity-80 mt-1">BBB Rating</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[#DB5425]">24/7</div>
+                <div className="text-4xl font-bold text-accent">24/7</div>
                 <div className="text-sm opacity-80 mt-1">Emergency Service</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-[#DB5425]">100%</div>
+                <div className="text-4xl font-bold text-accent">100%</div>
                 <div className="text-sm opacity-80 mt-1">
                   Satisfaction Guarantee
                 </div>
@@ -274,7 +274,7 @@ export default function HVACPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader eyebrow="FAQ" title="Common HVAC Questions" centered />
 
@@ -310,7 +310,7 @@ export default function HVACPage() {
                   />
                 </button>
                 {openAccordion === idx && (
-                  <div className="px-5 py-4 text-gray-700 border-t border-gray-200">
+                  <div className="px-5 py-4 text-foreground border-t border-border">
                     {faq.a}
                   </div>
                 )}

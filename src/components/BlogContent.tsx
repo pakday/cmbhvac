@@ -38,7 +38,7 @@ export function BlogContent({ content }: Props) {
       nodes.push(
         <h2
           key={i}
-          className="text-2xl font-bold text-gray-900 mt-10 mb-4 first:mt-0"
+          className="text-2xl font-bold text-foreground mt-10 mb-4 first:mt-0"
         >
           {line.slice(3)}
         </h2>,
@@ -50,7 +50,7 @@ export function BlogContent({ content }: Props) {
     // ### Heading 3
     if (line.startsWith("### ")) {
       nodes.push(
-        <h3 key={i} className="text-xl font-bold text-gray-900 mt-7 mb-3">
+        <h3 key={i} className="text-xl font-bold text-foreground mt-7 mb-3">
           {line.slice(4)}
         </h3>,
       );
@@ -61,7 +61,7 @@ export function BlogContent({ content }: Props) {
     // **Bold paragraph label (like "**1. Something**")
     if (line.startsWith("**") && line.endsWith("**")) {
       nodes.push(
-        <p key={i} className="font-semibold text-gray-900 mt-5 mb-1">
+        <p key={i} className="font-semibold text-foreground mt-5 mb-1">
           {line.slice(2, -2)}
         </p>,
       );
@@ -79,7 +79,7 @@ export function BlogContent({ content }: Props) {
       nodes.push(
         <ul
           key={i}
-          className="list-disc list-outside ml-5 space-y-1.5 my-4 text-gray-700"
+          className="list-disc list-outside ml-5 space-y-1.5 my-4 text-foreground"
         >
           {items.map((item, idx) => (
             <li key={idx}>{parseInline(item)}</li>
@@ -91,7 +91,7 @@ export function BlogContent({ content }: Props) {
 
     // Regular paragraph
     nodes.push(
-      <p key={i} className="text-gray-700 leading-relaxed mb-4">
+      <p key={i} className="text-foreground leading-relaxed mb-4">
         {parseInline(line)}
       </p>,
     );

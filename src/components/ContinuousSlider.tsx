@@ -16,9 +16,9 @@ export function ContinuousSlider({
   cities,
 }: ContinuousSliderProps) {
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h5 className="text-sm font-semibold text-gray-500 uppercase">
+        <h5 className="text-sm font-semibold text-muted-foreground uppercase">
           {heading}
         </h5>
         <h2 className="text-2xl font-bold mb-6">{subheading}</h2>

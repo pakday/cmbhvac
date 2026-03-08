@@ -35,7 +35,7 @@ export default function MembershipPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/95 via-[#133F60]/85 to-[#133F60]/50" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/80 to-brand/50" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
@@ -46,7 +46,7 @@ export default function MembershipPage() {
             <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
               Join Our Membership Program
             </h1>
-            <p className="text-xl text-white/85 mb-8">
+            <p className="text-xl text-primary-foreground/80 mb-8">
               Save on repairs, get priority service, and enjoy 24/7 emergency
               support. CMB's membership program is the smart choice for
               homeowners who want peace of mind.
@@ -103,7 +103,7 @@ export default function MembershipPage() {
                   {benefit.icon}
                 </div>
                 <h3 className="font-bold text-lg mb-2">{benefit.title}</h3>
-                <p className="text-sm text-gray-600">{benefit.desc}</p>
+                <p className="text-sm text-muted-foreground">{benefit.desc}</p>
               </div>
             ))}
           </div>
@@ -111,12 +111,12 @@ export default function MembershipPage() {
       </section>
 
       {/* DETAILED BENEFITS */}
-      <section className="section-dark bg-linear-to-br from-[#133F60] to-[#0D2E47] py-20 md:py-28">
+      <section className="section-dark bg-linear-to-br from-brand to-primary-dark py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
             What's Included
           </h2>
-          <p className="text-lg text-white/80 text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-lg text-primary-foreground/80 text-center mb-12 max-w-2xl mx-auto">
             Everything you need to keep your HVAC and plumbing systems running
             smoothly all year long.
           </p>
@@ -166,16 +166,16 @@ export default function MembershipPage() {
             ].map((section, idx) => (
               <div key={idx}>
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <CheckCircle className="w-6 h-6 text-[#DB5425]" />
+                  <CheckCircle className="w-6 h-6 text-accent" />
                   {section.title}
                 </h3>
                 <ul className="space-y-3">
                   {section.items.map((item, i) => (
                     <li
                       key={i}
-                      className="text-white/85 flex items-center gap-3"
+                      className="text-primary-foreground/80 flex items-center gap-3"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#DB5425]" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-accent" />
                       {item}
                     </li>
                   ))}
@@ -230,15 +230,15 @@ export default function MembershipPage() {
             ].map((plan, idx) => (
               <div
                 key={idx}
-                className={`rounded-2xl p-8 ${plan.highlight ? "bg-[#DB5425] text-white ring-2 ring-[#DB5425]" : "card"}`}
+                className={`rounded-2xl p-8 ${plan.highlight ? "bg-accent text-white ring-2 ring-accent" : "card"}`}
               >
                 <h3
-                  className={`text-2xl font-bold mb-2 ${plan.highlight ? "text-white" : "text-gray-900"}`}
+                  className={`text-2xl font-bold mb-2 ${plan.highlight ? "text-white" : "text-foreground"}`}
                 >
                   {plan.name}
                 </h3>
                 <p
-                  className={`text-sm mb-4 ${plan.highlight ? "text-white/90" : "text-gray-600"}`}
+                  className={`text-sm mb-4 ${plan.highlight ? "text-primary-foreground/90" : "text-muted-foreground"}`}
                 >
                   {plan.desc}
                 </p>
@@ -247,7 +247,7 @@ export default function MembershipPage() {
                   <span className="text-5xl font-bold">{plan.price}</span>
                   <span
                     className={
-                      plan.highlight ? "text-white/80" : "text-gray-600"
+                      plan.highlight ? "text-primary-foreground/80" : "text-muted-foreground"
                     }
                   >
                     {plan.period}
@@ -258,7 +258,7 @@ export default function MembershipPage() {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle
-                        className={`w-5 h-5 ${plan.highlight ? "text-white" : "text-[#DB5425]"}`}
+                        className={`w-5 h-5 ${plan.highlight ? "text-white" : "text-accent"}`}
                       />
                       {feature}
                     </li>
@@ -279,7 +279,7 @@ export default function MembershipPage() {
             ))}
           </div>
 
-          <p className="text-center text-gray-600 mt-8 text-sm">
+          <p className="text-center text-muted-foreground mt-8 text-sm">
             No long-term contract required. Cancel anytime. Both plans include
             emergency 24/7 support.
           </p>
@@ -287,7 +287,7 @@ export default function MembershipPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="FAQ"
@@ -345,7 +345,7 @@ export default function MembershipPage() {
                   </svg>
                 </button>
                 {openAccordion === idx && (
-                  <div className="px-5 py-4 text-gray-700 border-t border-gray-200">
+                  <div className="px-5 py-4 text-foreground border-t border-border">
                     {faq.a}
                   </div>
                 )}
@@ -385,13 +385,13 @@ export default function MembershipPage() {
               <div key={idx} className="card">
                 <div className="flex gap-0.5 mb-3">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <span key={i} className="text-[#DB5425] text-lg">
+                    <span key={i} className="text-accent text-lg">
                       ★
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4">"{testimonial.quote}"</p>
-                <p className="font-bold text-gray-900">{testimonial.name}</p>
+                <p className="text-foreground mb-4">"{testimonial.quote}"</p>
+                <p className="font-bold text-foreground">{testimonial.name}</p>
               </div>
             ))}
           </div>

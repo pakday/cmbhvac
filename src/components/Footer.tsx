@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Facebook, Instagram, Star } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#0D2E47] text-white">
+    <footer className="bg-primary-dark text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -14,9 +14,9 @@ export function Footer() {
               className="flex items-center gap-1 font-bold text-xl mb-3"
             >
               <span>CMB</span>
-              <span className="text-[#DB5425]">HVAC</span>
+              <span className="text-accent">HVAC</span>
             </Link>
-            <p className="text-gray-300 text-sm mb-4">
+            <p className="text-primary-foreground/70 text-sm mb-4">
               Your trusted experts for heating, cooling, and plumbing services
               across Salt Lake City and the Wasatch Front. Locally owned and
               operated.
@@ -24,19 +24,19 @@ export function Footer() {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#DB5425] transition-colors"
+                className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#DB5425] transition-colors"
+                className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a
                 href="#"
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#DB5425] transition-colors"
+                className="w-9 h-9 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-accent transition-colors"
               >
                 <Star className="w-5 h-5" />
               </a>
@@ -48,7 +48,7 @@ export function Footer() {
             <h4 className="font-bold text-sm uppercase tracking-widest mb-4">
               Quick Links
             </h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li>
                 <Link
                   href="/hvac"
@@ -97,7 +97,7 @@ export function Footer() {
             <h4 className="font-bold text-sm uppercase tracking-widest mb-4">
               Services
             </h4>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm text-primary-foreground/70">
               <li>
                 <Link
                   href="/services/ac"
@@ -137,7 +137,7 @@ export function Footer() {
             <h4 className="font-bold text-sm uppercase tracking-widest mb-4">
               Contact Us
             </h4>
-            <ul className="space-y-3 text-sm text-gray-300">
+            <ul className="space-y-3 text-sm text-primary-foreground/70">
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 shrink-0" />
                 <a
@@ -173,7 +173,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/10 pt-6 flex flex-wrap justify-between items-center gap-4 text-sm text-gray-400">
+        <div className="border-t border-primary-foreground/10 pt-6 flex flex-wrap justify-between items-center gap-4 text-sm text-muted-foreground">
           <span>&copy; 2025 CMB HVAC. All Rights Reserved.</span>
           <div className="flex gap-6">
             <Link href="#" className="hover:text-white transition-colors">

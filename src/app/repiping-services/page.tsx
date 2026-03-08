@@ -34,7 +34,7 @@ export default function RepipingServicesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/93 via-[#133F60]/82 to-[#133F60]/45" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/90 via-brand/80 to-brand/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -45,13 +45,13 @@ export default function RepipingServicesPage() {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
               Plumbing Repiping Services in Salt Lake &amp; Davis County
             </h1>
-            <p className="text-lg text-white/85 mb-8 max-w-xl">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
               CMB Plumbing delivers expert repiping and precision plumbing
               solutions across Northern Utah — trusted by homeowners and
               businesses. Specializing in full home repiping, mainline
               replacements, and gas line installations.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-white/80">
+            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
               {[
                 "Whole-Home Repiping",
                 "PEX & Copper",
@@ -59,7 +59,7 @@ export default function RepipingServicesPage() {
                 "Workmanship Guarantee",
               ].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> {t}
+                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
                 </span>
               ))}
             </div>
@@ -86,11 +86,11 @@ export default function RepipingServicesPage() {
                 description="CMB Plumbing delivers expert repiping services and precision plumbing solutions across Northern Utah — trusted by homeowners and businesses alike. Specializing in full home repiping, mainline replacements, and gas line installations, we're committed to enhancing the safety, performance, and value of your property."
               />
               <div className="mt-6 space-y-4">
-                <div className="border-l-4 border-[#DB5425] pl-4">
+                <div className="border-l-4 border-accent pl-4">
                   <h3 className="font-bold mb-1">
                     Whole Home Repiping You Can Rely On
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     If you&apos;re dealing with frequent leaks, low water
                     pressure, or rusty water, it may be time for a full home
                     repipe. CMB Plumbing replaces outdated piping with modern,
@@ -121,7 +121,7 @@ export default function RepipingServicesPage() {
       </section>
 
       {/* SIGNS YOU NEED REPIPING */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Warning Signs"
@@ -157,9 +157,9 @@ export default function RepipingServicesPage() {
               },
             ].map((item, idx) => (
               <div key={idx} className="card">
-                <div className="w-2 h-2 rounded-full bg-[#DB5425] mb-3" />
+                <div className="w-2 h-2 rounded-full bg-accent mb-3" />
                 <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -212,7 +212,7 @@ export default function RepipingServicesPage() {
                       <h4 className="font-semibold text-sm mb-0.5">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-gray-600">{item.desc}</p>
+                      <p className="text-xs text-muted-foreground">{item.desc}</p>
                     </div>
                   </li>
                 ))}
@@ -228,7 +228,7 @@ export default function RepipingServicesPage() {
       </section>
 
       {/* REPIPE TYPES */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Our Services"
@@ -258,7 +258,7 @@ export default function RepipingServicesPage() {
                   {item.icon}
                 </div>
                 <h3 className="font-bold mb-3">{item.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -288,7 +288,7 @@ export default function RepipingServicesPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="FAQ"
@@ -327,7 +327,7 @@ export default function RepipingServicesPage() {
                   />
                 </button>
                 {openAccordion === idx && (
-                  <div className="px-5 py-4 text-sm text-gray-700 border-t border-gray-200 leading-relaxed">
+                  <div className="px-5 py-4 text-sm text-foreground border-t border-border leading-relaxed">
                     {faq.a}
                   </div>
                 )}

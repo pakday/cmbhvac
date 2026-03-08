@@ -143,7 +143,7 @@ export default function PlumbingPage() {
       {/* ══════════════════════════════════════════
           HERO — solid left content · faded right image
       ══════════════════════════════════════════ */}
-      <section className="hero-dark relative min-h-[75vh] flex items-center overflow-hidden bg-[#0D2E47]">
+      <section className="hero-dark relative min-h-[75vh] flex items-center overflow-hidden bg-primary-dark">
         {/* dot texture over entire section */}
         <div
           className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -164,27 +164,27 @@ export default function PlumbingPage() {
             priority
           />
           {/* fade-left mask — blends image into the dark bg */}
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47] via-[#0D2E47]/60 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark via-primary-dark/60 to-transparent" />
           {/* subtle bottom & top vignette */}
-          <div className="absolute inset-0 bg-linear-to-b from-[#0D2E47]/30 via-transparent to-[#0D2E47]/40" />
+          <div className="absolute inset-0 bg-linear-to-b from-primary-dark/30 via-transparent to-primary-dark/40" />
         </div>
 
         {/* LEFT — content */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 w-full">
           <div className="max-w-xl">
             {/* eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white/70 mb-7">
-              <WaterDropIcon className="w-3.5 h-3.5 text-[#DB5425]" />
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary-foreground/70 mb-7">
+              <WaterDropIcon className="w-3.5 h-3.5 text-accent" />
               CMB Plumbing · Northern Utah
             </div>
 
-            <h1 className="text-5xl md:text-[4rem] font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="text-5xl md:text-display font-black leading-[1.02] tracking-tight mb-6">
               Plumbing You Can
               <br />
-              <span className="text-[#DB5425]">Count On.</span>
+              <span className="text-accent">Count On.</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-white/75 leading-relaxed mb-10">
+            <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-10">
               Burst pipe? Backed-up drain? We&apos;re already on the way. Fast,
               honest, and guaranteed — locally owned and operated.
             </p>
@@ -216,9 +216,9 @@ export default function PlumbingPage() {
               ].map((t) => (
                 <span
                   key={t}
-                  className="inline-flex items-center gap-1 text-xs text-white/50 font-medium"
+                  className="inline-flex items-center gap-1 text-xs text-primary-foreground/50 font-medium"
                 >
-                  <CheckCircle className="w-3 h-3 text-[#DB5425]/70" />
+                  <CheckCircle className="w-3 h-3 text-accent/70" />
                   {t}
                 </span>
               ))}
@@ -230,7 +230,7 @@ export default function PlumbingPage() {
       {/* ══════════════════════════════════════════
           CREDENTIAL STRIP
       ══════════════════════════════════════════ */}
-      <div className="bg-white border-b border-gray-100">
+      <div className="bg-white border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-gray-100">
             {CREDENTIALS.map((c) => (
@@ -246,7 +246,7 @@ export default function PlumbingPage() {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-sm font-bold text-gray-800 tracking-wide">
+                <span className="text-sm font-bold text-foreground tracking-wide">
                   {c.label}
                 </span>
               </div>
@@ -265,9 +265,9 @@ export default function PlumbingPage() {
             <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
               Everything Plumbing,
               <br />
-              <span className="text-[#133F60]">Under One Roof</span>
+              <span className="text-primary">Under One Roof</span>
             </h2>
-            <p className="text-gray-500 text-lg">
+            <p className="text-muted-foreground text-lg">
               From a dripping faucet to a complete home repipe — our licensed
               plumbers cover it all across Northern Utah.
             </p>
@@ -278,7 +278,7 @@ export default function PlumbingPage() {
               <Link
                 key={idx}
                 href={s.href}
-                className="group relative flex flex-col rounded-3xl border border-gray-200 bg-white p-7 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                className="group relative flex flex-col rounded-3xl border border-border bg-white p-7 shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 <div className="relative w-16 h-16 mb-5 shrink-0">
                   <Image
@@ -289,14 +289,14 @@ export default function PlumbingPage() {
                   />
                 </div>
 
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#DB5425] transition-colors">
+                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-accent transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-sm text-gray-500 leading-relaxed flex-1">
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                   {s.desc}
                 </p>
 
-                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#DB5425]">
+                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent">
                   Learn More
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
@@ -320,20 +320,20 @@ export default function PlumbingPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-[#0D2E47]/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-primary-dark/60 via-transparent to-transparent" />
               </div>
 
               {/* floating badge */}
-              <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-white rounded-2xl p-5 shadow-2xl border border-gray-100 max-w-xs">
+              <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-white rounded-2xl p-5 shadow-2xl border border-border max-w-xs">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-xl bg-[#DB5425]/10 flex items-center justify-center shrink-0">
-                    <CheckCircle className="w-5 h-5 text-[#DB5425]" />
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                    <CheckCircle className="w-5 h-5 text-accent" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 font-medium">
+                    <p className="text-xs text-muted-foreground font-medium">
                       Every job backed by our
                     </p>
-                    <p className="text-sm font-bold text-gray-900">
+                    <p className="text-sm font-bold text-foreground">
                       Workmanship Guarantee
                     </p>
                   </div>
@@ -346,9 +346,9 @@ export default function PlumbingPage() {
               <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
                 What You Need,
                 <br />
-                <span className="text-[#DB5425]">Today.</span>
+                <span className="text-accent">Today.</span>
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 When plumbing problems strike, you don&apos;t have time to wait
                 — and at CMB Plumbing, locally owned and operated, we don&apos;t
                 make you. Whether it&apos;s a burst pipe at midnight, a clogged
@@ -356,7 +356,7 @@ export default function PlumbingPage() {
                 precision and speed, our licensed pros show up fast, fix it
                 right, and leave your home cleaner than we found it.
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed mb-10">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
                 Backed by years of experience, five-star reviews, and honest
                 pricing — CMB Plumbing is the trusted name homeowners call first
                 and the only one they ever need to call again.
@@ -371,12 +371,12 @@ export default function PlumbingPage() {
                 ].map((stat) => (
                   <div
                     key={stat.l}
-                    className="rounded-2xl bg-white border border-gray-200 p-5"
+                    className="rounded-2xl bg-white border border-border p-5"
                   >
-                    <p className="text-2xl font-black text-[#DB5425]">
+                    <p className="text-2xl font-black text-accent">
                       {stat.n}
                     </p>
-                    <p className="text-xs text-gray-500 font-medium mt-0.5">
+                    <p className="text-xs text-muted-foreground font-medium mt-0.5">
                       {stat.l}
                     </p>
                   </div>
@@ -408,7 +408,7 @@ export default function PlumbingPage() {
             fill
             className="object-cover object-center"
           />
-          <div className="absolute inset-0 bg-[#071c2e]/96" />
+          <div className="absolute inset-0 bg-[#071c2e]/100" />
           <div
             className="absolute inset-0 opacity-[0.05]"
             style={{
@@ -422,18 +422,18 @@ export default function PlumbingPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="text-white">
-              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white/70 mb-8">
-                <Camera className="w-3.5 h-3.5 text-[#DB5425]" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary-foreground/70 mb-8">
+                <Camera className="w-3.5 h-3.5 text-accent" />
                 Snap &amp; Send
               </div>
 
               <h2 className="text-4xl md:text-5xl text-white tracking-tight leading-tight mb-5">
                 Schedule an
                 <br />
-                <span className="text-[#DB5425]">In-Home Visit</span>
+                <span className="text-accent">In-Home Visit</span>
               </h2>
 
-              <p className="text-lg text-white/90 leading-relaxed mb-4">
+              <p className="text-lg text-primary-foreground/90 leading-relaxed mb-4">
                 What&apos;s the easiest way to check your plumbing problem
                 today?
               </p>
@@ -445,7 +445,7 @@ export default function PlumbingPage() {
                 solved today.
               </p>
 
-              <p className="text-xl font-bold text-[#DB5425] mb-10">
+              <p className="text-xl font-bold text-accent mb-10">
                 We make sure you are satisfied!
               </p>
 
@@ -468,33 +468,33 @@ export default function PlumbingPage() {
             </div>
 
             {/* steps card */}
-            <div className="bg-[#0d2640] border border-white/10 rounded-3xl p-8 md:p-10">
+            <div className="bg-[#0d2640] border border-primary-foreground/10 rounded-3xl p-8 md:p-10">
               <h3 className="text-white font-bold text-xl mb-7">
                 Your 30-Minute Home Visit
               </h3>
               <ol className="space-y-6">
                 {STEPS.map((s) => (
                   <li key={s.num} className="flex gap-4 items-start">
-                    <div className="w-9 h-9 rounded-full bg-[#DB5425]/20 border border-[#DB5425]/40 flex items-center justify-center shrink-0 text-[#DB5425] text-xs font-black">
+                    <div className="w-9 h-9 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center shrink-0 text-accent text-xs font-black">
                       {s.num}
                     </div>
                     <div>
                       <p className="text-white font-semibold text-sm mb-0.5">
                         {s.title}
                       </p>
-                      <p className="text-white/75 text-sm leading-relaxed">
+                      <p className="text-primary-foreground/80 text-sm leading-relaxed">
                         {s.body}
                       </p>
                     </div>
                   </li>
                 ))}
               </ol>
-              <div className="mt-8 pt-7 border-t border-white/10">
+              <div className="mt-8 pt-7 border-t border-primary-foreground/10">
                 <a
                   href="tel:3858656749"
-                  className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-white text-sm font-semibold transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-[#DB5425]" />
+                  <Phone className="w-4 h-4 text-accent" />
                   Give us a call if you have questions
                 </a>
               </div>
@@ -514,9 +514,9 @@ export default function PlumbingPage() {
               <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-5">
                 Got Questions?
                 <br />
-                <span className="text-[#133F60]">Straight Answers.</span>
+                <span className="text-primary">Straight Answers.</span>
               </h2>
-              <p className="text-gray-500 text-lg leading-relaxed mb-8">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 At CMB Plumbing, peace of mind starts with clarity. Quick,
                 honest answers so you know exactly what to expect before we even
                 knock on your door.
@@ -533,26 +533,26 @@ export default function PlumbingPage() {
                   <div
                     key={idx}
                     className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                      open ? "border-[#DB5425]/40 shadow-md" : "border-gray-200"
+                      open ? "border-accent/40 shadow-md" : "border-border"
                     }`}
                   >
                     <button
                       onClick={() => setOpenAccordion(open ? null : idx)}
-                      className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-gray-50 transition-colors"
+                      className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-muted transition-colors"
                     >
                       <span
-                        className={`font-semibold text-base transition-colors ${open ? "text-[#DB5425]" : "text-gray-900"}`}
+                        className={`font-semibold text-base transition-colors ${open ? "text-accent" : "text-foreground"}`}
                       >
                         {faq.q}
                       </span>
                       <ChevronDown
-                        className={`w-5 h-5 shrink-0 transition-transform duration-300 ${open ? "rotate-180 text-[#DB5425]" : "text-gray-400"}`}
+                        className={`w-5 h-5 shrink-0 transition-transform duration-300 ${open ? "rotate-180 text-accent" : "text-muted-foreground"}`}
                       />
                     </button>
                     <div
                       className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96" : "max-h-0"}`}
                     >
-                      <p className="px-6 pb-6 pt-1 text-gray-600 text-sm leading-relaxed border-t border-gray-100">
+                      <p className="px-6 pb-6 pt-1 text-muted-foreground text-sm leading-relaxed border-t border-border">
                         {faq.a}
                       </p>
                     </div>

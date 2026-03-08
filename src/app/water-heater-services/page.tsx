@@ -35,7 +35,7 @@ export default function WaterHeaterServicesPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-[#0D2E47]/93 via-[#133F60]/82 to-[#133F60]/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/90 via-brand/80 to-brand/40" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="max-w-2xl">
@@ -47,13 +47,13 @@ export default function WaterHeaterServicesPage() {
               Water Heater Repair &amp; Installation in Salt Lake &amp; Davis
               County
             </h1>
-            <p className="text-lg text-white/85 mb-8 max-w-xl">
+            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
               Hot water isn&apos;t a luxury — it&apos;s a necessity. From fast
               expert repairs to seamless installations and high-efficiency
               replacements, CMB Plumbing keeps your water heater delivering
               comfort and reliability every day.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-white/80">
+            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
               {[
                 "Same-Day Diagnostics",
                 "Tank & Tankless",
@@ -61,7 +61,7 @@ export default function WaterHeaterServicesPage() {
                 "Satisfaction Guaranteed",
               ].map((t) => (
                 <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-[#DB5425]" /> {t}
+                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
                 </span>
               ))}
             </div>
@@ -88,11 +88,11 @@ export default function WaterHeaterServicesPage() {
                 description="At CMB Plumbing, we make sure your water heater delivers comfort, efficiency, and reliability every single day. Our certified plumbing team serves homeowners in Bountiful, Salt Lake City, Ogden, Layton, and surrounding Utah communities with precision and care."
               />
               <div className="mt-6 space-y-4">
-                <div className="border-l-4 border-[#DB5425] pl-4">
+                <div className="border-l-4 border-accent pl-4">
                   <h3 className="font-bold mb-1">
                     Expert Water Heater Repairs — Fast, Accurate, Hassle-Free
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     No hot water? Strange noises? Inconsistent temperatures?
                     Whether you own a traditional tank unit or a tankless water
                     heater, CMB Plumbing offers same-day diagnostic and repair
@@ -124,7 +124,7 @@ export default function WaterHeaterServicesPage() {
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Why CMB Plumbing?"
@@ -157,7 +157,7 @@ export default function WaterHeaterServicesPage() {
               <div key={idx} className="card text-center">
                 <div className="icon-box mx-auto mb-4">{item.icon}</div>
                 <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -210,7 +210,7 @@ export default function WaterHeaterServicesPage() {
                     {service.icon}
                   </div>
                   <h3 className="font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed flex-1">
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                     {service.desc}
                   </p>
                   <Link
@@ -227,7 +227,7 @@ export default function WaterHeaterServicesPage() {
       </section>
 
       {/* BENEFITS OF REPLACEMENT */}
-      <section className="bg-gray-50 py-20 md:py-28">
+      <section className="bg-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative rounded-2xl overflow-hidden min-h-[400px]">
@@ -269,9 +269,9 @@ export default function WaterHeaterServicesPage() {
                 ].map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-3 text-sm text-gray-700"
+                    className="flex items-start gap-3 text-sm text-foreground"
                   >
-                    <span className="text-[#DB5425] mt-0.5 shrink-0">
+                    <span className="text-accent mt-0.5 shrink-0">
                       {item.icon}
                     </span>
                     {item.text}
@@ -332,7 +332,7 @@ export default function WaterHeaterServicesPage() {
                   />
                 </button>
                 {openAccordion === idx && (
-                  <div className="px-5 py-4 text-sm text-gray-700 border-t border-gray-200 leading-relaxed">
+                  <div className="px-5 py-4 text-sm text-foreground border-t border-border leading-relaxed">
                     {faq.a}
                   </div>
                 )}
