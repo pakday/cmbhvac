@@ -153,7 +153,6 @@ export function Navbar() {
                   {item.submenu ? (
                     <>
                       <button className="flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-gray-700 hover:text-[#133F60] hover:bg-gray-50 transition-colors text-sm">
-                        {item.icon}
                         {item.label}
                         <ChevronDown className="w-3.5 h-3.5 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
                       </button>
@@ -185,7 +184,6 @@ export function Navbar() {
                       href={item.href!}
                       className="flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-gray-700 hover:text-[#133F60] hover:bg-gray-50 transition-colors text-sm"
                     >
-                      {item.icon}
                       {item.label}
                     </Link>
                   )}
