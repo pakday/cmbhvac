@@ -41,11 +41,6 @@ export function Navbar() {
           href: "/hvac",
           desc: "Fast repairs + high-efficiency systems",
         },
-        {
-          label: "All HVAC Services",
-          href: "/services",
-          desc: "Full range of heating solutions",
-        },
       ],
     },
     {
