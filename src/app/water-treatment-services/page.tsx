@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SectionHeader } from "@/components/SectionHeader";
 import { CTABanner } from "@/components/CTABanner";
+import { PageCTA } from "@/components/PageCTA";
 import {
   CheckCircle,
   ArrowRight,
@@ -16,240 +16,369 @@ import {
   Sparkles,
   Leaf,
 } from "lucide-react";
-import { useState } from "react";
+
+/* ─── data ─────────────────────────────────────────────── */
+
+const WHY_US = [
+  {
+    icon: <Droplets className="w-5 h-5" />,
+    title: "Local Water Quality Expertise",
+    desc: "We understand Utah's unique water composition and tailor our solutions accordingly.",
+  },
+  {
+    icon: <ShieldCheck className="w-5 h-5" />,
+    title: "Certified Installers & Technicians",
+    desc: "Our licensed pros install every system to the highest standards — backed by warranties and satisfaction guarantees.",
+  },
+  {
+    icon: <Sparkles className="w-5 h-5" />,
+    title: "Customized, Affordable Options",
+    desc: "We offer scalable water treatment systems for every home, budget, and family size.",
+  },
+  {
+    icon: <Leaf className="w-5 h-5" />,
+    title: "Ongoing Support & Maintenance",
+    desc: "Enjoy peace of mind with responsive service, annual maintenance, and system upgrades when needed.",
+  },
+];
+
+const SERVICES = [
+  {
+    icon: <Filter className="w-5 h-5" />,
+    title: "Water Softener Installation",
+    desc: "Tired of dealing with hard water buildup, dry skin, or stained fixtures? Our expert water softener installation and maintenance services protect your plumbing, appliances, and health. Our systems extend the lifespan of your pipes while delivering softer, cleaner water throughout your home.",
+  },
+  {
+    icon: <Droplets className="w-5 h-5" />,
+    title: "Reverse Osmosis Systems",
+    desc: "Take your water purity to the next level. CMB Plumbing installs high-efficiency reverse osmosis systems that remove up to 99% of contaminants — including lead, chlorine, fluoride, and other harmful substances. Every glass of water is crystal clear and worry-free.",
+  },
+  {
+    icon: <Sparkles className="w-5 h-5" />,
+    title: "Whole-Home Water Filtration",
+    desc: "Clean, healthy water doesn't stop at the kitchen sink. Our whole-home water filtration services ensure every faucet delivers safe, filtered water — ideal for bathing, cooking, and cleaning. We install sediment filters, carbon filtration, and multi-stage systems targeting Utah's specific water conditions.",
+  },
+];
+
+/* ─── component ─────────────────────────────────────────── */
 
 export default function WaterTreatmentServicesPage() {
-  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-
   return (
     <>
       <Navbar />
 
-      {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
-        <div className="absolute inset-0 -z-10">
+      {/* ══════════════════════════════════════════
+          HERO — solid left · faded right image
+      ══════════════════════════════════════════ */}
+      <section className="hero-dark relative min-h-[75vh] flex items-center overflow-hidden bg-primary-dark">
+        {/* dot texture */}
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+
+        {/* RIGHT — faded image */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[55%] pointer-events-none">
           <Image
-            src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80"
-            alt="Clean water treatment"
+            src="https://cmbhvac.com/wp-content/uploads/2025/06/cmb-plumbing-water-treatment-1.jpg"
+            alt="Water Treatment Services"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/90 via-brand/80 to-brand/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark via-primary-dark/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-b from-primary-dark/30 via-transparent to-primary-dark/40" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-2xl">
-            <div className="badge badge-white mb-5">
-              <Filter className="w-3.5 h-3.5" />
-              Water Treatment Services
+
+        {/* LEFT — content */}
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 w-full">
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary-foreground/70 mb-7">
+              <Filter className="w-3.5 h-3.5 text-accent" />
+              CMB Plumbing · Northern Utah
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
-              Utah&apos;s Top Water Treatment Services in Salt Lake &amp; Davis
-              County
+
+            <h1 className="text-5xl md:text-display font-black leading-[1.02] tracking-tight mb-6">
+              Water Treatment
+              <br />
+              <span className="text-accent">Done Right.</span>
             </h1>
+
+            <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-10">
+              Utah&apos;s trusted leader in professional water treatment — from
+              whole-home water softeners to advanced reverse osmosis
+              installations. Serving Salt Lake &amp; Davis County with expert
+              care at every tap.
+            </p>
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
               Upgrade your water quality with confidence. CMB Plumbing is
               Utah&apos;s trusted leader in professional water treatment — from
               whole-home water softeners to advanced reverse osmosis
               installations.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
+            <div className="flex flex-wrap gap-4 mb-8">
+              <Link
+                href="/contact"
+                className="btn-primary text-base py-3.5 px-8"
+              >
+                Book a Water Treatment Service
+              </Link>
+              <a
+                href="tel:3858656749"
+                className="btn-outline-white text-base py-3.5 px-8"
+              >
+                <Phone className="w-4 h-4" />
+                (385) 865-6749
+              </a>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
               {[
                 "Water Softeners",
                 "Reverse Osmosis",
                 "Whole-Home Filtration",
                 "Utah Experts",
               ].map((t) => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
+                <span
+                  key={t}
+                  className="inline-flex items-center gap-1 text-xs text-primary-foreground/50 font-medium"
+                >
+                  <CheckCircle className="w-3 h-3 text-accent/70" />
+                  {t}
                 </span>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">
-                Book Water Treatment Service
-              </Link>
-              <a href="tel:3858656749" className="btn-outline-white">
-                <Phone className="w-4 h-4" /> (385) 865-6749
-              </a>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="py-20 md:py-28">
+      {/* ══════════════════════════════════════════
+          INTRO — copy left · image right
+      ══════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
-              <SectionHeader
-                eyebrow="Water Treatment"
-                title="Water Treatment &amp; Services in Salt Lake &amp; Davis County"
-                description="CMB Plumbing provides tailored solutions that ensure clean, safe, and great-tasting water for your family or business. Serving Bountiful, Salt Lake City, Ogden, Layton, West Valley City, Millcreek, Roy, and Draper — we bring expert care to every tap."
-              />
-              <div className="mt-6 space-y-4">
-                <div className="border-l-4 border-accent pl-4">
-                  <h3 className="font-bold mb-1">
-                    Water Softener Installation for Healthier Homes
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Tired of hard water buildup, dry skin, or stained fixtures?
-                    CMB Plumbing offers expert water softener installation and
-                    maintenance that protects your plumbing, appliances, and
-                    health. Our systems extend the lifespan of your pipes while
-                    delivering softer, cleaner water throughout your home.
-                  </p>
-                </div>
+              <span className="eyebrow">Water Treatment Services</span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+                Water Treatment Repair&nbsp;&amp;&nbsp;Services in
+                <br />
+                <span className="text-primary">
+                  Salt Lake &amp; Davis County
+                </span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Upgrade your water quality with confidence — CMB Plumbing is
+                Utah&apos;s trusted leader in professional water treatment
+                system services. We provide tailored solutions that ensure
+                clean, safe, and great-tasting water for your family or
+                business. Serving Bountiful, Salt Lake City, Ogden, Layton, West
+                Valley City, Millcreek, Roy, and Draper, we bring expert care to
+                every tap.
+              </p>
+              <div className="border-l-4 border-accent pl-4 mb-10">
+                <h3 className="font-bold mb-1">
+                  Water Softener Installation for Healthier Homes and
+                  Longer-Lasting Plumbing
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Tired of dealing with hard water buildup, dry skin, or stained
+                  fixtures? CMB Plumbing offers expert water softener
+                  installation and maintenance services that protect your
+                  plumbing, appliances, and health. Our systems are designed to
+                  extend the lifespan of your pipes while delivering softer,
+                  cleaner water throughout your home.
+                </p>
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="btn-primary">
-                  Get a Free Assessment
+                  Book Our Expert Techs
                 </Link>
                 <a href="tel:3858656749" className="btn-secondary">
-                  <Phone className="w-4 h-4" /> Call Us
+                  <Phone className="w-4 h-4" />
+                  Call Now
                 </a>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden min-h-[420px]">
-              <Image
-                src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=900&q=80"
-                alt="Clean drinking water"
-                fill
-                className="object-cover"
-              />
+
+            {/* image with floating badge */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden min-h-115 md:min-h-135 lg:h-155">
+                <Image
+                  src="https://cmbhvac.com/wp-content/uploads/2025/06/cmb-plumbing-water-treatment-1.jpg"
+                  alt="CMB Plumbing Water Treatment"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-primary-dark/50 via-transparent to-transparent" />
+              </div>
+              <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-white rounded-2xl p-5 shadow-2xl border border-border max-w-xs">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                    <Filter className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">
+                      Utah-tailored solutions
+                    </p>
+                    <p className="text-sm font-bold text-foreground">
+                      Expert Water Treatment
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE */}
-      <section className="bg-muted py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Why CMB Plumbing?"
-            title="Why More Utah Residents Choose CMB Plumbing for Water Treatment"
-            centered
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {[
-              {
-                icon: <Droplets className="w-5 h-5" />,
-                title: "Local Water Expertise",
-                desc: "We understand Utah's unique water composition and tailor our solutions accordingly.",
-              },
-              {
-                icon: <ShieldCheck className="w-5 h-5" />,
-                title: "Certified Technicians",
-                desc: "Licensed pros install every system to the highest standards — backed by warranties.",
-              },
-              {
-                icon: <Sparkles className="w-5 h-5" />,
-                title: "Customized Options",
-                desc: "Scalable water treatment systems for every home, budget, and family size.",
-              },
-              {
-                icon: <Leaf className="w-5 h-5" />,
-                title: "Ongoing Support",
-                desc: "Responsive service, annual maintenance checks, and system upgrades when needed.",
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="card text-center">
-                <div className="icon-box mx-auto mb-4">{item.icon}</div>
-                <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ══════════════════════════════════════════
+          WHY CHOOSE — dark immersive
+      ══════════════════════════════════════════ */}
+      <section className="relative py-24 md:py-32 overflow-hidden bg-primary-dark">
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "28px 28px",
+          }}
+        />
 
-      {/* SERVICES */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Our Services"
-            title="We Fix Any Water System Issue"
-            centered
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {[
-              {
-                icon: <Filter className="w-5 h-5" />,
-                title: "Water Softener Installation",
-                img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80",
-                desc: "Tired of hard water buildup and stained fixtures? Our water softener systems are designed to extend the lifespan of your pipes, appliances, and fixtures while delivering softer, cleaner water.",
-              },
-              {
-                icon: <Droplets className="w-5 h-5" />,
-                title: "Reverse Osmosis Systems",
-                img: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80",
-                desc: "CMB Plumbing installs high-efficiency reverse osmosis systems that remove up to 99% of contaminants — including lead, chlorine, fluoride, and other harmful substances. Crystal clear water, every glass.",
-              },
-              {
-                icon: <Sparkles className="w-5 h-5" />,
-                title: "Whole-Home Water Filtration",
-                img: "https://images.unsplash.com/photo-1582616698198-f978da534162?w=600&q=80",
-                desc: "Clean, healthy water at every faucet. Our whole-home filtration systems ensure every tap delivers safe, filtered water — ideal for bathing, cooking, and cleaning. Targeting Utah-specific water impurities.",
-              },
-            ].map((service, idx) => (
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-accent">
+              Why CMB Plumbing?
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white mb-5">
+              Why More Utah Residents
+              <br />
+              <span className="text-accent">Choose CMB Plumbing</span>
+            </h2>
+            <p className="text-primary-foreground/70 text-lg leading-relaxed">
+              We understand Utah&apos;s unique water composition and bring
+              certified expertise, affordable options, and ongoing support to
+              every water treatment project we take on.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {WHY_US.map((item, idx) => (
               <div
                 key={idx}
-                className="card overflow-hidden !p-0 flex flex-col"
+                className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-3xl p-7 hover:bg-primary-foreground/13 transition-colors"
               >
-                <div className="relative h-44 w-full">
-                  <Image
-                    src={service.img}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="w-11 h-11 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center text-accent mb-5">
+                  {item.icon}
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="icon-box icon-box-secondary mb-3">
-                    {service.icon}
-                  </div>
-                  <h3 className="font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                    {service.desc}
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="btn-ghost text-sm inline-flex items-center gap-1 mt-4"
-                  >
-                    Get a Quote <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
+                <h3 className="text-white font-bold mb-2">{item.title}</h3>
+                <p className="text-primary-foreground/60 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* UTAH WATER QUALITY */}
-      <section className="bg-muted py-20 md:py-28">
+      {/* ══════════════════════════════════════════
+          SERVICES GRID
+      ══════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-[#f7f8fa]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative rounded-2xl overflow-hidden min-h-[380px]">
+          <div className="max-w-2xl mb-14">
+            <span className="eyebrow">Our Services</span>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+              We Fix Any of Your
+              <br />
+              <span className="text-primary">Water System Issues</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              From water softeners to reverse osmosis and whole-home filtration
+              — our licensed technicians handle it all across Northern Utah.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((s, idx) => (
+              <article
+                key={idx}
+                className="group relative bg-card rounded-2xl p-8 shadow-sm border border-border/50 hover:border-accent/30 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors text-accent">
+                  {s.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {s.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {s.desc}
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
+                >
+                  Get a Quote
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl" />
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          PAGE CTA STRIP
+      ══════════════════════════════════════════ */}
+      <PageCTA
+        eyebrow="Ready for Expert Help?"
+        message="CMB Plumbing provides fast plumbing services in Salt Lake City and the surrounding areas."
+        buttonText="Book Our Expert Techs"
+        buttonHref="/contact"
+      />
+
+      {/* ══════════════════════════════════════════
+          IMAGE + COPY — image left · copy right
+      ══════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            {/* image */}
+            <div className="relative rounded-3xl overflow-hidden lg:h-130 aspect-4/5 lg:aspect-auto">
               <Image
-                src="https://images.unsplash.com/photo-1624365169198-38255b2c8df5?w=900&q=80"
-                alt="Utah water quality treatment"
+                src="https://cmbhvac.com/wp-content/uploads/2025/06/cmb-plumbing-water-treatment-2.jpg"
+                alt="CMB Plumbing water treatment system"
                 fill
                 className="object-cover"
               />
+              <div className="absolute inset-0 bg-linear-to-t from-primary-dark/50 via-transparent to-transparent" />
             </div>
+
+            {/* copy */}
             <div>
-              <SectionHeader
-                eyebrow="Utah Water Quality"
-                title="Better Water Starts with One Simple Step"
-                description="Better water starts with one simple step — contact CMB Plumbing for trusted water treatment services that transform your tap. Utah's water is among the hardest in the nation. We know your local water composition and tailor every solution to address it."
-              />
-              <ul className="mt-8 space-y-3">
+              <span className="eyebrow">Better Water Starts Here</span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+                Schedule Your
+                <br />
+                <span className="text-accent">Water Treatment Service</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Better water starts with one simple step — contact CMB Plumbing
+                for trusted water treatment services that transform your tap.
+                Book your appointment today and enjoy cleaner, healthier water
+                tomorrow.
+              </p>
+              <ul className="space-y-3 mb-10">
                 {[
-                  "Hard water causes scale buildup in pipes, reducing flow and lifespan",
-                  "Salt Lake Valley water averages 250–350 ppm hardness — well above soft water threshold",
+                  "Utah's water is among the hardest in the nation — we know your local composition",
                   "Whole-home softeners protect your water heater, dishwasher, and all appliances",
-                  "RO systems remove 99%+ of contaminants for safe drinking water",
-                  "Filtered water improves taste, clarity, and peace of mind",
+                  "RO systems remove 99%+ of contaminants for safe, great-tasting drinking water",
+                  "Filtered water improves taste, clarity, and peace of mind for your entire family",
                 ].map((point, i) => (
                   <li
                     key={i}
@@ -260,66 +389,16 @@ export default function WaterTreatmentServicesPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8">
+              <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="btn-primary">
-                  Book Your Appointment Today
+                  Book Your Appointment Here
                 </Link>
+                <a href="tel:3858656749" className="btn-secondary">
+                  <Phone className="w-4 h-4" />
+                  Call Now
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="FAQ"
-            title="Water Treatment Questions Answered"
-            centered
-          />
-          <div className="max-w-2xl mx-auto mt-12 space-y-3">
-            {[
-              {
-                q: "How do I know if I need a water softener?",
-                a: "Signs include white scale buildup on fixtures and appliances, dry skin and hair after showering, soap that doesn't lather well, and stained laundry. Utah's water is notoriously hard — a softener is almost always beneficial.",
-              },
-              {
-                q: "What's the difference between a water softener and a water filter?",
-                a: "Water softeners remove hardness minerals (calcium and magnesium) through ion exchange. Water filters remove contaminants like chlorine, lead, and sediment. Many homes benefit from both.",
-              },
-              {
-                q: "Does reverse osmosis remove all contaminants?",
-                a: "RO systems remove up to 99% of dissolved solids including lead, chlorine, fluoride, nitrates, and many other contaminants. It's one of the most comprehensive filtration methods available.",
-              },
-              {
-                q: "How often does a water softener need maintenance?",
-                a: "Water softeners need salt refills every 4–8 weeks depending on your water hardness and usage. We offer annual maintenance plans to keep your system running optimally.",
-              },
-              {
-                q: "Do you offer financing?",
-                a: "Yes — we work with multiple banks and can help find 0% financing for 36–60 months on qualifying water treatment systems.",
-              },
-            ].map((faq, idx) => (
-              <div key={idx} className="accordion-item">
-                <button
-                  onClick={() =>
-                    setOpenAccordion(openAccordion === idx ? null : idx)
-                  }
-                  className="accordion-trigger w-full text-left"
-                >
-                  <span>{faq.q}</span>
-                  <ArrowRight
-                    className={`w-4 h-4 shrink-0 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`}
-                  />
-                </button>
-                {openAccordion === idx && (
-                  <div className="px-5 py-4 text-sm text-foreground border-t border-border leading-relaxed">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            ))}
           </div>
         </div>
       </section>

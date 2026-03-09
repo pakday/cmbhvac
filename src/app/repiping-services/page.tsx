@@ -4,8 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { SectionHeader } from "@/components/SectionHeader";
 import { CTABanner } from "@/components/CTABanner";
+import { PageCTA } from "@/components/PageCTA";
 import {
   CheckCircle,
   ArrowRight,
@@ -13,252 +13,258 @@ import {
   GitBranch,
   ShieldCheck,
   Clock,
-  DollarSign,
+  Flame,
 } from "lucide-react";
-import { useState } from "react";
+
+/* ─── data ─────────────────────────────────────────────── */
+
+const WHY_US = [
+  {
+    icon: <ShieldCheck className="w-5 h-5" />,
+    title: "Certified, Experienced Technicians",
+    desc: "Our highly trained team brings years of specialized plumbing experience to every repiping job.",
+  },
+  {
+    icon: <Clock className="w-5 h-5" />,
+    title: "Reliable and On-Time Service",
+    desc: "We respect your time and your property — showing up on schedule and delivering quality without delay.",
+  },
+  {
+    icon: <ShieldCheck className="w-5 h-5" />,
+    title: "Workmanship Guaranteed",
+    desc: "Every project is backed by our satisfaction guarantee, so you can book with complete confidence.",
+  },
+  {
+    icon: <CheckCircle className="w-5 h-5" />,
+    title: "Transparent, Upfront Pricing",
+    desc: "No hidden fees. Just honest work at fair prices — presented before we begin.",
+  },
+];
+
+const SERVICES = [
+  {
+    icon: <GitBranch className="w-5 h-5" />,
+    title: "Whole-Home Repiping",
+    desc: "If you're dealing with frequent leaks, low water pressure, or rusty water, it may be time for a full home repipe. CMB Plumbing replaces outdated piping with modern, long-lasting materials like PEX or copper — improving water quality, system reliability, and overall peace of mind. Our skilled technicians complete projects efficiently with minimal disruption.",
+  },
+  {
+    icon: <Clock className="w-5 h-5" />,
+    title: "Mainline Replacements",
+    desc: "A damaged or aging water main can lead to serious property damage. CMB Plumbing provides fast, expert mainline replacement services using high-performance materials built to withstand the elements and time. Whether it's due to pipe corrosion, soil movement, or invasive tree roots, we diagnose and resolve mainline issues before they become emergencies.",
+  },
+  {
+    icon: <Flame className="w-5 h-5" />,
+    title: "Safe & Certified Gas Line Installations",
+    desc: "When it comes to gas line installations, precision isn't optional — it's essential. CMB Plumbing's licensed professionals are trained to install new gas lines safely and in full compliance with building codes. Whether connecting a gas stove, installing an outdoor fire pit, or running gas to a new addition, we guarantee safety, reliability, and long-term performance.",
+  },
+];
+
+/* ─── component ─────────────────────────────────────────── */
 
 export default function RepipingServicesPage() {
-  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
-
   return (
     <>
       <Navbar />
 
-      {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
-        <div className="absolute inset-0 -z-10">
+      {/* ══════════════════════════════════════════
+          HERO — solid left · faded right image
+      ══════════════════════════════════════════ */}
+      <section className="hero-dark relative min-h-[75vh] flex items-center overflow-hidden bg-primary-dark">
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+
+        <div className="absolute inset-y-0 right-0 w-full lg:w-[55%] pointer-events-none">
           <Image
-            src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1600&q=80"
-            alt="Repiping services"
+            src="https://cmbhvac.com/wp-content/uploads/2025/06/cmb-plumbing-repiping-1.jpg"
+            alt="Plumbing Repiping Services"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/90 via-brand/80 to-brand/40" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary-dark via-primary-dark/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-b from-primary-dark/30 via-transparent to-primary-dark/40" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-2xl">
-            <div className="badge badge-white mb-5">
-              <GitBranch className="w-3.5 h-3.5" />
-              Repiping Services
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36 w-full">
+          <div className="max-w-xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary-foreground/70 mb-7">
+              <GitBranch className="w-3.5 h-3.5 text-accent" />
+              CMB Plumbing · Northern Utah
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
-              Plumbing Repiping Services in Salt Lake &amp; Davis County
+
+            <h1 className="text-5xl md:text-display font-black leading-[1.02] tracking-tight mb-6">
+              Repiping Services
+              <br />
+              <span className="text-accent">Done Right.</span>
             </h1>
-            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
-              CMB Plumbing delivers expert repiping and precision plumbing
-              solutions across Northern Utah — trusted by homeowners and
-              businesses. Specializing in full home repiping, mainline
-              replacements, and gas line installations.
+
+            <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-10">
+              Expert repiping services and precision plumbing solutions across
+              Northern Utah — specializing in full home repiping, mainline
+              replacements, and gas line installations in Salt Lake &amp; Davis
+              County.
             </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
+
+            <div className="flex flex-wrap gap-4 mb-8">
+              <Link
+                href="/contact"
+                className="btn-primary text-base py-3.5 px-8"
+              >
+                Book a Repipe Assessment
+              </Link>
+              <a
+                href="tel:3858656749"
+                className="btn-outline-white text-base py-3.5 px-8"
+              >
+                <Phone className="w-4 h-4" />
+                (385) 865-6749
+              </a>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
               {[
                 "Whole-Home Repiping",
                 "PEX & Copper",
                 "Gas Line Install",
                 "Workmanship Guarantee",
               ].map((t) => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
+                <span
+                  key={t}
+                  className="inline-flex items-center gap-1 text-xs text-primary-foreground/50 font-medium"
+                >
+                  <CheckCircle className="w-3 h-3 text-accent/70" />
+                  {t}
                 </span>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">
-                Book a Repipe Assessment
-              </Link>
-              <a href="tel:3858656749" className="btn-outline-white">
-                <Phone className="w-4 h-4" /> (385) 865-6749
-              </a>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* INTRO + IMAGE */}
-      <section className="py-20 md:py-28">
+      {/* ══════════════════════════════════════════
+          INTRO — copy left · image right
+      ══════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
-              <SectionHeader
-                eyebrow="Repiping Services"
-                title="Repiping Services in Salt Lake &amp; Davis County"
-                description="CMB Plumbing delivers expert repiping services and precision plumbing solutions across Northern Utah — trusted by homeowners and businesses alike. Specializing in full home repiping, mainline replacements, and gas line installations, we're committed to enhancing the safety, performance, and value of your property."
-              />
-              <div className="mt-6 space-y-4">
-                <div className="border-l-4 border-accent pl-4">
-                  <h3 className="font-bold mb-1">
-                    Whole Home Repiping You Can Rely On
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    If you&apos;re dealing with frequent leaks, low water
-                    pressure, or rusty water, it may be time for a full home
-                    repipe. CMB Plumbing replaces outdated piping with modern,
-                    long-lasting materials like PEX or copper — improving water
-                    quality, system reliability, and overall peace of mind.
-                  </p>
-                </div>
+              <span className="eyebrow">Repiping Services</span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+                Repiping Services in
+                <br />
+                <span className="text-primary">
+                  Salt Lake &amp; Davis County
+                </span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                CMB Plumbing delivers expert repiping services and precision
+                plumbing solutions across Northern Utah — trusted by homeowners
+                and businesses alike. Specializing in full home repiping,
+                mainline replacements, and gas line installations, we&apos;re
+                committed to enhancing the safety, performance, and value of
+                your property. We serve Bountiful, Salt Lake City, Ogden,
+                Layton, West Valley City, Millcreek, Roy, and Draper.
+              </p>
+              <div className="border-l-4 border-accent pl-4 mb-10">
+                <h3 className="font-bold mb-1">
+                  Whole Home Repiping You Can Rely On
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  If you&apos;re dealing with frequent leaks, low water
+                  pressure, or rusty water, it may be time for a full home
+                  repipe. CMB Plumbing replaces outdated piping with modern,
+                  long-lasting materials like PEX or copper — improving water
+                  quality, system reliability, and overall peace of mind.
+                </p>
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="btn-primary">
-                  Schedule Your Repipe
+                  Book Our Expert Techs
                 </Link>
                 <a href="tel:3858656749" className="btn-secondary">
-                  <Phone className="w-4 h-4" /> Call Us
+                  <Phone className="w-4 h-4" />
+                  Call Now
                 </a>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden min-h-[420px]">
-              <Image
-                src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80"
-                alt="Water pipes and plumbing system"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* SIGNS YOU NEED REPIPING */}
-      <section className="bg-muted py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Warning Signs"
-            title="Does Your Home Need Repiping?"
-            description="Don't ignore the warning signs. These symptoms often mean your pipes are overdue for replacement."
-            centered
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
-            {[
-              {
-                title: "Frequent Leaks",
-                desc: "Multiple leaks or recurring repair calls are a clear sign your pipes are failing — repiping may be more cost-effective than repeated repairs.",
-              },
-              {
-                title: "Low Water Pressure",
-                desc: "Mineral deposits and corrosion buildup inside old pipes restrict water flow and cause chronic low pressure throughout your home.",
-              },
-              {
-                title: "Rusty or Discolored Water",
-                desc: "Brown, red, or yellow water indicates corrosion inside your pipes — a direct sign that repiping is needed to safeguard your water quality.",
-              },
-              {
-                title: "Visible Corrosion",
-                desc: "Visible rust, green staining, or flaking on exposed pipes means corrosion is advanced and replacement should happen soon.",
-              },
-              {
-                title: "Noisy Pipes",
-                desc: "Banging, rattling, or humming pipes can signal pressure issues, loose fittings, or pipes that are failing under stress.",
-              },
-              {
-                title: "Old Pipes (50+ Years)",
-                desc: "Galvanized steel and polybutylene pipes were common decades ago — both are prone to failure and should be replaced with modern materials.",
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="card">
-                <div className="w-2 h-2 rounded-full bg-accent mb-3" />
-                <h3 className="font-bold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.desc}
-                </p>
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden min-h-115 md:min-h-135 lg:h-155">
+                <Image
+                  src="https://cmbhvac.com/wp-content/uploads/2025/06/cmb-plumbing-repiping-1.jpg"
+                  alt="CMB Plumbing Repiping"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-primary-dark/50 via-transparent to-transparent" />
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative rounded-2xl overflow-hidden min-h-[420px]">
-              <Image
-                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=900&q=80"
-                alt="Certified repipe technicians"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div>
-              <SectionHeader
-                eyebrow="Why CMB Plumbing?"
-                title="Why More Homeowners Trust CMB Plumbing"
-              />
-              <ul className="mt-6 space-y-4">
-                {[
-                  {
-                    title: "Certified, Experienced Technicians",
-                    desc: "Our highly trained team brings years of specialized plumbing experience to every job.",
-                  },
-                  {
-                    title: "Reliable and On-Time Service",
-                    desc: "We respect your time and your property — showing up on schedule and delivering quality without delay.",
-                  },
-                  {
-                    title: "Workmanship Guaranteed",
-                    desc: "Every project is backed by our satisfaction guarantee, so you can book with complete confidence.",
-                  },
-                  {
-                    title: "Transparent, Upfront Pricing",
-                    desc: "No hidden fees. Just honest work at fair prices — presented before we begin.",
-                  },
-                ].map((item, idx) => (
-                  <li key={idx} className="flex gap-3">
-                    <div className="icon-box shrink-0">
-                      <ShieldCheck className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-sm mb-0.5">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-muted-foreground">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-8">
-                <Link href="/contact" className="btn-primary">
-                  Book Your Repiping Assessment
-                </Link>
+              <div className="absolute bottom-6 left-6 right-6 sm:right-auto bg-white rounded-2xl p-5 shadow-2xl border border-border max-w-xs">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                    <GitBranch className="w-5 h-5 text-accent" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground font-medium">
+                      Trusted across Northern Utah
+                    </p>
+                    <p className="text-sm font-bold text-foreground">
+                      Expert Repiping Services
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* REPIPE TYPES */}
-      <section className="bg-muted py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="Our Services"
-            title="Schedule Your Repiping with Us"
-            centered
-          />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            {[
-              {
-                icon: <GitBranch className="w-5 h-5" />,
-                title: "Whole-Home Repiping",
-                desc: "Complete replacement of all water supply lines in your home using modern PEX or copper — minimizing disruption while maximizing long-term reliability.",
-              },
-              {
-                icon: <Clock className="w-5 h-5" />,
-                title: "Mainline Replacements",
-                desc: "A damaged or aging water main can lead to serious property damage. CMB Plumbing provides fast mainline replacement using high-performance materials built to withstand the elements.",
-              },
-              {
-                icon: <DollarSign className="w-5 h-5" />,
-                title: "Gas Line Installation",
-                desc: "Precision gas line installation by licensed professionals — fully compliant with building codes. Whether connecting a stove, fire pit, or new addition, we guarantee safety and long-term performance.",
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="card">
-                <div className="icon-box icon-box-secondary mb-4">
+      {/* ══════════════════════════════════════════
+          WHY CHOOSE — dark immersive
+      ══════════════════════════════════════════ */}
+      <section className="relative py-24 md:py-32 overflow-hidden bg-primary-dark">
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
+            backgroundSize: "28px 28px",
+          }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-accent">
+              Why CMB Plumbing?
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white mb-5">
+              How Can We Help with
+              <br />
+              <span className="text-accent">a Repiping of a Home?</span>
+            </h2>
+            <p className="text-primary-foreground/70 text-lg leading-relaxed">
+              With certified technicians, guaranteed workmanship, and
+              transparent pricing, CMB Plumbing delivers repiping services you
+              can trust — every job, every time.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {WHY_US.map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-primary-foreground/10 border border-primary-foreground/10 rounded-3xl p-7 hover:bg-primary-foreground/13 transition-colors"
+              >
+                <div className="w-11 h-11 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center text-accent mb-5">
                   {item.icon}
                 </div>
-                <h3 className="font-bold mb-3">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="text-white font-bold mb-2">{item.title}</h3>
+                <p className="text-primary-foreground/60 text-sm leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -267,72 +273,109 @@ export default function RepipingServicesPage() {
         </div>
       </section>
 
-      {/* FINAL NOTE */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <SectionHeader
-            eyebrow="Ready to Upgrade?"
-            title="Don't Gamble with Guesswork — Go with Utah's Trusted Repipe Experts"
-            description="When it's time to upgrade your plumbing system, CMB Plumbing delivers reliable, professional service that stands the test of time. Book your appointment today and take the first step toward better plumbing, better safety, and peace of mind."
-            centered
-          />
-          <div className="mt-8 flex flex-wrap gap-3 justify-center">
-            <Link href="/contact" className="btn-primary">
-              Book Your Appointment
-            </Link>
-            <a href="tel:3858656749" className="btn-secondary">
-              <Phone className="w-4 h-4" /> (385) 865-6749
-            </a>
+      {/* ══════════════════════════════════════════
+          SERVICES GRID
+      ══════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-[#f7f8fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-14">
+            <span className="eyebrow">Our Services</span>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+              Schedule Your
+              <br />
+              <span className="text-primary">Repiping Repairs with Us</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              From whole-home repiping to mainline replacements and certified
+              gas line installations — our licensed plumbers handle it all
+              across Northern Utah.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((s, idx) => (
+              <article
+                key={idx}
+                className="group relative bg-card rounded-2xl p-8 shadow-sm border border-border/50 hover:border-accent/30 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors text-accent">
+                  {s.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">
+                  {s.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {s.desc}
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-accent font-medium hover:gap-3 transition-all"
+                >
+                  Get an Estimate
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl" />
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-muted py-20 md:py-28">
+      {/* ══════════════════════════════════════════
+          PAGE CTA STRIP
+      ══════════════════════════════════════════ */}
+      <PageCTA
+        eyebrow="Why More Homeowners Trust CMB Plumbing"
+        message="CMB Plumbing provides fast plumbing repiping services in Salt Lake City &amp; the surrounding areas."
+        buttonText="Book Our Expert Techs"
+        buttonHref="/contact"
+      />
+
+      {/* ══════════════════════════════════════════
+          IMAGE + COPY — image left · copy right
+      ══════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader
-            eyebrow="FAQ"
-            title="Repiping Questions Answered"
-            centered
-          />
-          <div className="max-w-2xl mx-auto mt-12 space-y-3">
-            {[
-              {
-                q: "How long does whole-home repiping take?",
-                a: "Most whole-home repipes are completed in 1–3 days depending on the size of the home. We work efficiently to minimize disruption to your daily routine.",
-              },
-              {
-                q: "PEX or copper — which is better?",
-                a: "Both are excellent options. PEX is flexible, freeze-resistant, and often more affordable. Copper is highly durable and has a proven track record. We'll help you choose the best fit for your home and budget.",
-              },
-              {
-                q: "Will I need to leave my home during repiping?",
-                a: "Not necessarily. Water will be off for portions of the work, but we coordinate to minimize inconvenience. Many homeowners stay home throughout the process.",
-              },
-              {
-                q: "Do you offer financing for repiping?",
-                a: "Yes — we work with multiple banks to offer 0% financing for 36–60 months on qualifying projects. Ask us about current options.",
-              },
-            ].map((faq, idx) => (
-              <div key={idx} className="accordion-item">
-                <button
-                  onClick={() =>
-                    setOpenAccordion(openAccordion === idx ? null : idx)
-                  }
-                  className="accordion-trigger w-full text-left"
-                >
-                  <span>{faq.q}</span>
-                  <ArrowRight
-                    className={`w-4 h-4 shrink-0 transition-transform ${openAccordion === idx ? "rotate-90" : ""}`}
-                  />
-                </button>
-                {openAccordion === idx && (
-                  <div className="px-5 py-4 text-sm text-foreground border-t border-border leading-relaxed">
-                    {faq.a}
-                  </div>
-                )}
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <div className="relative rounded-3xl overflow-hidden lg:h-130 aspect-4/5 lg:aspect-auto">
+              <Image
+                src="https://cmbhvac.com/wp-content/uploads/2025/06/cmb-plumbing-repiping-2.jpg"
+                alt="CMB Plumbing repiping team"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-primary-dark/50 via-transparent to-transparent" />
+            </div>
+
+            <div>
+              <span className="eyebrow">Ready to Upgrade?</span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+                You Can Get the Answers
+                <br />
+                <span className="text-accent">
+                  to What May Seem Like a Big Question
+                </span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                When it&apos;s time to upgrade your plumbing system, don&apos;t
+                gamble with guesswork — go with Utah&apos;s trusted repiping
+                experts. CMB Plumbing delivers reliable, professional service
+                that stands the test of time.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+                Book your appointment today and take the first step toward
+                better plumbing, better safety, and peace of mind.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact" className="btn-primary">
+                  Book Your Appointment
+                </Link>
+                <a href="tel:3858656749" className="btn-secondary">
+                  <Phone className="w-4 h-4" />
+                  Call Now
+                </a>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>

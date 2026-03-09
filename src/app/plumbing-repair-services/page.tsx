@@ -397,14 +397,14 @@ export default function PlumbingRepairPage() {
 
           <div className="grid sm:grid-cols-2 gap-6">
             {REPAIR_SERVICES.map((s, idx) => (
-              <div
+              <article
                 key={idx}
-                className="group relative flex flex-col rounded-3xl border border-border bg-white p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group relative flex flex-col rounded-2xl bg-card p-8 shadow-sm border border-border/50 hover:border-accent/30 hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-5">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent mb-5 group-hover:bg-accent/20 transition-colors">
                   {s.icon}
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
+                <h3 className="text-lg font-bold text-foreground mb-3">
                   {s.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed flex-1">
@@ -414,7 +414,8 @@ export default function PlumbingRepairPage() {
                   Get an Estimate
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
                 </div>
-              </div>
+                <div className="absolute inset-x-0 bottom-0 h-1 bg-linear-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-b-2xl" />
+              </article>
             ))}
           </div>
 
