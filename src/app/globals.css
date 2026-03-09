@@ -248,6 +248,31 @@
     );
   }
 
+  /* page-cta: reuse the banner gradient and texture, add gradient borders top/bottom */
+  .page-cta {
+    @apply relative overflow-hidden py-14 text-primary-foreground;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary-dark)) 0%,
+      hsl(var(--primary)) 55%,
+      hsl(var(--primary-light)) 100%
+    );
+  }
+
+  .page-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      white 1px,
+      transparent 0
+    );
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+
   .icon-box {
     @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-secondary text-primary;
   }

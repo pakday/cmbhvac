@@ -16,8 +16,9 @@ import {
   Clock,
   Flame,
   WashingMachine,
+  ChevronDown,
 } from "lucide-react";
-import { PageCTA } from "@/components/PageCTA";
+import { useState } from "react";
 
 /* ─── data ─────────────────────────────────────────────── */
 
@@ -67,9 +68,34 @@ const WHY_US = [
   },
 ];
 
+const FAQS = [
+  {
+    q: "How fast can a repair be completed?",
+    a: "Most repairs can be scheduled and completed the same day or next day. Emergency repairs are prioritized — we get to you as fast as possible.",
+  },
+  {
+    q: "Do you fix both residential and commercial plumbing?",
+    a: "Yes! CMB Plumbing serves both homeowners and business owners across Northern Utah with the same top-tier, 5-star care — every job, every time.",
+  },
+  {
+    q: "What if I don't know where the leak is coming from?",
+    a: "That's exactly what we do. Our state-of-the-art leak detection tools locate issues within walls, slabs, and underground lines without damaging your property.",
+  },
+  {
+    q: "Do you offer financing?",
+    a: "Yes — we work with multiple banks to find the right plan. Our most popular plans include 0% financing for 36–60 months.",
+  },
+  {
+    q: "Are permits and inspection fees included?",
+    a: "Permits and inspection fees may be required depending on your location and are not included in estimates. Just ask your plumber which permits apply and we'll add them to your package.",
+  },
+];
+
 /* ─── component ─────────────────────────────────────────── */
 
 export default function PlumbingRepairPage() {
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null);
+
   return (
     <>
       <Navbar />
@@ -158,6 +184,24 @@ export default function PlumbingRepairPage() {
       </section>
 
       {/* ══════════════════════════════════════════
+          EMERGENCY STRIP
+      ══════════════════════════════════════════ */}
+      <div className="bg-accent text-white py-3.5 px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap font-semibold text-sm md:text-base text-center">
+          <AlertTriangle className="w-5 h-5 shrink-0" />
+          <span>
+            Burst pipe or major leak? We provide emergency plumbing service.
+          </span>
+          <a
+            href="tel:3858656749"
+            className="underline font-bold whitespace-nowrap"
+          >
+            Call (385) 865-6749 now
+          </a>
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════
           INTRO — copy left · image right
       ══════════════════════════════════════════ */}
       <section className="py-24 md:py-32 bg-white">
@@ -172,7 +216,7 @@ export default function PlumbingRepairPage() {
                   Salt Lake &amp; Davis County
                 </span>
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
                 CMB Plumbing is the trusted name for expert plumbing services
                 across Northern Utah — from advanced leak detection and toilet
                 repairs to high-end fixture installations. Whether you&apos;re a
@@ -180,6 +224,13 @@ export default function PlumbingRepairPage() {
                 Layton, West Valley City, Millcreek, Roy, or Draper, you can
                 count on fast, professional, and dependable plumbing solutions
                 that protect your property and your peace of mind.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+                When plumbing problems strike, you don&apos;t have time to wait
+                — and at CMB Plumbing, locally owned and operated, we don&apos;t
+                make you. Our licensed pros show up fast, fix it right, and
+                leave your home cleaner than we found it. Backed by years of
+                experience, five-star reviews, and honest pricing.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/contact" className="btn-primary">
@@ -194,7 +245,7 @@ export default function PlumbingRepairPage() {
 
             {/* image with floating badge */}
             <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden min-h-115 md:min-h-135 lg:h-155">
+              <div className="relative rounded-3xl overflow-hidden aspect-4/5 md:aspect-3/4 lg:h-140">
                 <Image
                   src="https://cmbhvac.com/wp-content/uploads/2025/06/cmb-plumbing-repair-service-1.jpg"
                   alt="Advanced Water Leak Detection"
@@ -257,21 +308,43 @@ export default function PlumbingRepairPage() {
                 both residential and commercial customers, delivering rapid
                 results and reliable repairs that prevent future problems.
               </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                We get to your home or business as quickly as possible so as to
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+                We get to your home or business as quickly as possible to
                 mitigate the damage that a water leak, overflow, or drain backup
-                may be causing you. We get in, pinpoint where the problem is and
-                get you all the information you need to make the right decision
-                for the repair.
+                may be causing. We pinpoint where the problem is and give you
+                all the information you need to make the right decision for the
+                repair.
               </p>
+
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                {[
+                  { n: "Same Day", l: "Response Time" },
+                  { n: "5-Star", l: "Customer Rated" },
+                  { n: "Non-Invasive", l: "Leak Detection" },
+                  { n: "100%", l: "Satisfaction Guaranteed" },
+                ].map((stat) => (
+                  <div
+                    key={stat.l}
+                    className="rounded-2xl bg-white border border-border p-5 shadow-sm"
+                  >
+                    <p className="text-2xl font-black text-accent">
+                      {stat.n}
+                    </p>
+                    <p className="text-xs text-muted-foreground font-medium mt-0.5">
+                      {stat.l}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <Link href="/contact" className="btn-primary">
+                Book Our Expert Techs
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════
-          SERVICE CTA STRIP
-      ══════════════════════════════════════════ */}
       {/* ══════════════════════════════════════════
           WHY CHOOSE — dark immersive
       ══════════════════════════════════════════ */}
@@ -324,58 +397,94 @@ export default function PlumbingRepairPage() {
       </section>
 
       {/* ══════════════════════════════════════════
-          SCHEDULE
+          SCHEDULE — copy left · checklist card right
       ══════════════════════════════════════════ */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="eyebrow">CMB Plumbing Services</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
-              Schedule Your
-              <br />
-              <span className="text-accent">Plumbing Repairs</span>
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Considering the immense strain under which your plumbing system is
-              operating most of the time, it should come as no surprise to hear
-              that you will undoubtedly find yourself in need of professional
-              plumbing service repairs at some point. When you do, time is of
-              the essence. As soon as you have any reason at all to suspect that
-              your system is not functioning properly, give us a call. We will
-              diagnose the problem precisely and make any necessary repairs with
-              the expertise that so defines our expert plumbing services.
-            </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-              Of course, while there is no way in which to completely avoid all
-              problems with your aging plumbing system, you can keep them to a
-              minimum by scheduling routine system maintenance with the pros in
-              our employ. No matter what type of equipment has been installed
-              and may be used, routine maintenance is a must. Not only will it
-              help your overall system function more effectively and reliably,
-              but also more efficiently. Saving you money in the long run
-              &mdash; That sounds like a pretty good deal to us.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact" className="btn-primary">
-                Book Your Appointment
-              </Link>
-              <a href="tel:3858656749" className="btn-secondary">
-                <Phone className="w-4 h-4" />
-                Call Now
-              </a>
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-14 items-center">
+            <div>
+              <span className="eyebrow">CMB Plumbing Services</span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+                Schedule Your
+                <br />
+                <span className="text-accent">Plumbing Repairs</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Considering the immense strain under which your plumbing system
+                operates most of the time, it should come as no surprise that
+                you&apos;ll find yourself in need of professional plumbing
+                repairs at some point. When you do, time is of the essence. As
+                soon as you suspect your system isn&apos;t functioning properly,
+                give us a call. We&apos;ll diagnose the problem precisely and
+                make any necessary repairs with the expertise that defines our
+                expert plumbing services.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+                While there&apos;s no way to completely avoid all problems with
+                an aging plumbing system, you can keep them to a minimum by
+                scheduling routine maintenance. Not only does it help your
+                system function more effectively and reliably — it also saves
+                you money in the long run.
+              </p>
+
+              <div className="flex flex-wrap gap-3">
+                <Link href="/contact" className="btn-primary">
+                  Book Your Appointment
+                </Link>
+                <a href="tel:3858656749" className="btn-secondary">
+                  <Phone className="w-4 h-4" />
+                  Call Now
+                </a>
+              </div>
+            </div>
+
+            {/* checklist card */}
+            <div className="bg-[#f7f8fa] rounded-3xl p-8 md:p-10 border border-border">
+              <h3 className="text-xl font-black text-foreground mb-7">
+                What to Expect on Your Visit
+              </h3>
+              <ul className="space-y-5">
+                {[
+                  {
+                    title: "We Text You First",
+                    body: "Before we arrive we'll send your exact arrival window — no guessing, no waiting around.",
+                  },
+                  {
+                    title: "Thorough Diagnosis",
+                    body: "We examine and test to pinpoint the exact source and cause of your plumbing problem.",
+                  },
+                  {
+                    title: "Fixed-Price Options",
+                    body: "Multiple remediation options with upfront fixed pricing — you choose what works for your budget.",
+                  },
+                  {
+                    title: "We Fix It Right",
+                    body: "Repair is completed and the area is cleaned up. Every job is guaranteed before we leave.",
+                  },
+                  {
+                    title: "Financing Available",
+                    body: "We help you find the right financing plan — including 0% for 36–60 months.",
+                  },
+                ].map((step, i) => (
+                  <li key={i} className="flex gap-4 items-start">
+                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center shrink-0 text-white text-xs font-black">
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div>
+                      <p className="font-bold text-foreground text-sm mb-0.5">
+                        {step.title}
+                      </p>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {step.body}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
-
-      <PageCTA
-        eyebrow="Ready for Expert Help?"
-        message={
-          "CMB Plumbing provides fast plumbing services in Salt Lake City and the surrounding areas."
-        }
-        buttonText="Book Our Expert Techs"
-        buttonHref="/contact"
-      />
 
       {/* ══════════════════════════════════════════
           REPAIR SERVICES GRID
@@ -425,6 +534,67 @@ export default function PlumbingRepairPage() {
             >
               Book Your Appointment
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════
+          FAQ — sticky sidebar layout
+      ══════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 items-start">
+            <div className="lg:sticky lg:top-32">
+              <span className="eyebrow">FAQs</span>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-5">
+                Got Questions?
+                <br />
+                <span className="text-primary">Straight Answers.</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                At CMB Plumbing, peace of mind starts with clarity. Quick,
+                honest answers so you know exactly what to expect before we even
+                knock on your door.
+              </p>
+              <Link href="/contact" className="btn-primary">
+                Ask Us Anything
+              </Link>
+            </div>
+
+            <div className="space-y-3">
+              {FAQS.map((faq, idx) => {
+                const open = openAccordion === idx;
+                return (
+                  <div
+                    key={idx}
+                    className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
+                      open ? "border-accent/40 shadow-md" : "border-border"
+                    }`}
+                  >
+                    <button
+                      onClick={() => setOpenAccordion(open ? null : idx)}
+                      className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left bg-white hover:bg-muted transition-colors"
+                    >
+                      <span
+                        className={`font-semibold text-base transition-colors ${open ? "text-accent" : "text-foreground"}`}
+                      >
+                        {faq.q}
+                      </span>
+                      <ChevronDown
+                        className={`w-5 h-5 shrink-0 transition-transform duration-300 ${open ? "rotate-180 text-accent" : "text-muted-foreground"}`}
+                      />
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${open ? "max-h-96" : "max-h-0"}`}
+                    >
+                      <p className="px-6 pb-6 pt-1 text-muted-foreground text-sm leading-relaxed border-t border-border">
+                        {faq.a}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
