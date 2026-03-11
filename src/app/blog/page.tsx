@@ -42,7 +42,7 @@ export default function BlogPage() {
             <Tag className="w-3.5 h-3.5" />
             CMB HVAC Blog
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="heading-xl font-bold mb-4">
             Expert HVAC Advice & Honest Reviews
           </h1>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ export default function BlogPage() {
       {/* ═══ ALL POSTS ═══ */}
       <section className="bg-muted py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-8 text-foreground">
+          <h2 className="h-small font-bold mb-8 text-foreground">
             All Articles
           </h2>
 

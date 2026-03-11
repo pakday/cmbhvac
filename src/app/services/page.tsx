@@ -150,7 +150,7 @@ export default function ServicesPage() {
               <ShieldCheck className="w-3.5 h-3.5" />
               CMB HVAC &amp; Plumbing · Salt Lake &amp; Davis County
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
+            <h1 className="heading-2xl font-bold leading-tight mb-5">
               All Services — Heating, Cooling &amp; Plumbing
             </h1>
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
@@ -278,7 +278,7 @@ export default function ServicesPage() {
                 <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
                   Membership Program
                 </p>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <h2 className="heading-m font-bold mb-4">
                   Save All Year with a CMB Membership
                 </h2>
                 <p className="text-muted-foreground mb-6">

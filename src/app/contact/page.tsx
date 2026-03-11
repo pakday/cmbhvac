@@ -61,7 +61,7 @@ export default function ContactPage() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="heading-xl font-bold leading-tight mb-6">
               Get in Touch Today
             </h1>
             <p className="text-xl text-primary-foreground/80 mb-8">
@@ -79,7 +79,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* LEFT: CONTACT INFO */}
             <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold mb-8">Quick Info</h2>
+              <h2 className="h-small font-bold mb-8">Quick Info</h2>
 
               <div className="space-y-6">
                 {/* PHONE */}
@@ -91,9 +91,13 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground font-medium">PHONE</p>
+                    <p className="text-sm text-muted-foreground font-medium">
+                      PHONE
+                    </p>
                     <p className="text-lg font-bold">(385) 865-6749</p>
-                    <p className="text-sm text-muted-foreground">Available 24/7</p>
+                    <p className="text-sm text-muted-foreground">
+                      Available 24/7
+                    </p>
                   </div>
                 </a>
 
@@ -106,7 +110,9 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground font-medium">EMAIL</p>
+                    <p className="text-sm text-muted-foreground font-medium">
+                      EMAIL
+                    </p>
                     <p className="text-lg font-bold">Team@cmbhvac.com</p>
                     <p className="text-sm text-muted-foreground">
                       We reply within 1 hour
@@ -136,7 +142,9 @@ export default function ContactPage() {
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground font-medium">HOURS</p>
+                    <p className="text-sm text-muted-foreground font-medium">
+                      HOURS
+                    </p>
                     <p className="text-sm font-semibold">Mon–Fri: 7am–6pm</p>
                     <p className="text-sm font-semibold">Sat: 9am–4pm</p>
                     <p className="text-sm text-muted-foreground">
@@ -150,7 +158,7 @@ export default function ContactPage() {
             {/* RIGHT: FORM */}
             <div className="lg:col-span-2">
               <div className="card p-8">
-                <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                <h2 className="h-small font-bold mb-6">Send Us a Message</h2>
 
                 {submitted ? (
                   <div className="flex items-center justify-center py-12 text-center">
@@ -160,7 +168,7 @@ export default function ContactPage() {
                           <CheckCircle className="w-6 h-6" />
                         </div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-2">Thank you!</h3>
+                      <h3 className="h-small font-bold mb-2">Thank you!</h3>
                       <p className="text-muted-foreground mb-4">
                         We'll contact you within the next hour.
                       </p>
@@ -316,9 +324,7 @@ export default function ContactPage() {
               },
             ].map((stat, idx) => (
               <div key={idx}>
-                <p className="text-4xl font-bold text-primary mb-2">
-                  {stat.num}
-                </p>
+                <p className="heading-l font-bold text-primary mb-2">{stat.num}</p>
                 <p className="font-bold text-lg mb-1">{stat.label}</p>
                 <p className="text-muted-foreground">{stat.desc}</p>
               </div>

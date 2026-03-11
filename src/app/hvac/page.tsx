@@ -41,7 +41,7 @@ export default function HVACPage() {
               <Flame className="w-3.5 h-3.5" />
               HVAC Services
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="heading-xl font-bold leading-tight mb-6">
               Let Us Cool You Down — or Warm You Up
             </h1>
             <p className="text-xl text-primary-foreground/80 mb-8">
@@ -131,8 +131,8 @@ export default function HVACPage() {
               <h3 className="text-xl font-bold mb-3">Heating & Furnace</h3>
               <ul className="space-y-2 mb-4 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-accent" /> Furnace
-                  Repair & Installation
+                  <CheckCircle className="w-4 h-4 text-accent" /> Furnace Repair
+                  & Installation
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-accent" /> Boiler
@@ -177,8 +177,8 @@ export default function HVACPage() {
                   Repair & Maintenance
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-accent" /> Custom
-                  System Design
+                  <CheckCircle className="w-4 h-4 text-accent" /> Custom System
+                  Design
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-accent" /> Service
@@ -251,19 +251,19 @@ export default function HVACPage() {
           <div className="bg-primary rounded-3xl p-8 text-white">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               <div>
-                <div className="text-4xl font-bold text-accent">25+</div>
+                <div className="heading-l font-bold text-accent">25+</div>
                 <div className="text-sm opacity-80 mt-1">Years Experience</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-accent">A+</div>
+                <div className="heading-l font-bold text-accent">A+</div>
                 <div className="text-sm opacity-80 mt-1">BBB Rating</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-accent">24/7</div>
+                <div className="heading-l font-bold text-accent">24/7</div>
                 <div className="text-sm opacity-80 mt-1">Emergency Service</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-accent">100%</div>
+                <div className="heading-l font-bold text-accent">100%</div>
                 <div className="text-sm opacity-80 mt-1">
                   Satisfaction Guarantee
                 </div>

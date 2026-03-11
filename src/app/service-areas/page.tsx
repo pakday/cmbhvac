@@ -130,7 +130,7 @@ export default function ServiceAreasPage() {
               <MapPin className="w-3.5 h-3.5" />
               Service Areas · Utah
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
+            <h1 className="heading-2xl font-bold leading-tight mb-5">
               Serving Utah&apos;s Wasatch Front &amp; Beyond
             </h1>
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
@@ -169,7 +169,7 @@ export default function ServiceAreasPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-14">
             <p className="eyebrow">Where We Work</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            <h2 className="heading-m font-bold mb-4 text-foreground">
               Cities &amp; Communities We Serve
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -239,7 +239,7 @@ export default function ServiceAreasPage() {
               <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
                 Full Service Coverage
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold mb-5">
+              <h2 className="heading-m font-bold mb-5">
                 All Services Available Across Our Coverage Area
               </h2>
               <p className="text-primary-foreground/80 mb-8">

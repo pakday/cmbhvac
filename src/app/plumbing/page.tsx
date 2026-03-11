@@ -178,7 +178,7 @@ export default function PlumbingPage() {
               CMB Plumbing · Northern Utah
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="heading-2xl font-black leading-[1.02] tracking-tight mb-6">
               Plumbing You Can
               <br />
               <span className="text-accent">Count On.</span>
@@ -262,7 +262,7 @@ export default function PlumbingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <span className="eyebrow">Our Services</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+            <h2 className="heading-xl font-black tracking-tight leading-tight mb-4">
               Everything Plumbing,
               <br />
               <span className="text-primary">Under One Roof</span>
@@ -343,7 +343,7 @@ export default function PlumbingPage() {
 
             <div>
               <span className="eyebrow">CMB Plumbing Services</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 What You Need,
                 <br />
                 <span className="text-accent">Today.</span>
@@ -373,7 +373,7 @@ export default function PlumbingPage() {
                     key={stat.l}
                     className="rounded-2xl bg-white border border-border p-5"
                   >
-                    <p className="text-2xl font-black text-accent">{stat.n}</p>
+                    <p className="h-small font-black text-accent">{stat.n}</p>
                     <p className="text-xs text-muted-foreground font-medium mt-0.5">
                       {stat.l}
                     </p>
@@ -425,7 +425,7 @@ export default function PlumbingPage() {
                 Snap &amp; Send
               </div>
 
-              <h2 className="text-4xl md:text-5xl text-white tracking-tight leading-tight mb-5">
+              <h2 className="heading-xl text-white tracking-tight leading-tight mb-5">
                 Schedule an
                 <br />
                 <span className="text-accent">In-Home Visit</span>
@@ -509,7 +509,7 @@ export default function PlumbingPage() {
           <div className="grid lg:grid-cols-[1fr_1.6fr] gap-16 items-start">
             <div className="lg:sticky lg:top-32">
               <span className="eyebrow">FAQs</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-5">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-5">
                 Got Questions?
                 <br />
                 <span className="text-primary">Straight Answers.</span>

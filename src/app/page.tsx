@@ -282,13 +282,13 @@ export default function Home() {
                 Licensed &amp; Insured &middot; 25+ Years Experience
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-5">
+              <h1 className="heading-2xl font-extrabold text-white leading-[1.05] tracking-tight mb-5">
                 No More
                 <br />
                 <span className="text-accent">Pricing Games.</span>
               </h1>
 
-              <p className="text-xl md:text-2xl font-semibold text-primary-foreground/90 mb-3 leading-snug max-w-xl">
+              <p className="h-body font-semibold text-primary-foreground/90 mb-3 leading-snug max-w-xl">
                 Get the HVAC system you need, affordably, promptly, expertly.
               </p>
               <p className="text-base text-primary-foreground/70 mb-10 leading-relaxed max-w-xl">
@@ -370,7 +370,7 @@ export default function Home() {
                   key={i}
                   className={`bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 border-t-2 ${s.accent} rounded-2xl p-6 text-white`}
                 >
-                  <div className="text-3xl font-extrabold mb-1">{s.value}</div>
+                  <div className="heading-l font-extrabold mb-1">{s.value}</div>
                   <div className="text-sm text-primary-foreground/70">
                     {s.label}
                   </div>
@@ -388,7 +388,7 @@ export default function Home() {
             <p className="text-accent text-xs font-bold uppercase tracking-widest mb-2">
               Why Trust Us
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-white">
+            <h2 className="heading-m font-bold text-white">
               Built on 25 Years of Integrity
             </h2>
           </div>
@@ -418,7 +418,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-xl mx-auto mb-14">
             <p className="eyebrow">Our Services</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="heading-xl font-bold text-foreground mb-4">
               Service and Maintenance
             </h2>
           </div>
@@ -469,7 +469,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <p className="eyebrow">Why Choose CMB HVAC</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
+              <h2 className="heading-m font-bold text-foreground mb-5 leading-tight">
                 We Treat Your Home
                 <br className="hidden md:block" /> Like Our Own
               </h2>
@@ -541,7 +541,7 @@ export default function Home() {
                     { value: "64", label: "5-Star Reviews" },
                   ].map((s, i) => (
                     <div key={i} className="text-white">
-                      <div className="text-2xl font-extrabold">{s.value}</div>
+                      <div className="h-small font-extrabold">{s.value}</div>
                       <div className="text-xs text-primary-foreground/70">
                         {s.label}
                       </div>
@@ -552,7 +552,7 @@ export default function Home() {
             </div>
             <div>
               <p className="eyebrow">About Us</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5 leading-tight">
+              <h2 className="heading-m font-bold text-foreground mb-5 leading-tight">
                 We make sure your home stays
                 <br className="hidden md:block" /> cool and comfortable
               </h2>
@@ -584,7 +584,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="eyebrow">Our Reviews</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+            <h2 className="heading-m font-bold text-foreground mb-5">
               What Our Customers Say
             </h2>
             <div className="inline-flex items-center gap-3 rounded-2xl bg-muted border border-border shadow-sm px-5 py-2.5">
@@ -649,7 +649,7 @@ export default function Home() {
       <section className="py-16 md:py-20 bg-muted border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="eyebrow mb-2">Our Brands</p>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
+          <h2 className="heading-m font-bold text-foreground mb-10">
             Part of the CMB HVAC Family
           </h2>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
@@ -691,7 +691,7 @@ export default function Home() {
             <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
               We Serve
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="heading-m font-bold text-white mb-4">
               We Service Davis &amp; Salt Lake County
             </h2>
             <p className="text-primary-foreground/60 text-lg max-w-lg mx-auto">

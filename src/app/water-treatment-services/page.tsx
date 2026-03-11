@@ -102,7 +102,7 @@ export default function WaterTreatmentServicesPage() {
               CMB Plumbing · Northern Utah
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="heading-2xl font-black leading-[1.02] tracking-tight mb-6">
               Water Treatment
               <br />
               <span className="text-accent">Done Right.</span>
@@ -164,7 +164,7 @@ export default function WaterTreatmentServicesPage() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <span className="eyebrow">Water Treatment Services</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 Water Treatment Repair&nbsp;&amp;&nbsp;Services in
                 <br />
                 <span className="text-primary">
@@ -254,7 +254,7 @@ export default function WaterTreatmentServicesPage() {
             <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-accent">
               Why CMB Plumbing?
             </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white mb-5">
+            <h2 className="heading-xl font-black tracking-tight leading-tight text-white mb-5">
               Why More Utah Residents
               <br />
               <span className="text-accent">Choose CMB Plumbing</span>
@@ -292,7 +292,7 @@ export default function WaterTreatmentServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <span className="eyebrow">Our Services</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+            <h2 className="heading-xl font-black tracking-tight leading-tight mb-4">
               We Fix Any of Your
               <br />
               <span className="text-primary">Water System Issues</span>
@@ -362,7 +362,7 @@ export default function WaterTreatmentServicesPage() {
             {/* copy */}
             <div>
               <span className="eyebrow">Better Water Starts Here</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 Schedule Your
                 <br />
                 <span className="text-accent">Water Treatment Service</span>

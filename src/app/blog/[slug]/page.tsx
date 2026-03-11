@@ -82,7 +82,7 @@ export default async function BlogPostPage({ params }: Props) {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-5 leading-tight">
+            <h1 className="heading-m lg:heading-l font-bold text-foreground mb-5 leading-tight">
               {post.title}
             </h1>
 
@@ -156,7 +156,7 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="bg-muted py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-foreground">
+            <h2 className="h-small font-bold text-foreground">
               Recommended for You
             </h2>
             <Link

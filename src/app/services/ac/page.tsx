@@ -44,7 +44,7 @@ export default function ACServicesPage() {
               <Snowflake className="w-3.5 h-3.5" />
               AC & Cooling Services
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="heading-xl font-bold leading-tight mb-6">
               Expert AC Repair & Installation in Salt Lake City
             </h1>
             <p className="text-xl text-primary-foreground/80 mb-8">
@@ -154,7 +154,9 @@ export default function ACServicesPage() {
                   <p className="text-sm font-semibold text-foreground">
                     Our solution:
                   </p>
-                  <p className="text-sm text-muted-foreground mt-1">{issue.fix}</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {issue.fix}
+                  </p>
                 </div>
               </div>
             ))}
@@ -211,7 +213,7 @@ export default function ACServicesPage() {
       {/* AC BRANDS WE SERVE */}
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-4">
+          <h2 className="heading-l font-bold text-center mb-4">
             We Service All Major Brands
           </h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -242,7 +244,7 @@ export default function ACServicesPage() {
       <section className="section-dark bg-primary py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="heading-m font-bold mb-6">
               Keep Your AC Running All Summer
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8">

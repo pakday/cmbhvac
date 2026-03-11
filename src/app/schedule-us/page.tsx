@@ -152,7 +152,7 @@ export default function SchedulePage() {
               <CalendarCheck className="w-3.5 h-3.5" />
               Book an Appointment
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-5">
+            <h1 className="heading-2xl font-bold leading-tight mb-5">
               Schedule Your HVAC or Plumbing Service
             </h1>
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
@@ -190,7 +190,7 @@ export default function SchedulePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <p className="eyebrow">How It Works</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            <h2 className="heading-m font-bold mb-4 text-foreground">
               From Booking to Fixed — Simple Steps
             </h2>
             <p className="text-lg text-muted-foreground">
@@ -227,7 +227,7 @@ export default function SchedulePage() {
             <div className="lg:col-span-1 space-y-6">
               <div>
                 <p className="eyebrow">Contact Us Directly</p>
-                <h2 className="text-2xl font-bold mb-4">
+                <h2 className="h-small font-bold mb-4">
                   Prefer to Call or Text?
                 </h2>
                 <p className="text-muted-foreground mb-6">
@@ -340,7 +340,7 @@ export default function SchedulePage() {
                     <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
                       <CheckCircle className="w-8 h-8 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">
+                    <h3 className="h-small font-bold mb-2">
                       Request Received!
                     </h3>
                     <p className="text-muted-foreground">
@@ -352,7 +352,7 @@ export default function SchedulePage() {
                   <>
                     <div className="mb-8">
                       <p className="eyebrow mb-2">Appointment Request</p>
-                      <h2 className="text-2xl font-bold">
+                      <h2 className="h-small font-bold">
                         Tell Us What You Need
                       </h2>
                     </div>

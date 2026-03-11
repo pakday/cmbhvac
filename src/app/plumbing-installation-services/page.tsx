@@ -96,7 +96,7 @@ export default function PlumbingInstallationPage() {
               Plumbing Installation Services
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[0.95] mb-6 text-white">
+            <h1 className="heading-2xl font-black tracking-tight leading-[0.95] mb-6 text-white">
               Plumbing Installations
               <span className="block text-accent">/ Done Right.</span>
             </h1>
@@ -143,7 +143,7 @@ export default function PlumbingInstallationPage() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <span className="eyebrow">Plumbing Installations</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 Precision Installations for
                 <br />
                 <span className="text-primary">Your Water &amp; Gas Needs</span>
@@ -226,7 +226,7 @@ export default function PlumbingInstallationPage() {
             <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-accent">
               Why CMB Plumbing?
             </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white mb-5">
+            <h2 className="heading-xl font-black tracking-tight leading-tight text-white mb-5">
               We Fix Any Plumbing
               <br />
               <span className="text-accent">Install Issue</span>
@@ -275,7 +275,7 @@ export default function PlumbingInstallationPage() {
 
             <div>
               <span className="eyebrow">Schedule Your Install</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 Schedule Your Plumbing
                 <br />
                 <span className="text-accent">Install Projects with Us</span>
@@ -322,7 +322,7 @@ export default function PlumbingInstallationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <span className="eyebrow">Our Installations</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+            <h2 className="heading-xl font-black tracking-tight leading-tight mb-4">
               Expert Plumbing Installation
               <br />
               <span className="text-primary">Services in Northern Utah</span>

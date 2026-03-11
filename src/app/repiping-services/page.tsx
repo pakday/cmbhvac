@@ -98,7 +98,7 @@ export default function RepipingServicesPage() {
               CMB Plumbing · Northern Utah
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="heading-2xl font-black leading-[1.02] tracking-tight mb-6">
               Repiping Services
               <br />
               <span className="text-accent">Done Right.</span>
@@ -155,7 +155,7 @@ export default function RepipingServicesPage() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <span className="eyebrow">Repiping Services</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 Repiping Services in
                 <br />
                 <span className="text-primary">
@@ -242,7 +242,7 @@ export default function RepipingServicesPage() {
             <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-accent">
               Why CMB Plumbing?
             </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white mb-5">
+            <h2 className="heading-xl font-black tracking-tight leading-tight text-white mb-5">
               How Can We Help with
               <br />
               <span className="text-accent">a Repiping of a Home?</span>
@@ -280,7 +280,7 @@ export default function RepipingServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <span className="eyebrow">Our Services</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+            <h2 className="heading-xl font-black tracking-tight leading-tight mb-4">
               Schedule Your
               <br />
               <span className="text-primary">Repiping Repairs with Us</span>
@@ -349,7 +349,7 @@ export default function RepipingServicesPage() {
 
             <div>
               <span className="eyebrow">Ready to Upgrade?</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 You Can Get the Answers
                 <br />
                 <span className="text-accent">

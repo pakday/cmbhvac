@@ -43,7 +43,7 @@ export default function MembershipPage() {
               <Award className="w-3.5 h-3.5" />
               Premium Membership
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="heading-xl font-bold leading-tight mb-6">
               Join Our Membership Program
             </h1>
             <p className="text-xl text-primary-foreground/80 mb-8">
@@ -113,7 +113,7 @@ export default function MembershipPage() {
       {/* DETAILED BENEFITS */}
       <section className="section-dark bg-linear-to-br from-brand to-primary-dark py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          <h2 className="heading-m font-bold mb-4 text-center">
             What's Included
           </h2>
           <p className="text-lg text-primary-foreground/80 text-center mb-12 max-w-2xl mx-auto">
@@ -233,7 +233,7 @@ export default function MembershipPage() {
                 className={`rounded-2xl p-8 ${plan.highlight ? "bg-accent text-white ring-2 ring-accent" : "card"}`}
               >
                 <h3
-                  className={`text-2xl font-bold mb-2 ${plan.highlight ? "text-white" : "text-foreground"}`}
+                  className={`h-small font-bold mb-2 ${plan.highlight ? "text-white" : "text-foreground"}`}
                 >
                   {plan.name}
                 </h3>
@@ -244,7 +244,7 @@ export default function MembershipPage() {
                 </p>
 
                 <div className="mb-6">
-                  <span className="text-5xl font-bold">{plan.price}</span>
+                  <span className="heading-l font-bold">{plan.price}</span>
                   <span
                     className={
                       plan.highlight ? "text-primary-foreground/80" : "text-muted-foreground"

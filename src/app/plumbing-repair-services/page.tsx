@@ -109,7 +109,7 @@ export default function PlumbingRepairPage() {
               CMB Plumbing · Northern Utah
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="heading-2xl font-black leading-[1.02] tracking-tight mb-6">
               Plumbing Repair
               <br />
               <span className="text-accent">Done Right.</span>
@@ -165,7 +165,7 @@ export default function PlumbingRepairPage() {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             <div>
               <span className="eyebrow">Plumbing Repair Services</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 Plumbing Repair in
                 <br />
                 <span className="text-primary">
@@ -244,7 +244,7 @@ export default function PlumbingRepairPage() {
             {/* copy */}
             <div className="order-1 lg:order-2">
               <span className="eyebrow">We Fix Any Problem</span>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+              <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
                 Advanced Water
                 <br />
                 <span className="text-accent">Leak Detection</span>
@@ -290,7 +290,7 @@ export default function PlumbingRepairPage() {
             <span className="mb-3 inline-block text-xs font-bold uppercase tracking-widest text-accent">
               Why CMB Plumbing?
             </span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white mb-5">
+            <h2 className="heading-xl font-black tracking-tight leading-tight text-white mb-5">
               We Fix Any of Your
               <br />
               <span className="text-accent">Problem Plumbing Issues</span>
@@ -330,7 +330,7 @@ export default function PlumbingRepairPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="eyebrow">CMB Plumbing Services</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
+            <h2 className="heading-xl font-black tracking-tight leading-tight mb-6">
               Schedule Your
               <br />
               <span className="text-accent">Plumbing Repairs</span>
@@ -384,7 +384,7 @@ export default function PlumbingRepairPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <span className="eyebrow">Our Repair Services</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-4">
+            <h2 className="heading-xl font-black tracking-tight leading-tight mb-4">
               Every Repair,
               <br />
               <span className="text-primary">Covered &amp; Guaranteed</span>

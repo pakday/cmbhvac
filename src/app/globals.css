@@ -334,3 +334,36 @@
   /* previously used marquee animation; now handled by Swiper */
   /* nothing needed here */
 }
+
+/* ─── Clamp-based heading utilities (380px - 1280px viewport) ─── */
+@layer utilities {
+  /* Hero H1 — largest (48px → 72px) */
+  .heading-2xl {
+    font-size: clamp(3rem, 3.5vw + 0.5rem, 4.5rem);
+  }
+
+  /* Section H2 — medium (36px → 48px) */
+  .heading-xl {
+    font-size: clamp(2.25rem, 2.5vw + 0.5rem, 3rem);
+  }
+
+  /* Blog H1 / stats — medium-to-large (30px → 48px) */
+  .heading-l {
+    font-size: clamp(1.875rem, 2.5vw, 3rem);
+  }
+
+  /* Subheading / card headings — small (30px → 36px / 24px→32px) */
+  .heading-m {
+    font-size: clamp(1.875rem, 1.5vw + 0.5rem, 2.25rem);
+  }
+
+  /* Body/Smaller display (20px → 24px) */
+  .h-body {
+    font-size: clamp(1.25rem, 1vw + 0.25rem, 1.5rem);
+  }
+
+  /* Small headings/emphasis (18px → 22px) */
+  .h-small {
+    font-size: clamp(1.125rem, 0.8vw + 0.25rem, 1.375rem);
+  }
+}
