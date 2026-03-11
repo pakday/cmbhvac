@@ -178,7 +178,7 @@ export default function PlumbingPage() {
               CMB Plumbing · Northern Utah
             </div>
 
-            <h1 className="text-5xl md:text-display font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight mb-6">
               Plumbing You Can
               <br />
               <span className="text-accent">Count On.</span>
@@ -373,9 +373,7 @@ export default function PlumbingPage() {
                     key={stat.l}
                     className="rounded-2xl bg-white border border-border p-5"
                   >
-                    <p className="text-2xl font-black text-accent">
-                      {stat.n}
-                    </p>
+                    <p className="text-2xl font-black text-accent">{stat.n}</p>
                     <p className="text-xs text-muted-foreground font-medium mt-0.5">
                       {stat.l}
                     </p>

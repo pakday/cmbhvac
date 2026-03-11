@@ -99,7 +99,7 @@ export default function WaterHeaterServicesPage() {
               CMB Plumbing · Northern Utah
             </div>
 
-            <h1 className="text-5xl md:text-display font-black leading-[1.02] tracking-tight mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.02] tracking-tight mb-6">
               Water Heater
               <br />
               <span className="text-accent">Done Right.</span>

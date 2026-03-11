@@ -282,7 +282,7 @@ export default function Home() {
                 Licensed &amp; Insured &middot; 25+ Years Experience
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-display font-extrabold text-white leading-[1.05] tracking-tight mb-5">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] tracking-tight mb-5">
                 No More
                 <br />
                 <span className="text-accent">Pricing Games.</span>
@@ -371,7 +371,9 @@ export default function Home() {
                   className={`bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 border-t-2 ${s.accent} rounded-2xl p-6 text-white`}
                 >
                   <div className="text-3xl font-extrabold mb-1">{s.value}</div>
-                  <div className="text-sm text-primary-foreground/70">{s.label}</div>
+                  <div className="text-sm text-primary-foreground/70">
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -540,7 +542,9 @@ export default function Home() {
                   ].map((s, i) => (
                     <div key={i} className="text-white">
                       <div className="text-2xl font-extrabold">{s.value}</div>
-                      <div className="text-xs text-primary-foreground/70">{s.label}</div>
+                      <div className="text-xs text-primary-foreground/70">
+                        {s.label}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -593,7 +597,9 @@ export default function Home() {
                   <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                 ))}
               </div>
-              <span className="text-muted-foreground text-sm">64 Google reviews</span>
+              <span className="text-muted-foreground text-sm">
+                64 Google reviews
+              </span>
             </div>
           </div>
         </div>
