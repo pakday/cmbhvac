@@ -1,366 +1,433 @@
-import Link from "next/link";
+"use client";
+
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { CTABanner } from "@/components/CTABanner";
-import {
-  MapPin,
-  Phone,
-  CheckCircle,
-  ArrowRight,
-  Clock,
-  ShieldCheck,
-} from "lucide-react";
+import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
+import { useState } from "react";
 
-const counties = [
-  {
-    name: "Salt Lake County",
-    description:
-      "Our primary service hub. Same-day and next-day availability throughout Salt Lake County.",
-    cities: [
-      "Salt Lake City",
-      "West Valley City",
-      "Sandy",
-      "South Jordan",
-      "West Jordan",
-      "Murray",
-      "Draper",
-      "Millcreek",
-      "Taylorsville",
-      "Midvale",
-      "Cottonwood Heights",
-      "Holladay",
-      "Herriman",
-      "Riverton",
-      "South Salt Lake",
-      "Magna",
-    ],
-  },
-  {
-    name: "Davis County",
-    description:
-      "Full coverage across Davis County — from Bountiful up to Clearfield and beyond.",
-    cities: [
-      "Bountiful",
-      "North Salt Lake",
-      "Woods Cross",
-      "Centerville",
-      "Farmington",
-      "Kaysville",
-      "Layton",
-      "Clearfield",
-      "Syracuse",
-      "Roy",
-      "Clinton",
-      "West Bountiful",
-    ],
-  },
-  {
-    name: "Weber County",
-    description: "Serving Ogden and the surrounding Weber County communities.",
-    cities: [
-      "Ogden",
-      "Washington Terrace",
-      "South Ogden",
-      "Riverdale",
-      "West Haven",
-      "Plain City",
-      "Farr West",
-      "Pleasant View",
-    ],
-  },
-  {
-    name: "Utah County",
-    description:
-      "Service available for many Utah County communities — call to confirm availability.",
-    cities: [
-      "Provo",
-      "Orem",
-      "Lehi",
-      "American Fork",
-      "Pleasant Grove",
-      "Springville",
-      "Spanish Fork",
-      "Saratoga Springs",
-    ],
-  },
-  {
-    name: "Summit & Wasatch Counties",
-    description: "Serving Park City, Heber City, and the mountain communities.",
-    cities: [
-      "Park City",
-      "Heber City",
-      "Midway",
-      "Snyderville",
-      "Kimball Junction",
-    ],
-  },
+const col1 = [
+  "Alpine, UT",
+  "American Fork, UT",
+  "Benjamin, UT",
+  "Bluffdale, UT",
+  "Bountiful, Utah",
+  "Brigham City, UT",
+  "Cedar Fort, UT",
+  "Cedar Hills, UT",
+  "Centerville, UT",
+  "Clearfield, UT",
+  "Clinton, UT",
+  "Coalville, UT",
+  "Copperton, UT",
+  "Cottonwood Heights, UT",
+  "Daybreak, UT",
+  "Draper, UT",
+  "Eagle Mountain, UT",
+  "East Millcreek, UT",
+  "Eden, UT",
+  "Elberta, UT",
+  "Elk Ridge, UT",
+  "Emigration Canyon, UT",
+  "Erda, UT",
+  "Fairfield, UT",
+  "Farmington, UT",
+  "Farr West, UT",
+  "Francis, UT",
+  "Fruit Heights, UT",
+  "Genola, UT",
+  "Glendale, UT",
+  "Goshen, UT",
+  "Grantsville, UT",
+  "Harrisville, UT",
+  "Heber City, UT",
+  "Herriman, UT",
 ];
 
-const services = [
-  { label: "AC Repair & Installation", href: "/services/ac" },
-  { label: "Furnace Repair & Installation", href: "/services/furnace" },
-  { label: "Plumbing Repair", href: "/plumbing-repair-services" },
-  { label: "Plumbing Installation", href: "/plumbing-installation-services" },
-  { label: "Repiping Services", href: "/repiping-services" },
-  { label: "Water Heater Services", href: "/water-heater-services" },
-  { label: "Water Treatment", href: "/water-treatment-services" },
+const col2 = [
+  "Highland, UT",
+  "Hill AFB, UT",
+  "Hobble Creek, UT",
+  "Holladay, UT",
+  "Hooper, UT",
+  "Huntsville, UT",
+  "Kamas, UT",
+  "Kaysville, UT",
+  "Kearns, UT",
+  "Kimball Junction, UT",
+  "Lake Shore, UT",
+  "Lake Town, UT",
+  "Layton, UT",
+  "Lindon, UT",
+  "Lehi, UT",
+  "Lindon, UT",
+  "Mantua, UT",
+  "Mapleton, UT",
+  "Midvale, UT",
+  "Midway, UT",
+  "Millcreek, UT",
+  "Morgan, UT",
+  "Mountain Green, UT",
+  "Murray, UT",
+  "Nephi, UT",
+  "North Ogden, UT",
+  "North Salt Lake, UT",
+  "Oakley, UT",
+  "Ogden, UT",
+  "Oquirrh, UT",
+  "Orem, UT",
+  "Palmyra, UT",
+  "Park City, UT",
+  "Payson, UT",
+  "Perry, UT",
+];
+
+const col3 = [
+  "Pleasant View, UT",
+  "Pleasant Grove, UT",
+  "Provo, UT",
+  "Riverdale, UT",
+  "Riverton, UT",
+  "Roy, UT",
+  "Salem, UT",
+  "Salt Lake City, UT",
+  "Sandy, UT",
+  "Santaquin, UT",
+  "Saratoga Springs, UT",
+  "South Jordan, UT",
+  "South Ogden, UT",
+  "South Salt Lake, UT",
+  "Spanish Fork, UT",
+  "Springville, UT",
+  "Snyderville, UT",
+  "Stansbury Park, UT",
+  "Summit Park, UT",
+  "Sunset, UT",
+  "Stockton, UT",
+  "Syracuse, UT",
+  "Taylorsville, UT",
+  "Tooele, UT",
+  "Vineyard, UT",
+  "Wallsburg, UT",
+  "Wanship, UT",
+  "Washington Terrace, UT",
+  "West Bountiful, UT",
+  "West Haven, UT",
+  "West Jordan, UT",
+  "West Point, Utah",
+  "West Valley City, UT",
+  "Woodland Hills, UT",
+  "Woods Cross, UT",
 ];
 
 export default function ServiceAreasPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      setSubmitted(false);
+    }, 3000);
+  };
+
   return (
     <>
       <Navbar />
 
       {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
+      <section className="hero-dark relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1600&q=80"
-            alt="Utah Wasatch Front landscape"
+            src="https://cmbhvac.com/wp-content/uploads/2024/06/cmb-hvac-top-banner.jpg"
+            alt="Areas We Serve in Utah"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/90 to-brand/50" />
+          <div className="absolute inset-0 bg-primary-dark/75" />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <div className="badge badge-white mb-5">
-              <MapPin className="w-3.5 h-3.5" />
-              Service Areas · Utah
-            </div>
-            <h1 className="heading-2xl font-bold leading-tight mb-5">
-              Serving Utah&apos;s Wasatch Front &amp; Beyond
+            <h1 className="heading-xl font-bold leading-tight mb-6">
+              Areas We Serve in Utah
             </h1>
-            <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl">
-              CMB HVAC &amp; Plumbing serves over 50 communities across Salt
-              Lake, Davis, Weber, Utah, and Summit counties. Licensed
-              technicians, same-day availability, and satisfaction guaranteed.
-            </p>
-            <div className="flex flex-wrap gap-4 mb-8 text-sm text-primary-foreground/80">
-              {[
-                "50+ Communities Served",
-                "Same-Day Available",
-                "Licensed & Insured",
-                "24/7 Emergency",
-              ].map((t) => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-4 h-4 text-accent" /> {t}
-                </span>
+          </div>
+        </div>
+      </section>
+
+      {/* CITIES LIST */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="heading-m font-bold mb-10">Find Your City or Town</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-2">
+            <div className="space-y-2">
+              {col1.map((city) => (
+                <p key={city} className="text-foreground">
+                  {city}
+                </p>
               ))}
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/schedule-us" className="btn-primary">
-                Book a Service
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a href="tel:3858656749" className="btn-outline-white">
-                <Phone className="w-4 h-4" />
-                (385) 865-6749
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* COUNTIES GRID */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto text-center mb-14">
-            <p className="eyebrow">Where We Work</p>
-            <h2 className="heading-m font-bold mb-4 text-foreground">
-              Cities &amp; Communities We Serve
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Don&apos;t see your city? Call us — we serve many communities
-              beyond this list and may still be able to help you.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {counties.map((county, idx) => (
-              <div key={idx} className="card">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="icon-box shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-xl font-bold">{county.name}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground mb-4">
-                  {county.description}
+            <div className="space-y-2">
+              <p className="font-bold text-primary mb-4">Where We Serve</p>
+              {col2.map((city) => (
+                <p key={city} className="text-foreground">
+                  {city}
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  {county.cities.map((city) => (
-                    <span
-                      key={city}
-                      className="inline-flex items-center gap-1 bg-secondary text-foreground text-xs font-medium rounded-full px-3 py-1"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                      {city}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-
-            {/* Not Listed Card */}
-            <div className="card border-dashed border-2 border-border bg-muted flex flex-col items-center justify-center text-center p-10">
-              <div className="icon-box icon-box-secondary icon-box-lg mx-auto mb-4">
-                <Phone className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">
-                Don&apos;t See Your City?
-              </h3>
-              <p className="text-muted-foreground text-sm mb-5">
-                We expand our coverage regularly. Give us a call — we may
-                already serve your area or be able to accommodate you.
-              </p>
-              <a href="tel:3858656749" className="btn-primary">
-                <Phone className="w-4 h-4" />
-                Call Us Now
-              </a>
+              ))}
+            </div>
+            <div className="space-y-2">
+              <p className="font-bold text-primary mb-4">Schedule an Appt.</p>
+              {col3.map((city) => (
+                <p key={city} className="text-foreground">
+                  {city}
+                </p>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* ALL SERVICES OFFERED ACROSS AREAS */}
-      <section
-        className="section-dark py-20 md:py-28"
-        style={{
-          background:
-            "linear-gradient(135deg, #0D2E47 0%, #133F60 55%, #1A5280 100%)",
-        }}
-      >
+      {/* CALL TO ACTION + FORM */}
+      <section className="bg-muted py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* LEFT */}
             <div>
-              <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
-                Full Service Coverage
-              </p>
-              <h2 className="heading-m font-bold mb-5">
-                All Services Available Across Our Coverage Area
+              <h2 className="heading-m font-bold mb-4">
+                Get Your HVAC System taken care of Today
               </h2>
-              <p className="text-primary-foreground/80 mb-8">
-                Whether you&apos;re in Salt Lake City or Park City, you get the
-                same high-quality service. Our licensed and NATE-certified
-                technicians cover every community we serve.
+              <p className="text-2xl font-semibold mb-4">
+                Call{" "}
+                <a href="tel:3858656749" className="text-accent underline">
+                  385-865-6749
+                </a>
               </p>
-              <div className="space-y-3">
-                {services.map((service) => (
-                  <Link
-                    key={service.label}
-                    href={service.href}
-                    className="flex items-center gap-3 text-primary-foreground/90 hover:text-white group transition-colors"
-                  >
+              <a
+                href="tel:3858656749"
+                className="btn-primary text-lg py-3 px-8 mb-6 inline-flex"
+              >
+                Click to Call Us
+              </a>
+              <p className="text-xl font-semibold mt-4 mb-8">
+                Don&apos;t Wait for your Free Service Call!
+              </p>
+
+              <p className="text-lg font-semibold mb-2 text-muted-foreground">
+                What you can expect with us:
+              </p>
+              <p className="text-lg font-semibold mb-4">
+                Professional and Affordable HVAC Services in Salt Lake City
+              </p>
+              <p className="text-base font-semibold mb-4">
+                What you can expect:
+              </p>
+
+              <ul className="space-y-3 mb-8">
+                {[
+                  "The Best Techs",
+                  "The Friendliest Service",
+                  "100% Satisfaction",
+                  "Upfront Pricing & Honest Recommendations",
+                  "The Best Warranties",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-accent shrink-0" />
-                    <span className="font-medium group-hover:underline">
-                      {service.label}
-                    </span>
-                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </Link>
+                    <span className="text-foreground font-medium">{item}</span>
+                  </li>
                 ))}
-              </div>
-              <div className="mt-8">
-                <Link
-                  href="/services"
-                  className="btn-white inline-flex items-center gap-2"
-                >
-                  View All Services
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+              </ul>
+
+              <div className="bg-primary rounded-2xl p-6 text-primary-foreground">
+                <h3 className="text-xl font-bold mb-3">
+                  HOME OF THE FREE SERVICE CALL
+                </h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  Call or text us now and we&apos;ll be there in a snap to get
+                  your system back on no matter the weather outside.
+                </p>
               </div>
             </div>
-            <div className="relative rounded-3xl overflow-hidden h-80 lg:h-96">
-              <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-                alt="CMB technician serving your area"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-primary-dark/60 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5">
-                <div className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-4 border border-primary-foreground/20">
-                  <div className="flex items-center gap-3">
-                    <ShieldCheck className="w-8 h-8 text-accent" />
+
+            {/* RIGHT: FORM */}
+            <div>
+              <div className="card p-8">
+                <h2 className="h-small font-bold mb-6">Send Us a Message</h2>
+
+                {submitted ? (
+                  <div className="flex items-center justify-center py-12 text-center">
                     <div>
-                      <p className="font-bold text-sm">
-                        NATE Certified Technicians
-                      </p>
-                      <p className="text-xs text-primary-foreground/80">
-                        Serving the Wasatch Front since 2008
+                      <div className="flex justify-center mb-4">
+                        <div className="icon-box icon-box-lg bg-green-100 text-green-600">
+                          <CheckCircle className="w-6 h-6" />
+                        </div>
+                      </div>
+                      <h3 className="h-small font-bold mb-2">Thank you!</h3>
+                      <p className="text-muted-foreground">
+                        We&apos;ll be in touch shortly.
                       </p>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-semibold text-foreground mb-2"
+                      >
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-semibold text-foreground mb-2"
+                      >
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-semibold text-foreground mb-2"
+                      >
+                        Phone
+                      </label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                        placeholder="(385) 555-0123"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-semibold text-foreground mb-2"
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={5}
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                        placeholder="Tell us about your issue or question..."
+                      />
+                    </div>
+                    <button type="submit" className="btn-primary w-full">
+                      Submit
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* EMERGENCY + AVAILABILITY */}
-      <section className="py-20 md:py-28 bg-muted">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="card text-center">
-              <div className="icon-box icon-box-lg icon-box-secondary mx-auto mb-4">
-                <Clock className="w-6 h-6" />
+      {/* CONNECT WITH US */}
+      <section className="py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="heading-m font-bold mb-10 text-center">
+            Connect With Us For Your Free In-home Consultation!
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a
+              href="tel:3858656749"
+              className="flex flex-col items-center text-center p-6 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-md transition-all"
+            >
+              <div className="icon-box icon-box-lg mb-3">
+                <Phone className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-xl mb-2">24/7 Emergency Service</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                HVAC failures and plumbing emergencies don&apos;t wait for
-                business hours. Our emergency line is always open.
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                Phone
               </p>
-              <a href="tel:3858656749" className="btn-primary">
-                Emergency Line: (385) 865-6749
-              </a>
-            </div>
-
-            <div className="card text-center">
-              <div className="icon-box icon-box-lg mx-auto mb-4">
-                <MapPin className="w-6 h-6" />
+              <p className="font-bold text-lg">(385) 865-6749</p>
+            </a>
+            <a
+              href="mailto:team@cmbhvac.com"
+              className="flex flex-col items-center text-center p-6 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-md transition-all"
+            >
+              <div className="icon-box icon-box-lg mb-3">
+                <Mail className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-xl mb-2">Fast Response Times</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                We keep technicians strategically positioned across the Wasatch
-                Front so we can reach you fast — often within 1–2 hours.
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                Email
               </p>
-              <Link href="/schedule-us" className="btn-secondary">
-                Schedule Now
-              </Link>
-            </div>
-
-            <div className="card text-center">
-              <div className="icon-box icon-box-lg mx-auto mb-4">
-                <ShieldCheck className="w-6 h-6" />
+              <p className="font-bold text-lg">team@cmbhvac.com</p>
+            </a>
+            <div className="flex flex-col items-center text-center p-6 rounded-2xl border border-border bg-card">
+              <div className="icon-box icon-box-lg mb-3">
+                <MapPin className="w-5 h-5" />
               </div>
-              <h3 className="font-bold text-xl mb-2">
-                Satisfaction Guaranteed
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                Every job backed by our workmanship guarantee. If you&apos;re
-                not happy, we&apos;ll make it right — no questions asked.
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                Service Area
               </p>
-              <Link href="/membership" className="btn-secondary">
-                View Membership Perks
-              </Link>
+              <p className="font-bold text-lg">Wasatch Front</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <CTABanner
-        eyebrow="Ready to Schedule?"
-        title="Book Your Service in Under 2 Minutes"
-        description="Our expert technicians are stationed across the Wasatch Front and ready to come to you. Same-day appointments available in most areas."
-        primaryText="Book an Appointment"
-        primaryHref="/schedule-us"
-        secondaryText="Call (385) 865-6749"
-        secondaryHref="tel:3858656749"
-      />
+      {/* GOOGLE MAP */}
+      <section className="pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl overflow-hidden border border-border">
+            <iframe
+              src="https://maps.google.com/maps?q=CMB+HVAC+Salt+Lake+City+UT&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="CMB HVAC Location"
+            />
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>

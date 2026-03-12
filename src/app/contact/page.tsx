@@ -1,26 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import Image from "next/image";
-import { SectionHeader } from "@/components/SectionHeader";
-import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
+import { CheckCircle, Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    service: "hvac",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -28,17 +25,9 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log("Form submitted:", formData);
     setSubmitted(true);
     setTimeout(() => {
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "hvac",
-        message: "",
-      });
+      setFormData({ name: "", email: "", phone: "", message: "" });
       setSubmitted(false);
     }, 3000);
   };
@@ -51,112 +40,79 @@ export default function ContactPage() {
       <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80"
-            alt="Contact CMB HVAC"
+            src="https://cmbhvac.com/wp-content/uploads/2024/06/cmb-hvac-top-banner.jpg"
+            alt="CMB HVAC Contact"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-primary-dark/100 via-brand/90 to-brand/50" />
+          <div className="absolute inset-0 bg-primary-dark/75" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h1 className="heading-xl font-bold leading-tight mb-6">
-              Get in Touch Today
+            <h1 className="heading-xl font-bold leading-tight mb-4">
+              Get Your HVAC System taken care of Today
             </h1>
-            <p className="text-xl text-primary-foreground/80 mb-8">
-              Need HVAC or plumbing help? We're here to assist. Reach out with
-              your question, and we'll respond quickly with an honest
-              assessment.
+            <p className="text-xl text-primary-foreground/90 mb-6">
+              Call{" "}
+              <a href="tel:3858656749" className="underline font-bold">
+                385-865-6749
+              </a>
             </p>
+            <a href="tel:3858656749" className="btn-primary text-lg py-3 px-8">
+              Click to Call Us
+            </a>
           </div>
         </div>
       </section>
 
-      {/* CONTACT INFO & FORM */}
-      <section className="py-20 md:py-28">
+      {/* MAIN CONTENT */}
+      <section className="py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* LEFT: CONTACT INFO */}
-            <div className="lg:col-span-1">
-              <h2 className="h-small font-bold mb-8">Quick Info</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* LEFT: WHAT TO EXPECT */}
+            <div>
+              <h2 className="heading-m font-bold mb-4">
+                Don&apos;t Wait for your Free Service Call!
+              </h2>
+              <p className="text-lg font-semibold mb-2 text-muted-foreground">
+                What you can expect:
+              </p>
+              <p className="text-lg font-semibold mb-4">
+                Professional and Affordable HVAC Services in Salt Lake City
+              </p>
+              <p className="text-base font-semibold mb-4">
+                What you can expect:
+              </p>
 
-              <div className="space-y-6">
-                {/* PHONE */}
-                <a
-                  href="tel:3858656749"
-                  className="flex gap-4 p-4 rounded-lg hover:bg-muted transition"
-                >
-                  <div className="icon-box shrink-0">
-                    <Phone className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground font-medium">
-                      PHONE
-                    </p>
-                    <p className="text-lg font-bold">(385) 865-6749</p>
-                    <p className="text-sm text-muted-foreground">
-                      Available 24/7
-                    </p>
-                  </div>
-                </a>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "The Best Techs",
+                  "The Friendliest Service",
+                  "100% Satisfaction",
+                  "Upfront Pricing & Honest Recommendations",
+                  "The Best Warranties",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-accent shrink-0" />
+                    <span className="text-foreground font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
 
-                {/* EMAIL */}
-                <a
-                  href="mailto:Team@cmbhvac.com"
-                  className="flex gap-4 p-4 rounded-lg hover:bg-muted transition"
-                >
-                  <div className="icon-box shrink-0">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground font-medium">
-                      EMAIL
-                    </p>
-                    <p className="text-lg font-bold">Team@cmbhvac.com</p>
-                    <p className="text-sm text-muted-foreground">
-                      We reply within 1 hour
-                    </p>
-                  </div>
-                </a>
-
-                {/* SERVICE AREA */}
-                <div className="flex gap-4 p-4 rounded-lg bg-muted">
-                  <div className="icon-box shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground font-medium">
-                      SERVICE AREA
-                    </p>
-                    <p className="text-lg font-bold">Wasatch Front</p>
-                    <p className="text-sm text-muted-foreground">
-                      Salt Lake, Davis, Weber Counties
-                    </p>
-                  </div>
-                </div>
-
-                {/* HOURS */}
-                <div className="flex gap-4 p-4 rounded-lg">
-                  <div className="icon-box shrink-0">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground font-medium">
-                      HOURS
-                    </p>
-                    <p className="text-sm font-semibold">Mon–Fri: 7am–6pm</p>
-                    <p className="text-sm font-semibold">Sat: 9am–4pm</p>
-                    <p className="text-sm text-muted-foreground">
-                      24/7 emergency service
-                    </p>
-                  </div>
-                </div>
+              <div className="bg-primary rounded-2xl p-6 text-primary-foreground">
+                <h3 className="text-xl font-bold mb-3">
+                  HOME OF THE FREE SERVICE CALL
+                </h3>
+                <p className="text-primary-foreground/90 leading-relaxed">
+                  Call or text us now and we&apos;ll be there in a snap to get
+                  your system back on no matter the weather outside.
+                </p>
               </div>
             </div>
 
             {/* RIGHT: FORM */}
-            <div className="lg:col-span-2">
+            <div>
               <div className="card p-8">
                 <h2 className="h-small font-bold mb-6">Send Us a Message</h2>
 
@@ -169,23 +125,19 @@ export default function ContactPage() {
                         </div>
                       </div>
                       <h3 className="h-small font-bold mb-2">Thank you!</h3>
-                      <p className="text-muted-foreground mb-4">
-                        We'll contact you within the next hour.
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        In the meantime, feel free to call us at (385) 865-6749.
+                      <p className="text-muted-foreground">
+                        We&apos;ll be in touch shortly.
                       </p>
                     </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
-                    {/* NAME */}
                     <div>
                       <label
                         htmlFor="name"
                         className="block text-sm font-semibold text-foreground mb-2"
                       >
-                        Full Name *
+                        Name
                       </label>
                       <input
                         type="text"
@@ -194,18 +146,17 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
-                        placeholder="John Smith"
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                        placeholder="Your name"
                       />
                     </div>
 
-                    {/* EMAIL */}
                     <div>
                       <label
                         htmlFor="email"
                         className="block text-sm font-semibold text-foreground mb-2"
                       >
-                        Email Address *
+                        Email
                       </label>
                       <input
                         type="email"
@@ -214,18 +165,17 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
-                        placeholder="john@example.com"
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
+                        placeholder="your@email.com"
                       />
                     </div>
 
-                    {/* PHONE */}
                     <div>
                       <label
                         htmlFor="phone"
                         className="block text-sm font-semibold text-foreground mb-2"
                       >
-                        Phone Number *
+                        Phone
                       </label>
                       <input
                         type="tel"
@@ -234,44 +184,17 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
                         placeholder="(385) 555-0123"
                       />
                     </div>
 
-                    {/* SERVICE TYPE */}
-                    <div>
-                      <label
-                        htmlFor="service"
-                        className="block text-sm font-semibold text-foreground mb-2"
-                      >
-                        Service Type *
-                      </label>
-                      <select
-                        id="service"
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
-                      >
-                        <option value="hvac">HVAC Service</option>
-                        <option value="ac">AC Repair</option>
-                        <option value="heating">Heating Service</option>
-                        <option value="plumbing">Plumbing Service</option>
-                        <option value="water-heater">Water Heater</option>
-                        <option value="water-treatment">Water Treatment</option>
-                        <option value="membership">Membership Inquiry</option>
-                        <option value="other">Other</option>
-                      </select>
-                    </div>
-
-                    {/* MESSAGE */}
                     <div>
                       <label
                         htmlFor="message"
                         className="block text-sm font-semibold text-foreground mb-2"
                       >
-                        Message *
+                        Message
                       </label>
                       <textarea
                         id="message"
@@ -280,20 +203,14 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+                        className="w-full px-4 py-2.5 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
                         placeholder="Tell us about your issue or question..."
                       />
                     </div>
 
-                    {/* SUBMIT */}
                     <button type="submit" className="btn-primary w-full">
                       Submit
                     </button>
-
-                    <p className="text-xs text-muted-foreground text-center">
-                      We'll respond within 1 hour during business hours. For
-                      emergencies, call (385) 865-6749.
-                    </p>
                   </form>
                 )}
               </div>
@@ -302,33 +219,78 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* WHY CONTACT */}
-      <section className="bg-muted py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {[
-              {
-                num: "25+",
-                label: "Years of Experience",
-                desc: "Trusted by thousands of homeowners",
-              },
-              {
-                num: "24/7",
-                label: "Always Available",
-                desc: "Emergency response when you need it",
-              },
-              {
-                num: "100%",
-                label: "Satisfaction Guarantee",
-                desc: "If we don't fix it right, we make it right",
-              },
-            ].map((stat, idx) => (
-              <div key={idx}>
-                <p className="heading-l font-bold text-primary mb-2">{stat.num}</p>
-                <p className="font-bold text-lg mb-1">{stat.label}</p>
-                <p className="text-muted-foreground">{stat.desc}</p>
+      {/* CALL TO ACTION */}
+      <section className="bg-muted py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="heading-m font-bold mb-4">
+            Call Now For Your Free In-home Consultation!
+          </h2>
+        </div>
+      </section>
+
+      {/* CONNECT WITH US */}
+      <section className="py-14 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="heading-m font-bold mb-10 text-center">
+            Connect With Us For Your Free In-home Consultation!
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a
+              href="tel:3858656749"
+              className="flex flex-col items-center text-center p-6 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-md transition-all"
+            >
+              <div className="icon-box icon-box-lg mb-3">
+                <Phone className="w-5 h-5" />
               </div>
-            ))}
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                Phone
+              </p>
+              <p className="font-bold text-lg">(385) 865-6749</p>
+            </a>
+
+            <a
+              href="mailto:team@cmbhvac.com"
+              className="flex flex-col items-center text-center p-6 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-md transition-all"
+            >
+              <div className="icon-box icon-box-lg mb-3">
+                <Mail className="w-5 h-5" />
+              </div>
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                Email
+              </p>
+              <p className="font-bold text-lg">team@cmbhvac.com</p>
+            </a>
+
+            <Link
+              href="/schedule-us"
+              className="flex flex-col items-center text-center p-6 rounded-2xl border border-border bg-card hover:border-primary hover:shadow-md transition-all"
+            >
+              <div className="icon-box icon-box-lg mb-3">
+                <MapPin className="w-5 h-5" />
+              </div>
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-1">
+                Schedule an Appt.
+              </p>
+              <p className="font-bold text-lg">CLICK HERE</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* GOOGLE MAP */}
+      <section className="pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl overflow-hidden border border-border">
+            <iframe
+              src="https://maps.google.com/maps?q=CMB+HVAC+Salt+Lake+City+UT&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="CMB HVAC Location"
+            />
           </div>
         </div>
       </section>
