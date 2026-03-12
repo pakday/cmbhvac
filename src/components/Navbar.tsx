@@ -33,12 +33,16 @@ export function Navbar() {
 
   const navLinks: NavItem[] = [
     {
+      label: "Services",
+      href: "/services",
+    },
+    {
       label: "Heating",
       icon: <Flame className="w-4 h-4 text-accent" />,
       submenu: [
         {
           label: "Furnace Repair & Installation",
-          href: "/hvac",
+          href: "/services/furnace",
           desc: "Fast repairs + high-efficiency systems",
         },
       ],
@@ -48,9 +52,14 @@ export function Navbar() {
       icon: <Snowflake className="w-4 h-4 text-blue-400" />,
       submenu: [
         {
+          label: "Air Conditioning Services",
+          href: "/air-conditioning",
+          desc: "Salt Lake City AC solutions",
+        },
+        {
           label: "AC Repair & Installation",
           href: "/services/ac",
-          desc: "Central AC, heat pumps & mini-splits",
+          desc: "24-hour repair, central AC & mini-splits",
         },
       ],
     },

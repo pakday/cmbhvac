@@ -227,7 +227,7 @@ export default function PlumbingRepairPage() {
       {/* ══════════════════════════════════════════
           LEAK DETECTION FEATURE — image left · copy right
       ══════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 bg-[#f7f8fa]">
+      <section className="py-24 md:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             {/* image */}
@@ -380,7 +380,7 @@ export default function PlumbingRepairPage() {
       {/* ══════════════════════════════════════════
           REPAIR SERVICES GRID
       ══════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 bg-[#f7f8fa]">
+      <section className="py-24 md:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-14">
             <span className="eyebrow">Our Repair Services</span>

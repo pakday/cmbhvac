@@ -26,6 +26,9 @@
   --muted: 210 20% 94%;
   --muted-foreground: 210 20% 45%;
 
+  /* Surface — light off-white section background (#f7f8fa) */
+  --surface: 220 14% 97%;
+
   /* Accent — CMB orange */
   --accent: 17 71% 51%; /* #db5425 */
   --accent-foreground: 0 0% 100%;
@@ -71,6 +74,9 @@
   /* Muted */
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
+
+  /* Surface */
+  --color-surface: hsl(var(--surface));
 
   /* Accent */
   --color-accent: hsl(var(--accent));
