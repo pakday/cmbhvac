@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { CheckCircle, Phone, Mail, MapPin } from "lucide-react";
+import { CheckCircle, Phone, Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -36,32 +35,29 @@ export default function ContactPage() {
     <>
       <Navbar />
 
-      {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="https://cmbhvac.com/wp-content/uploads/2024/06/cmb-hvac-top-banner.jpg"
-            alt="CMB HVAC Contact"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-primary-dark/75" />
-        </div>
+      {/* PAGE HEADER */}
+      <section className="pt-32 pb-20 bg-linear-to-br from-primary/5 via-background to-accent/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h1 className="heading-xl font-bold leading-tight mb-4">
-              Get Your HVAC System taken care of Today
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
+              Contact Us
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              Get Your HVAC System Taken Care of Today
             </h1>
-            <p className="text-xl text-primary-foreground/90 mb-6">
-              Call{" "}
-              <a href="tel:3858656749" className="underline font-bold">
-                385-865-6749
-              </a>
+            <p className="text-xl text-muted-foreground mb-8">
+              Our friendly team of expert HVAC technicians is ready to help —
+              fast response, honest pricing, and 100% satisfaction guaranteed.
             </p>
-            <a href="tel:3858656749" className="btn-primary text-lg py-3 px-8">
-              Click to Call Us
-            </a>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="tel:3858656749"
+                className="btn-primary text-base py-3 px-8"
+              >
+                <Phone className="w-4 h-4" />
+                (385) 865-6749
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -100,11 +96,11 @@ export default function ContactPage() {
                 ))}
               </ul>
 
-              <div className="bg-primary rounded-2xl p-6 text-primary-foreground">
+              <div className="bg-primary rounded-2xl p-6 text-white">
                 <h3 className="text-xl font-bold mb-3">
                   HOME OF THE FREE SERVICE CALL
                 </h3>
-                <p className="text-primary-foreground/90 leading-relaxed">
+                <p className="text-white/90 leading-relaxed">
                   Call or text us now and we&apos;ll be there in a snap to get
                   your system back on no matter the weather outside.
                 </p>
@@ -213,6 +209,80 @@ export default function ContactPage() {
                     </button>
                   </form>
                 )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT INFO CARDS */}
+      <section className="py-14 md:py-16 bg-muted">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="heading-m font-bold mb-10 text-center">
+            Our Contact Information
+          </h2>
+          <div className="space-y-6">
+            {/* Email */}
+            <div className="flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                <Mail className="h-6 w-6 text-accent" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                <a
+                  href="mailto:team@cmbhvac.com"
+                  className="text-muted-foreground hover:text-accent transition-colors"
+                >
+                  team@cmbhvac.com
+                </a>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                <Phone className="h-6 w-6 text-accent" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                <a
+                  href="tel:3858656749"
+                  className="text-muted-foreground hover:text-accent transition-colors"
+                >
+                  (385) 865-6749
+                </a>
+              </div>
+            </div>
+
+            {/* Service Area */}
+            <div className="flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                <MapPin className="h-6 w-6 text-accent" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">
+                  Service Area
+                </h3>
+                <p className="text-muted-foreground">
+                  Salt Lake &amp; Davis County, Utah &mdash; Wasatch Front
+                </p>
+              </div>
+            </div>
+
+            {/* Business Hours */}
+            <div className="flex gap-4 items-start">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                <Clock className="h-6 w-6 text-accent" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-1">
+                  Business Hours
+                </h3>
+                <div className="text-muted-foreground space-y-1">
+                  <p>Monday &ndash; Friday: 7:00 AM &ndash; 6:00 PM</p>
+                  <p>Saturday: 8:00 AM &ndash; 12:00 PM</p>
+                  <p>Sunday: 8:00 AM &ndash; 12:00 PM</p>
+                </div>
               </div>
             </div>
           </div>

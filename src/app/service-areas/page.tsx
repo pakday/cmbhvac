@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Phone, Mail, MapPin, CheckCircle } from "lucide-react";
@@ -60,7 +59,6 @@ const col2 = [
   "Layton, UT",
   "Lindon, UT",
   "Lehi, UT",
-  "Lindon, UT",
   "Mantua, UT",
   "Mapleton, UT",
   "Midvale, UT",
@@ -149,23 +147,21 @@ export default function ServiceAreasPage() {
     <>
       <Navbar />
 
-      {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-28 pb-20 md:pt-40 md:pb-28">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="https://cmbhvac.com/wp-content/uploads/2024/06/cmb-hvac-top-banner.jpg"
-            alt="Areas We Serve in Utah"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-primary-dark/75" />
-        </div>
+      {/* PAGE HEADER */}
+      <section className="pt-32 pb-20 bg-linear-to-br from-primary/5 via-background to-accent/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h1 className="heading-xl font-bold leading-tight mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
+              Service Areas
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Areas We Serve in Utah
             </h1>
+            <p className="text-xl text-muted-foreground">
+              Proudly serving Salt Lake City, Davis County, and communities
+              across the Wasatch Front — your local HVAC experts, right in your
+              neighborhood.
+            </p>
           </div>
         </div>
       </section>
@@ -252,11 +248,11 @@ export default function ServiceAreasPage() {
                 ))}
               </ul>
 
-              <div className="bg-primary rounded-2xl p-6 text-primary-foreground">
+              <div className="bg-primary rounded-2xl p-6 text-white">
                 <h3 className="text-xl font-bold mb-3">
                   HOME OF THE FREE SERVICE CALL
                 </h3>
-                <p className="text-primary-foreground/90 leading-relaxed">
+                <p className="text-white/90 leading-relaxed">
                   Call or text us now and we&apos;ll be there in a snap to get
                   your system back on no matter the weather outside.
                 </p>

@@ -36,12 +36,15 @@ const PRODUCTS = [
     imageBg: "bg-white",
     overview:
       "The Amana brand has a rich history of creating appliances that changed the American household. When it comes to hassle-free indoor living, our customers always come first.",
+    commitmentIntro:
+      "To ensure each unit lives up to the Amana brand\u2019s uncompromising standard and delivers the premium performance homeowners have come to expect from an American legend, we are committed to:",
     commitments: [
       "Innovative engineering",
       "World-class manufacturing processes",
       "Relentless drive",
       "Ten-year parts warranty",
     ],
+    quickFactsIntro: null,
     quickFacts: [
       "1st cold storage locker",
       "1st nationally marketed upright freezer for home use",
@@ -56,7 +59,9 @@ const PRODUCTS = [
     imageBg: "bg-white",
     overview:
       "The Amana brand has a rich history of creating appliances that changed the American household. That is why we are excited to be a part of the local HVAC professionals that distinguish ourselves as Local Amana Dealers.",
+    commitmentIntro: null,
     commitments: null,
+    quickFactsIntro: null,
     quickFacts: [
       "Engineered Longevity",
       "Low sound output",
@@ -70,12 +75,14 @@ const PRODUCTS = [
     imageBg: "bg-white",
     overview:
       "The parent company behind Amana brand heating and air conditioning equipment is consolidating its manufacturing and logistics footprint to a new $400 million facility located outside of Houston, TX.",
+    commitmentIntro: null,
     commitments: null,
+    quickFactsIntro:
+      "The 4.2 million square feet of operational space was built from the ground up to provide:",
     quickFacts: [
       "Logical arrangement of equipment and material flow",
       "High-speed manufacturing",
       "The centralization of all internal departments",
-      "4.2 million square feet of operational space",
     ],
   },
   {
@@ -86,7 +93,9 @@ const PRODUCTS = [
     imageBg: "bg-white",
     overview:
       "The Goodman brand has been focused on providing efficiency and comfort where it matters most while still being an inexpensive brand. With its superior components and standard efficiency, Goodman brand HVACs are a popular choice for homeowners around the United States.",
+    commitmentIntro: null,
     commitments: null,
+    quickFactsIntro: null,
     quickFacts: [
       "Ideal size to cover a small house in ideal climates",
       "Low sound output",
@@ -229,19 +238,22 @@ export default function ProductsPage() {
 
                 {/* Text */}
                 <div className="w-full lg:w-1/2">
-                  <span className="inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs font-bold text-accent uppercase tracking-widest mb-5">
+                  <h2 className="text-2xl font-bold text-foreground mb-4">
                     {p.brand}
-                  </span>
+                  </h2>
 
-                  <p className="text-foreground text-lg leading-relaxed mb-6">
+                  <p className="text-foreground text-lg leading-relaxed mb-4">
                     {p.overview}
                   </p>
 
+                  {p.commitmentIntro && (
+                    <p className="text-foreground text-base leading-relaxed mb-4">
+                      {p.commitmentIntro}
+                    </p>
+                  )}
+
                   {p.commitments && (
                     <div className="mb-6">
-                      <p className="text-sm font-semibold text-foreground mb-3">
-                        We are committed to:
-                      </p>
                       <ul className="space-y-2">
                         {p.commitments.map((c) => (
                           <li
@@ -260,13 +272,18 @@ export default function ProductsPage() {
                     <p className="text-sm font-semibold text-foreground mb-3">
                       Quick Facts:
                     </p>
+                    {p.quickFactsIntro && (
+                      <p className="text-base text-foreground mb-3">
+                        {p.quickFactsIntro}
+                      </p>
+                    )}
                     <ul className="space-y-2">
                       {p.quickFacts.map((f) => (
                         <li
                           key={f}
-                          className="flex items-center gap-3 text-muted-foreground"
+                          className="flex items-center gap-3 text-foreground"
                         >
-                          <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                          <CheckCircle className="w-5 h-5 text-accent shrink-0" />
                           {f}
                         </li>
                       ))}

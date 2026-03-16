@@ -10,23 +10,20 @@ export default function MembershipPage() {
     <>
       <Navbar />
 
-      {/* HERO */}
-      <section className="hero-dark relative overflow-hidden pt-28 pb-28 md:pt-40 md:pb-40">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="https://cmbhvac.com/wp-content/uploads/2024/09/membership-top.jpg"
-            alt="CMB HVAC Maintenance Membership"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-primary-dark/75" />
-        </div>
+      {/* PAGE HEADER */}
+      <section className="pt-32 pb-20 bg-linear-to-br from-primary/5 via-background to-accent/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <h1 className="heading-xl font-bold leading-tight mb-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-semibold mb-4">
+              Membership
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Our CMB HVAC Maintenance Membership
             </h1>
+            <p className="text-xl text-muted-foreground">
+              Save on maintenance, get priority service, and extend the life of
+              your HVAC system with our exclusive membership program.
+            </p>
           </div>
         </div>
       </section>
