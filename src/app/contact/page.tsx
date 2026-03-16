@@ -289,15 +289,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CALL TO ACTION */}
-      <section className="bg-muted py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="heading-m font-bold mb-4">
-            Call Now For Your Free In-home Consultation!
-          </h2>
-        </div>
-      </section>
-
       {/* CONNECT WITH US */}
       <section className="py-14 md:py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
