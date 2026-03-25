@@ -522,6 +522,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FEATURED VIDEO ───────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <p className="eyebrow">Dual-Fuel Heat Pump</p>
+            <h2 className="heading-xl font-bold text-foreground mb-4">
+              Cut Your Energy Bills by Up to 75%
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Discover how dual-fuel heat pump systems deliver superior
+              efficiency and comfort while dramatically reducing your heating
+              and cooling costs.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <div className="w-full max-w-sm">
+              <div
+                className="relative rounded-3xl overflow-hidden bg-black shadow-2xl"
+                style={{ aspectRatio: "9/16" }}
+              >
+                <video
+                  width={400}
+                  height={712}
+                  controls
+                  suppressHydrationWarning
+                  data-scrollseek="true"
+                  className="w-full h-full object-cover"
+                  controlsList="nodownload"
+                >
+                  <source src="/video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+              Interested in upgrading to a more efficient system? Our certified
+              technicians can help you find the perfect solution for your home.
+            </p>
+            <Link
+              href="/schedule-us"
+              className="btn-primary text-base py-3 px-8"
+            >
+              Get Your FREE Quote
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── ABOUT US ─────────────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
