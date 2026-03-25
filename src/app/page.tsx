@@ -575,6 +575,93 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FEATURED VIDEO V2 (Left-Right Layout) ───────────────── */}
+      <section className="py-20 md:py-28 bg-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* VIDEO LEFT */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="w-full max-w-sm">
+                <div
+                  className="relative rounded-3xl overflow-hidden bg-black shadow-2xl"
+                  style={{ aspectRatio: "9/16" }}
+                >
+                  <video
+                    width={400}
+                    height={712}
+                    controls
+                    suppressHydrationWarning
+                    data-scrollseek="true"
+                    className="w-full h-full object-cover"
+                    controlsList="nodownload"
+                  >
+                    <source src="/video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+
+            {/* CONTENT RIGHT */}
+            <div>
+              <p className="eyebrow">Dual-Fuel Heat Pump</p>
+              <h2 className="heading-m font-bold text-foreground mb-4">
+                Cut Your Energy Bills by Up to 75%
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                Discover how dual-fuel heat pump systems deliver superior
+                efficiency and comfort while dramatically reducing your heating
+                and cooling costs.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex gap-3">
+                  <Zap className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground">
+                      350% More Efficient
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Than traditional heating and cooling systems
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <HandCoins className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground">
+                      Massive Energy Savings
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Reduce your bills from $200 to just $50
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <Award className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-semibold text-foreground">
+                      Expert Installation
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      Our NATE-certified technicians handle it all
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                href="/schedule-us"
+                className="btn-primary text-base py-3 px-8"
+              >
+                Get Your FREE Quote
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── ABOUT US ─────────────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -701,8 +788,8 @@ export default function Home() {
       {/* ── BRANDS ───────────────────────────────────────────────── */}
       <section className="py-16 md:py-20 bg-muted border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="eyebrow mb-2">Our Brands</p>
-          <h2 className="heading-m font-bold text-foreground mb-10">
+          <p className="eyebrow text-sm lg:text-base mb-2">Our Brands</p>
+          <h2 className="heading-xl font-bold text-foreground mb-10">
             Part of the CMB HVAC Family
           </h2>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
@@ -741,13 +828,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* header */}
           <div className="text-center mb-14">
-            <p className="text-accent text-xs font-bold uppercase tracking-widest mb-3">
+            <p className="text-accent text-sm lg:text-base font-bold uppercase tracking-widest mb-3">
               We Serve
             </p>
-            <h2 className="heading-m font-bold text-white mb-4">
+            <h2 className="heading-xl font-bold text-white mb-4">
               We Service Davis &amp; Salt Lake County
             </h2>
-            <p className="text-primary-foreground/60 text-lg max-w-lg mx-auto">
+            <p className="text-primary-foreground/60 text-xl lg:text-2xl max-w-lg mx-auto">
               From the mountains to the valley floor &mdash; wherever you are,
               we&apos;ve got you covered.
             </p>
