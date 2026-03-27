@@ -215,7 +215,7 @@ export default function ServiceAreasPage() {
               </p>
               <a
                 href="tel:3858656749"
-                className="btn-primary text-lg py-3 px-8 mb-6 inline-flex"
+                className="btn-primary btn-xl mb-6 inline-flex"
               >
                 Click to Call Us
               </a>

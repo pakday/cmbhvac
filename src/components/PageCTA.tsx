@@ -28,7 +28,7 @@ export function PageCTA({
         </div>
         <Link
           href={buttonHref}
-          className="btn-primary shrink-0 text-base py-3 px-8"
+          className="btn-primary shrink-0 btn-lg"
         >
           {buttonText}
         </Link>

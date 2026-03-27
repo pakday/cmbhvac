@@ -52,7 +52,7 @@ export default function ContactPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:3858656749"
-                className="btn-primary text-base py-3 px-8"
+                className="btn-primary btn-lg"
               >
                 <Phone className="w-4 h-4" />
                 (385) 865-6749

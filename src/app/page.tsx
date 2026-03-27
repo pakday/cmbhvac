@@ -300,14 +300,14 @@ export default function Home() {
               <div className="flex flex-wrap gap-3 mb-10">
                 <Link
                   href="/schedule-us"
-                  className="btn-primary text-base py-3.5 px-8"
+                  className="btn-primary btn-lg"
                 >
                   Schedule Appointment
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:3858656749"
-                  className="btn-outline-white text-base py-3.5 px-8"
+                  className="btn-outline-white btn-lg"
                 >
                   <Phone className="w-4 h-4" />
                   (385) 865-6749
@@ -455,7 +455,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/services" className="btn-primary text-base py-3 px-8">
+            <Link href="/services" className="btn-primary btn-lg">
               View All Services
               <ArrowRight className="w-5 h-5" />
             </Link>
@@ -566,7 +566,7 @@ export default function Home() {
             </p>
             <Link
               href="/schedule-us"
-              className="btn-primary text-base py-3 px-8"
+              className="btn-primary btn-lg"
             >
               Get Your FREE Quote
               <ArrowRight className="w-5 h-5" />
@@ -652,7 +652,7 @@ export default function Home() {
 
               <Link
                 href="/schedule-us"
-                className="btn-primary text-base py-3 px-8"
+                className="btn-primary btn-lg"
               >
                 Get Your FREE Quote
                 <ArrowRight className="w-5 h-5" />
@@ -709,7 +709,7 @@ export default function Home() {
               </p>
               <Link
                 href="/schedule-us"
-                className="btn-primary text-base py-3 px-7"
+                className="btn-primary text-base btn-lg"
               >
                 Schedule Your Appointment Here
                 <ArrowRight className="w-5 h-5" />
@@ -868,7 +868,7 @@ export default function Home() {
             <a
               href="/services"
               rel="noopener noreferrer"
-              className="btn-primary py-3 px-7"
+              className="btn-primary btn-lg"
             >
               <Map className="w-4 h-4" />
               View Service Areas
@@ -877,7 +877,7 @@ export default function Home() {
               href="https://www.google.com/maps/d/viewer?mid=15WRpP-K1nD1upUucDxlv6AiJBmRrgEc&femb=1&ll=40.865799427114816%2C-111.863819566313&z=9"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline-white py-3 px-7"
+              className="btn-outline-white btn-lg"
             >
               <MapPin className="w-4 h-4" />
               Check on Map

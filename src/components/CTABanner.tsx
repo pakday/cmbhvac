@@ -45,7 +45,7 @@ export function CTABanner({
           <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3 lg:shrink-0">
             <Link
               href={primaryHref}
-              className="btn-primary inline-flex items-center justify-center gap-2 text-base py-3 px-7"
+              className="btn-primary inline-flex items-center justify-center gap-2 text-base btn-lg"
             >
               {primaryText}
               <ArrowRight className="w-4 h-4" />
@@ -53,7 +53,7 @@ export function CTABanner({
             {secondaryText && secondaryHref && (
               <Link
                 href={secondaryHref}
-                className="btn-outline-white inline-flex items-center justify-center gap-2 text-base py-3 px-7"
+                className="btn-outline-white inline-flex items-center justify-center gap-2 text-base btn-lg"
               >
                 {icon ?? <Phone className="w-4 h-4" />}
                 {secondaryText}

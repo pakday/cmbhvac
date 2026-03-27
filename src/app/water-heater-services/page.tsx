@@ -115,13 +115,13 @@ export default function WaterHeaterServicesPage() {
             <div className="flex flex-wrap gap-4 mb-8">
               <Link
                 href="/contact"
-                className="btn-primary text-base py-3.5 px-8"
+                className="btn-primary btn-lg"
               >
                 Book a Water Heater Service
               </Link>
               <a
                 href="tel:3858656749"
-                className="btn-outline-white text-base py-3.5 px-8"
+                className="btn-outline-white btn-lg"
               >
                 <Phone className="w-4 h-4" />
                 (385) 865-6749

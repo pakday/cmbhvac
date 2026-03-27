@@ -193,13 +193,13 @@ export default function PlumbingPage() {
             <div className="flex flex-wrap gap-4 mb-8">
               <Link
                 href="/contact"
-                className="btn-primary text-base py-3.5 px-8"
+                className="btn-primary btn-lg"
               >
                 Schedule Service
               </Link>
               <a
                 href="tel:3858656749"
-                className="btn-outline-white text-base py-3.5 px-8"
+                className="btn-outline-white btn-lg"
               >
                 <Phone className="w-4 h-4" />
                 (385) 865-6749
@@ -450,14 +450,14 @@ export default function PlumbingPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="btn-primary text-base py-3.5 px-8"
+                  className="btn-primary btn-lg"
                 >
                   <Camera className="w-4 h-4" />
                   Send Us a Photo
                 </Link>
                 <a
                   href="tel:3858656749"
-                  className="btn-outline-white text-base py-3.5 px-8"
+                  className="btn-outline-white btn-lg"
                 >
                   <Phone className="w-4 h-4" />
                   (385) 865-6749

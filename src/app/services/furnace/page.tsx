@@ -111,13 +111,13 @@ export default function FurnacePage() {
             <div className="flex flex-wrap gap-4 mb-8">
               <Link
                 href="/contact"
-                className="btn-primary text-base py-3.5 px-8"
+                className="btn-primary btn-lg"
               >
                 Book Appointment Here
               </Link>
               <a
                 href="tel:3858656749"
-                className="btn-outline-white text-base py-3.5 px-8"
+                className="btn-outline-white btn-lg"
               >
                 <Phone className="w-4 h-4" />
                 (385) 865-6749
@@ -304,7 +304,7 @@ export default function FurnacePage() {
               </p>
               <a
                 href="tel:3858656749"
-                className="btn-primary text-base py-3.5 px-8 text-lg"
+                className="btn-primary btn-lg text-lg"
               >
                 <Phone className="w-5 h-5" />
                 Call CMB HVAC at (385) 865-6749

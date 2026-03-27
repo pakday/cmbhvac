@@ -50,12 +50,12 @@ export default function HVACPage() {
               speed, transparency, and guaranteed work.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="btn-primary text-lg py-3 px-8">
+              <Link href="/contact" className="btn-primary btn-xl">
                 Schedule Free Estimate
               </Link>
               <a
                 href="tel:3858656749"
-                className="btn-outline-white text-lg py-3 px-8"
+                className="btn-outline-white btn-xl"
               >
                 <Phone className="w-5 h-5" />
                 (385) 865-6749
