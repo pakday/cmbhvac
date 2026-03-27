@@ -194,6 +194,14 @@
     @apply px-4 py-1.5 text-sm;
   }
 
+  .btn-lg {
+    @apply px-8 py-3 text-base;
+  }
+
+  .btn-xl {
+    @apply px-10 py-4 text-lg;
+  }
+
   .hero-dark {
     @apply relative bg-primary text-primary-foreground;
   }
