@@ -73,6 +73,11 @@ export function Navbar() {
           desc: "Complete plumbing solutions",
         },
         {
+          label: "Pipe Inspection Services",
+          href: "/pipe-inspection-services",
+          desc: "Inspect pipes with advanced diagnostics",
+        },
+        {
           label: "Plumbing Repair",
           href: "/plumbing-repair-services",
           desc: "Fast, accurate repairs",
